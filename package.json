@@ -1,0 +1,48 @@
+{
+  "name": "notion-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/mdx": "^13.5.4",
+    "@notionhq/client": "^2.2.13",
+    "@tanstack/react-query": "^5.0.0",
+    "axios": "^1.5.1",
+    "encoding": "^0.1.13",
+    "framer-motion": "^10.16.4",
+    "humbleicons": "^1.10.0",
+    "kbar": "0.1.0-beta.43",
+    "next": "13.5.4",
+    "notion-client": "^6.16.0",
+    "notion-page-to-html": "^1.2.0",
+    "notion-to-md": "^3.1.1",
+    "notion-types": "^6.16.0",
+    "notion-utils": "^6.16.0",
+    "nprogress": "^0.2.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-notion-x": "^6.16.0",
+    "react-use": "^17.4.0",
+    "rss": "^1.2.2",
+    "sharp": "^0.32.6",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/nprogress": "^0.2.2",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/rss": "^0.0.30",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  }
+}
