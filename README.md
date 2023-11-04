@@ -1,4 +1,4 @@
-# Notion Blog Template
+# Devlog - v2
 
 ## Getting Started
 
@@ -38,8 +38,8 @@ pnpm start
 
 - [x] 페이지 레이아웃 및 UI 설정
 - [x] Notion Api 연동
-- [x] Sitemap 생성 // https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap#generate-a-sitemap
-- [x] rss 생성 // https://lmoisz.lat/blog/rss-feed-nextjs13-app-router-guide
+- [x] Sitemap 생성
+- [x] rss 생성
 - [x] Resume 페이지 작업
 - [x] favicon 생성
 - [x] ga 연동
