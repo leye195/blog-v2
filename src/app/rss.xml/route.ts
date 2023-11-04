@@ -3,7 +3,7 @@ import NotionPageToHtml from "notion-page-to-html";
 import { notionDBRowStructed as Post } from "@/types/notion";
 import { getPosts } from "@/apis";
 
-const baseURL = "ttps://www.dantechblog.xyz";
+const baseURL = "https://www.dantechblog.xyz";
 
 const generateRssFeed = async () => {
   try {
