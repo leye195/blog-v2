@@ -23,7 +23,7 @@ const MainPage = ({ data }: Data<Post[]>) => {
           src="/assets/bg.jpg"
           alt=""
           placeholder="blur"
-          blurDataURL="/assets/bg.jpg"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8c+hMPQAHlwLbS5qbuQAAAABJRU5ErkJggg=="
           fill
           priority
         />
