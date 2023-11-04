@@ -1,7 +1,7 @@
 import { getPosts } from "@/apis";
 import type { notionDBRowStructed as Post } from "@/types/notion";
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = "https://www.dantechblog.xyz";
   const posts = await getPosts("all");
   const postSitemaps = posts.map((post: Post) => {
     return {
