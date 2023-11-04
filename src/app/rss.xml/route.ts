@@ -3,14 +3,16 @@ import NotionPageToHtml from "notion-page-to-html";
 import { notionDBRowStructed as Post } from "@/types/notion";
 import { getPosts } from "@/apis";
 
+const baseURL = "ttps://www.dantechblog.xyz";
+
 const generateRssFeed = async () => {
   try {
     const posts = await getPosts("all");
     const feed = new Rss({
       title: "Dan DevLog",
       description: "Dan DevLog",
-      site_url: `${process.env.NEXT_PUBLIC_URL}`,
-      feed_url: `${process.env.NEXT_PUBLIC_URL}rss.xml`,
+      site_url: baseURL,
+      feed_url: `${baseURL}rss.xml`,
     });
 
     const parsedPosts = await Promise.all(
@@ -22,7 +24,7 @@ const generateRssFeed = async () => {
         return {
           title: post.name,
           description: html,
-          url: `${process.env.NEXT_PUBLIC_URL}/posts/${post.id}`,
+          url: `${baseURL}/posts/${post.id}`,
           date: post.date,
         };
       })
