@@ -41,5 +41,6 @@ pnpm start
 - [x] Sitemap 생성 // https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap#generate-a-sitemap
 - [x] rss 생성 // https://lmoisz.lat/blog/rss-feed-nextjs13-app-router-guide
 - [x] Resume 페이지 작업
+- [x] favicon 생성
 - [ ] Vitest 테스트 코드 설정
-- [ ] favicon 생성
+- [ ] ga 연동
