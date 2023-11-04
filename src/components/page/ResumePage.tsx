@@ -158,6 +158,9 @@ const ResumePage = () => {
                     <Ul>
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
+                        web3 지갑 로그인 지원을 위한 web3-react, wagmi 적용
+                      </li>
+                      <li>
                         iframe을 통한 game client 연동 및 postMessage를 활용한
                         이벤트 통신 작업
                       </li>
@@ -165,9 +168,9 @@ const ResumePage = () => {
                         점검 페이지 노출
                         <Ul className="pl-[18px]">
                           <li>
-                            nextjs의 middleware api 활용을 통한 점검 진행 중인
-                            경우 점검페이지로 redirect, 아닌 경우 입력 경로로
-                            접근하도록 처리
+                            페이지 접근시 점검 진행 중인 경우 nextjs의
+                            middleware api 활용을 통한 점검페이지로 redirect
+                            처리
                           </li>
                         </Ul>
                       </li>
@@ -177,7 +180,9 @@ const ResumePage = () => {
                         <Ul className="pl-[18px]">
                           <li>
                             MarketPlace에서 구매한 Ticket NFT를 토너먼트내에서
-                            사용 할 수 있게 하기 위한 기능입니다
+                            사용 할 수 있게 하기 위한 기능으로 - contract abi의
+                            burn 함수과 rest api호출을 통해 NFT 소각 및
+                            지급되도록 구현 진행
                           </li>
                         </Ul>
                       </li>
@@ -185,9 +190,9 @@ const ResumePage = () => {
                         Paypal 티켓 구매 기능 추가
                         <ul className="pl-[18px]">
                           <li>
-                            Paypal을 통해 티켓 좀 더 쉽게 구매 할 수 있도록 지원
-                            - `react-paypal-js` 지원 버튼위젯 및 이벤트 함수
-                            활용
+                            Paypal을 통해 티켓 및 재화를 좀 더 쉽게 구매 할 수
+                            있도록 지원 - `react-paypal-js` 지원 버튼위젯 및
+                            이벤트 함수 활용
                           </li>
                         </ul>
                       </li>
@@ -195,9 +200,9 @@ const ResumePage = () => {
                         Guest 로그인 기능 추가
                         <ul className="pl-[18px]">
                           <li>
-                            Wallet 로그인 같은 Web3 환경에 익숙하지 않은
-                            유저들도 서비스를 체험 및 경험을 통해 참여 하도록
-                            유도하기 위해 Guest 로그인을 지원합니다
+                            Web3 환경에 익숙하지 않은 유저들도 서비스를 체험 및
+                            경험을 통해 참여 하도록 유도하기 위한 Guest 로그인
+                            지원
                           </li>
                         </ul>
                       </li>
