@@ -1,12 +1,12 @@
 "use client";
 
+import styled from "styled-components";
 import { useMedia } from "react-use";
 
 import { getBreakpointQuery } from "@/libs/utils";
 import breakpoints from "@/styles/breakpoints";
 import Flex from "@/components/common/Flex";
 import Tag from "@/components/common/Tag";
-import styled from "styled-components";
 
 const P = styled.p`
   ${breakpoints.down("md")} {
@@ -55,10 +55,10 @@ const ResumePage = () => {
               <b>Blog:</b>{" "}
               <Anchor
                 className="text-blue-500"
-                href="https://blog-v2-ochre.vercel.app"
+                href="https://www.dantechblog.xyz"
                 target="_blank"
               >
-                https://blog-v2-ochre.vercel.app
+                https://www.dantechblog.xyz
               </Anchor>
             </li>
             <li>
@@ -85,7 +85,7 @@ const ResumePage = () => {
               주도적으로 찾아 진행하는것을 좋아합니다. 한 가지 예로 서비스
               성능을 분석하며{" "}
               <Anchor
-                href="https://dantechblog.netlify.app/posts/bundle-size"
+                href="https://www.dantechblog.xyz/posts/e485275b-92a8-499d-81b3-466d27f944b2"
                 target="_blank"
               >
                 번들 사이즈 개선
