@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 
 import AppProvider from "@/components/AppProvider";
 import Layout from "@/components/layout";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import NProgressBar from "@/components/NProgressBar";
+
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "nprogress/nprogress.css";
@@ -32,6 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <AppProvider>
           <NProgressBar />
           <Layout>{children}</Layout>

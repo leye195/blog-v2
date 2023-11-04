@@ -42,5 +42,5 @@ pnpm start
 - [x] rss 생성 // https://lmoisz.lat/blog/rss-feed-nextjs13-app-router-guide
 - [x] Resume 페이지 작업
 - [x] favicon 생성
+- [x] ga 연동
 - [ ] Vitest 테스트 코드 설정
-- [ ] ga 연동
