@@ -7,6 +7,8 @@ export default async function sitemap() {
     return {
       url: `${baseUrl}/posts/${post.id}`,
       lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "daily",
     };
   });
 
@@ -14,14 +16,20 @@ export default async function sitemap() {
     {
       url: baseUrl,
       lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "daily",
     },
     {
       url: `${baseUrl}/posts`,
       lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "daily",
     },
     {
       url: `${baseUrl}/resume`,
       lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "daily",
     },
     ...postSitemaps,
   ];
