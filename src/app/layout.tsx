@@ -32,6 +32,7 @@ export default function RootLayout({
           href="/rss.xml"
           title="Dan DevLog Feed RSS"
         />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
