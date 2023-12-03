@@ -54,8 +54,6 @@ const PostPage = ({ data }: Data<Post[]>) => {
     setPosts(getPostsByCategory(data, category));
   }, [category, data]);
 
-  console.log(y);
-
   if (!isMounted || !tags) return <></>;
 
   return (
