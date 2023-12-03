@@ -5,6 +5,7 @@ const base = css`
   * {
     box-sizing: border-box;
     line-height: 1.5;
+    scroll-behavior: smooth;
   }
 
   html,
