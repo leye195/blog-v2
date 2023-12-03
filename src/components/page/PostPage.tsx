@@ -8,20 +8,26 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import useFetchTags from "@/hooks/useFetchTags";
 import useMounted from "@/hooks/useMounted";
 import { classnames, getPostsByCategory } from "@/libs/utils";
+import { paletteColor } from "@/styles/variable";
 import { type notionDBRowStructed as Post } from "@/types/notion";
 import { type Data } from "@/types/page";
+
+import { ArrowUp } from "@/components/icon";
 import Flex from "@/components/common/Flex";
 import PostCard from "@/components/common/PostCard";
 import Tag from "@/components/common/Tag";
 import Button from "@/components/common/Button";
+import FloatingButton from "@/components/common/FloatingButton";
+import useScrollValue from "@/hooks/useScrollValue";
 
 const PostPage = ({ data }: Data<Post[]>) => {
   const [posts, setPosts] = useState(data);
   const [category, setCategory] = useState("all");
-  const isMounted = useMounted();
 
+  const isMounted = useMounted();
   const [scope, animate] = useAnimate();
   const { data: tags } = useFetchTags();
+  const { y } = useScrollValue();
 
   const handleClickTag = (name: string) => () => {
     const animateTemplate = {
@@ -38,9 +44,17 @@ const PostPage = ({ data }: Data<Post[]>) => {
     });
   };
 
+  const handleToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   useIsomorphicLayoutEffect(() => {
     setPosts(getPostsByCategory(data, category));
   }, [category, data]);
+
+  console.log(y);
 
   if (!isMounted || !tags) return <></>;
 
@@ -87,6 +101,18 @@ const PostPage = ({ data }: Data<Post[]>) => {
           ))}
         </Flex>
       </Flex>
+      <FloatingButton
+        className={classnames(...[y > 10 ? "show" : ""])}
+        bottom={40}
+        right={40}
+        padding="12px"
+        borderRadius="50px"
+        bgColor={paletteColor.blue200}
+        hoverBgColor={paletteColor.blue200}
+        onClick={handleToTop}
+      >
+        <ArrowUp />
+      </FloatingButton>
     </Flex>
   );
 };
