@@ -3,7 +3,7 @@
 import { CSSProperties, ComponentPropsWithRef } from "react";
 import styled from "styled-components";
 
-type Props = {
+export type ButtonProps = {
   width?: CSSProperties["width"];
   height?: CSSProperties["height"];
   bgColor?: CSSProperties["backgroundColor"];
@@ -14,14 +14,14 @@ type Props = {
 } & ComponentPropsWithRef<"button">;
 
 const Container = styled.button<{
-  $padding: Props["padding"];
-  $width: Props["width"];
-  $height: Props["height"];
-  $color?: Props["color"];
-  $bgColor: Props["bgColor"];
-  $hoverBgColor: Props["hoverBgColor"];
-  $disableBgColor: Props["disableBgColor"];
-  $borderRadius: Props["borderRadius"];
+  $padding: ButtonProps["padding"];
+  $width: ButtonProps["width"];
+  $height: ButtonProps["height"];
+  $color?: ButtonProps["color"];
+  $bgColor: ButtonProps["bgColor"];
+  $hoverBgColor: ButtonProps["hoverBgColor"];
+  $disableBgColor: ButtonProps["disableBgColor"];
+  $borderRadius: ButtonProps["borderRadius"];
 }>`
   padding: ${({ $padding }) => $padding};
   width: ${({ $width }) => $width};
@@ -54,7 +54,7 @@ const Button = ({
   disableBgColor = "transparent",
   color = "black",
   onClick,
-}: Props) => {
+}: ButtonProps) => {
   return (
     <Container
       className={className}
