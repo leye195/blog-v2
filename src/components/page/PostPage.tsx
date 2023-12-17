@@ -64,7 +64,7 @@ const PostPage = ({ data }: Data<Post[]>) => {
       $alignItems="center"
     >
       <h1 className={classnames("text-[42px]", "flex")}>
-        <b>{category.toUpperCase()}</b>
+        <b className="text-center">{category.toUpperCase()}</b>
         <span className="text-base text-slate-600">({posts.length})</span>
       </h1>
       <Flex className="w-[inherit]" $direction="column" $gap="12px">
