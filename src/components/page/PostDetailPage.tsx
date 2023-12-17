@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { type ExtendedRecordMap } from "notion-types";
 import Flex from "@/components/common/Flex";
-import UtterancesComments from "@/components/UtterancesComments";
+import Giscus from "@/components/Giscus";
 
 const Code = dynamic(
   () => import("react-notion-x/build/third-party/code").then((m) => m.Code),
@@ -66,7 +66,7 @@ const NotionPage = ({
         disableHeader={disableHeader}
         isImageZoomable
       />
-      <UtterancesComments />
+      <Giscus />
     </Flex>
   );
 };
