@@ -28,11 +28,12 @@ const generateRssFeed = async () => {
           url: `${baseURL}/posts/${post.id}`,
           date: post.date,
           description,
+          content: html,
         };
       })
     );
 
-    parsedPosts.forEach(({ title, description, url, date }: any) => {
+    parsedPosts.forEach(({ title, description, url, date, content }: any) => {
       feed.item({
         title,
         description: `${description?.slice(0, 100)}...`,
@@ -40,7 +41,7 @@ const generateRssFeed = async () => {
         date,
         custom_elements: [
           {
-            "content:encoded": description,
+            "content:encoded": content,
           },
         ],
       });
