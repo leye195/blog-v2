@@ -1,8 +1,8 @@
 import Rss from "rss";
 import NotionPageToHtml from "notion-page-to-html";
 import removeMarkdown from "markdown-to-text";
-import { notionDBRowStructed as Post } from "@/types/notion";
 import { getPosts } from "@/apis";
+import type { notionDBRowStructed as Post } from "@/types/notion";
 
 const baseURL = "https://www.dantechblog.xyz";
 

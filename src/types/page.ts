@@ -1,5 +1,3 @@
-import { notionDBRowStructed as Posts } from "./notion";
-
 export type PageProps = {
   params: {
     [key: string]: string;
