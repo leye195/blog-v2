@@ -1,5 +1,6 @@
 import Rss from "rss";
 import NotionPageToHtml from "notion-page-to-html";
+import removeMarkdown from "markdown-to-text";
 import { notionDBRowStructed as Post } from "@/types/notion";
 import { getPosts } from "@/apis";
 
@@ -20,12 +21,13 @@ const generateRssFeed = async () => {
         const { html } = await NotionPageToHtml.convert(post.url, {
           bodyContentOnly: true,
         });
+        const description = removeMarkdown(html);
 
         return {
           title: post.name,
-          description: html,
           url: `${baseURL}/posts/${post.id}`,
           date: post.date,
+          description,
         };
       })
     );
@@ -33,13 +35,20 @@ const generateRssFeed = async () => {
     parsedPosts.forEach(({ title, description, url, date }: any) => {
       feed.item({
         title,
-        description: `${description?.slice(0, 120)}...`,
+        description: `${description?.slice(0, 100)}...`,
         url,
         date,
+        custom_elements: [
+          {
+            "content:encoded": description,
+          },
+        ],
       });
     });
 
-    return feed.xml();
+    return feed.xml({
+      indent: true,
+    });
   } catch (error) {
     // Handle error appropriately (e.g., log, return an error message, etc.)
     console.error("Error generating RSS feed:", error);
