@@ -3,7 +3,10 @@ import { getPosts } from "@/apis";
 import PostPage from "@/components/page/PostPage";
 
 export const metadata: Metadata = {
-  title: "Posts | Dan DevLog",
+  title: "Posts",
+  openGraph: {
+    title: "Posts",
+  },
 };
 
 async function fetchNotionData() {

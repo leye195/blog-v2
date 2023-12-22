@@ -8,11 +8,13 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const pageId = params.id;
-
   const recordMap = await getNotionPage(pageId);
   const title = getPageTitle(recordMap);
   return {
-    title: `${title} | Dan DevLog`,
+    title: `${title}`,
+    openGraph: {
+      title: `${title}`,
+    },
   };
 }
 

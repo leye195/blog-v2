@@ -14,8 +14,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dan DevLog",
+  title: {
+    default: "Dan DevLog",
+    template: "%s | Dan DevLog",
+  },
   description: "Blog posted about development",
+  openGraph: {
+    title: {
+      default: "Dan DevLog",
+      template: "%s | Dan DevLog",
+    },
+    url: "https://www.dantechblog.xyz/",
+    siteName: "Dan DevLog",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
