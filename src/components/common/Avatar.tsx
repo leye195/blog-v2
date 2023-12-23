@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Flex from "./Flex";
 import { classnames } from "@/libs/utils";
+import Flex from "@/components/common/Flex";
 
 type Props = {
   size: number;

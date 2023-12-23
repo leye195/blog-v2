@@ -1,7 +1,7 @@
-import { flex } from "@/styles/mixin";
-import { paletteColor } from "@/styles/variable";
 import { KBarResults, useMatches } from "kbar";
 import styled from "styled-components";
+import { flex } from "@/styles/mixin";
+import { paletteColor } from "@/styles/variable";
 
 const ItemWrapper = styled.div<{ active: string }>`
   ${flex({ $alignItems: "center" })};

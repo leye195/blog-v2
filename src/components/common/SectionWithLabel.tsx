@@ -1,4 +1,4 @@
-import { ReactElement, type ComponentProps } from "react";
+import { type ComponentProps } from "react";
 
 type Props = {
   title: React.ReactNode;

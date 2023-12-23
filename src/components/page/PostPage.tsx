@@ -7,6 +7,7 @@ import { useAnimate } from "framer-motion";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import useFetchTags from "@/hooks/useFetchTags";
 import useMounted from "@/hooks/useMounted";
+import useScrollValue from "@/hooks/useScrollValue";
 import { classnames, getPostsByCategory } from "@/libs/utils";
 import { paletteColor } from "@/styles/variable";
 import { type notionDBRowStructed as Post } from "@/types/notion";
@@ -18,7 +19,6 @@ import PostCard from "@/components/common/PostCard";
 import Tag from "@/components/common/Tag";
 import Button from "@/components/common/Button";
 import FloatingButton from "@/components/common/FloatingButton";
-import useScrollValue from "@/hooks/useScrollValue";
 
 const PostPage = ({ data }: Data<Post[]>) => {
   const [posts, setPosts] = useState(data);
