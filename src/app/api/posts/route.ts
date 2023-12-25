@@ -1,27 +1,5 @@
 import { retrieveDatabase } from "@/libs/notion";
-
-export type RowType = {
-  id: string;
-  name: {
-    id: string;
-    title: [
-      {
-        text: { content: string };
-      }
-    ];
-  };
-  tag: {
-    id: string;
-    name: string;
-  }[];
-  date: {
-    id: string;
-    date: {
-      start: string;
-    };
-  };
-  url: string;
-};
+import type { RowType } from "@/types/notion";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

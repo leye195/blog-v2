@@ -1,5 +1,5 @@
 import { retrieveDatabase } from "@/libs/notion";
-import { type RowType } from "../posts/route";
+import type { RowType } from "@/types/notion";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
