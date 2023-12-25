@@ -1,7 +1,6 @@
 import { retrieveDatabase } from "@/libs/notion";
-import type { NextApiRequest, NextApiResponse } from "next";
 
-type Row = {
+export type RowType = {
   id: string;
   name: {
     id: string;
@@ -39,7 +38,7 @@ export async function GET(req: Request) {
       tag: properties.tag.multi_select,
       url,
     };
-  }) as Row[];
+  }) as RowType[];
   const reStructed = rows.map((row) => ({
     id: row.id,
     name: row.name.title.reduce(
