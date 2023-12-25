@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { Post } from "@/types/notion";
 
 const api = axios.create({
   headers: {
@@ -6,9 +7,9 @@ const api = axios.create({
   },
 });
 
-export const getTags = () => api.get("/api/tags");
+export const getTags = (): Promise<string[]> => api.get("/api/tags");
 
-export const getPost = async (id: string) => {
+export const getPost = async (id: string): Promise<Post> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/post?id=${id}`
   );
@@ -16,7 +17,10 @@ export const getPost = async (id: string) => {
   return data;
 };
 
-export const getPosts = async (category: string, count?: number) => {
+export const getPosts = async (
+  category: string,
+  count?: number
+): Promise<Post[]> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?category=${category}${
       count != null ? `&count=${count}` : ``

@@ -11,7 +11,7 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import StyledComponentsRegistry from "@/libs/registry";
 import { generateKBarAction } from "@/libs/kbarActions";
 import GlobalStyle from "@/styles/global";
-import { type notionDBRowStructed as Post } from "@/types/notion";
+import type { Post } from "@/types/notion";
 
 import KBarComponent from "@/components/KBarComponent";
 

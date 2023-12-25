@@ -10,8 +10,8 @@ import useMounted from "@/hooks/useMounted";
 import useScrollValue from "@/hooks/useScrollValue";
 import { classnames, getPostsByCategory } from "@/libs/utils";
 import { paletteColor } from "@/styles/variable";
-import { type notionDBRowStructed as Post } from "@/types/notion";
-import { type Data } from "@/types/page";
+import type { Post } from "@/types/notion";
+import type { Data } from "@/types/page";
 
 import { ArrowUp } from "@/components/icon";
 import Flex from "@/components/common/Flex";

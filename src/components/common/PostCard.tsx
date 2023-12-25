@@ -1,9 +1,10 @@
 import { type ComponentProps } from "react";
-import { type notionDBRowStructed as PostCard } from "@/types/notion";
+
 import Flex from "@/components/common/Flex";
 import Tag from "@/components/common/Tag";
+import type { Post } from "@/types/notion";
 
-type Props = ComponentProps<"div"> & Omit<PostCard, "id">;
+type Props = ComponentProps<"div"> & Omit<Post, "id">;
 
 const PostCard = ({ date, name, tag }: Props) => {
   return (

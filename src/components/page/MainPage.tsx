@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { type notionDBRowStructed as Post } from "@/types/notion";
-import { type Data } from "@/types/page";
+import type { Post } from "@/types/notion";
+import type { Data } from "@/types/page";
 import Flex from "@/components/common/Flex";
 import PostCard from "@/components/common/PostCard";
 import SectionWithLabel from "@/components/common/SectionWithLabel";

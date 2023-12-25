@@ -1,4 +1,4 @@
-import { type notionDBRowStructed as Post } from "@/types/notion";
+import type { Post } from "@/types/notion";
 
 /**
  * @description breakpoint의 미디어 쿼리 조건만 반환합니다(useMedia에서 사용)
