@@ -7,7 +7,7 @@ const api = axios.create({
   },
 });
 
-export const getTags = (): Promise<string[]> => api.get("/api/tags");
+export const getTags = () => api.get("/api/tags");
 
 export const getPost = async (id: string): Promise<Post> => {
   const res = await fetch(
