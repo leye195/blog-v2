@@ -1,5 +1,5 @@
-import { getTags } from "@/apis";
 import { useQuery } from "@tanstack/react-query";
+import { getTags } from "@/apis";
 
 const useFetchTags = () => {
   const { data } = useQuery({

@@ -1,8 +1,7 @@
 "use client";
 
-import { forwardRef } from "react";
+import { forwardRef, type ComponentProps } from "react";
 import styled from "styled-components";
-import { type ComponentProps } from "react";
 import { type Flex } from "@/styles/mixin";
 
 type Props = Flex & ComponentProps<"div">;

@@ -1,6 +1,6 @@
 import { KBarAnimator, KBarPortal, KBarPositioner } from "kbar";
-
 import styled from "styled-components";
+
 import { paletteColor } from "@/styles/variable";
 import BackDrop from "@/components/common/BackDrop";
 import KBarResult from "@/components/kbar/Result";
