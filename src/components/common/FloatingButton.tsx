@@ -7,11 +7,15 @@ type Props = {
   right: CSSProperties["right"];
 } & ButtonProps;
 
-const Container = styled.div<Pick<Props, "bottom" | "right">>`
+const Container = styled.div<{
+  $bottom: CSSProperties["bottom"];
+  $right: CSSProperties["right"];
+}>`
   position: fixed;
-  bottom: ${({ bottom }) =>
-    typeof bottom === "number" ? `${bottom}px` : bottom};
-  right: ${({ right }) => (typeof right === "number" ? `${right}px` : right)};
+  bottom: ${({ $bottom }) =>
+    typeof $bottom === "number" ? `${$bottom}px` : $bottom};
+  right: ${({ $right }) =>
+    typeof $right === "number" ? `${$right}px` : $right};
   transition: opacity 0.25s;
   opacity: 0;
 
@@ -28,7 +32,7 @@ const FloatingButton = ({
   ...restProps
 }: Props) => {
   return (
-    <Container className={className} right={right} bottom={bottom}>
+    <Container className={className} $right={right} $bottom={bottom}>
       <Button {...restProps}>{children}</Button>
     </Container>
   );
