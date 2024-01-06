@@ -1,14 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { getTags } from "@/apis";
 
-const useFetchTags = () => {
+type Props = {
+  initialData?: string[];
+};
+
+const useFetchTags = ({ initialData = [] }: Props) => {
   const { data } = useQuery({
     queryKey: ["tags"],
     queryFn: async () => {
-      const { data } = await getTags();
+      const data = await getTags();
       return data;
     },
     refetchOnWindowFocus: false,
+    initialData,
   });
 
   return { data };

@@ -20,13 +20,16 @@ import Tag from "@/components/common/Tag";
 import Button from "@/components/common/Button";
 import FloatingButton from "@/components/common/FloatingButton";
 
-const PostPage = ({ data }: Data<Post[]>) => {
+const PostPage = ({
+  data,
+  tagsData,
+}: Data<Post[]> & { tagsData: string[] }) => {
   const [posts, setPosts] = useState(data);
   const [category, setCategory] = useState("all");
 
   const isMounted = useMounted();
   const [scope, animate] = useAnimate();
-  const { data: tags } = useFetchTags();
+  const { data: tags } = useFetchTags({ initialData: tagsData });
   const { y } = useScrollValue();
 
   const handleClickTag = (name: string) => () => {
