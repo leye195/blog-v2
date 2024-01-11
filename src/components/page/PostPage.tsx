@@ -27,7 +27,6 @@ const PostPage = ({
   const [posts, setPosts] = useState(data);
   const [category, setCategory] = useState("all");
 
-  const isMounted = useMounted();
   const [scope, animate] = useAnimate();
   const { data: tags } = useFetchTags({ initialData: tagsData });
   const { y } = useScrollValue();
@@ -56,8 +55,6 @@ const PostPage = ({
   useIsomorphicLayoutEffect(() => {
     setPosts(getPostsByCategory(data, category));
   }, [category, data]);
-
-  if (!isMounted || !tags) return <></>;
 
   return (
     <Flex
