@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 
 import AppProvider from "@/components/AppProvider";
 import Layout from "@/components/layout";
@@ -49,7 +50,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <GoogleAnalytics />
         <AppProvider>
-          <NProgressBar />
+          <Suspense fallback={<></>}>
+            <NProgressBar />
+          </Suspense>
           <Layout>{children}</Layout>
         </AppProvider>
       </body>
