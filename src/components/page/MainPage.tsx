@@ -1,14 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import type { Post } from "@/types/notion";
-import type { Data } from "@/types/page";
 import Avatar from "@/components/common/Avatar";
 import Flex from "@/components/common/Flex";
-import PostCard from "@/components/common/PostCard";
 import SectionWithLabel from "@/components/common/SectionWithLabel";
+import PostList from "@/components/posts/PostList";
 
-const MainPage = ({ data }: Data<Post[]>) => {
+const MainPage = () => {
   return (
     <Flex $direction="column" $gap="64px">
       <Flex
@@ -45,17 +43,7 @@ const MainPage = ({ data }: Data<Post[]>) => {
           </Flex>
         }
       >
-        <Flex className="w-[inherit]" $direction="column" $gap="12px">
-          {data.map(({ id, name, date, tag, url }) => (
-            <Link
-              className="transition duration-500 border-2 rounded-xl w-[inherit] hover:border-blue-200 "
-              key={id}
-              href={`/posts/${id}`}
-            >
-              <PostCard id={id} name={name} date={date} tag={tag} url={url} />
-            </Link>
-          ))}
-        </Flex>
+        <PostList count={5} />
       </SectionWithLabel>
     </Flex>
   );

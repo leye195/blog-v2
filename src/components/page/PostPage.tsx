@@ -6,7 +6,6 @@ import { useAnimate } from "framer-motion";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import useFetchTags from "@/hooks/useFetchTags";
-import useMounted from "@/hooks/useMounted";
 import useScrollValue from "@/hooks/useScrollValue";
 import { classnames, getPostsByCategory } from "@/libs/utils";
 import { paletteColor } from "@/styles/variable";
