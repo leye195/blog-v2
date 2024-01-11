@@ -3,10 +3,10 @@ import Image from "next/image";
 
 import type { Post } from "@/types/notion";
 import type { Data } from "@/types/page";
+import Avatar from "@/components/common/Avatar";
 import Flex from "@/components/common/Flex";
 import PostCard from "@/components/common/PostCard";
 import SectionWithLabel from "@/components/common/SectionWithLabel";
-import Avatar from "@/components/common/Avatar";
 
 const MainPage = ({ data }: Data<Post[]>) => {
   return (
