@@ -16,7 +16,7 @@ const PostCard = ({ date, name, tag }: Props) => {
       </Flex>
       <h5 className="md:text-[22px] font-[600]">{name}</h5>
       <Flex
-        className="w-[inherit] md:text-[12px]"
+        className="w-[inherit] md:text-[14px]"
         $alignItems="center"
         $justifyContent="space-between"
       >
