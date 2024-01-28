@@ -3,6 +3,9 @@ import { type Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resume",
+  alternates: {
+    canonical: "https://www.dantechblog.xyz/resume",
+  },
   openGraph: {
     title: "Resume",
   },

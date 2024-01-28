@@ -12,6 +12,9 @@ export async function generateMetadata({
   const title = getPageTitle(recordMap);
   return {
     title: `${title}`,
+    alternates: {
+      canonical: `https://www.dantechblog.xyz/posts/${pageId}`,
+    },
     openGraph: {
       title: `${title}`,
     },

@@ -3,6 +3,9 @@ import MainPage from "@/components/page/MainPage";
 
 export const metadata: Metadata = {
   title: "Home | Dan DevLog",
+  alternates: {
+    canonical: "https://www.dantechblog.xyz/",
+  },
   openGraph: {
     title: "Home | Dan DevLog",
   },

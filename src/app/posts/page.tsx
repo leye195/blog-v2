@@ -4,6 +4,9 @@ import PostPage from "@/components/page/PostPage";
 
 export const metadata: Metadata = {
   title: "Posts",
+  alternates: {
+    canonical: "https://www.dantechblog.xyz/posts",
+  },
   openGraph: {
     title: "Posts",
   },
