@@ -96,7 +96,7 @@ const ResumePage = () => {
             <P>
               현재에 만족하지 않고 지속적으로 성장하기 위해 노력하고 있으며 제가
               경험한 것들이 누군가에게는 도움이 될 수 있을거라 생각을 하며
-              블로그에 글을 작성하고 있습니다.
+              블로그에 글도 기록하고 있습니다.
             </P>
           </div>
         </Flex>
@@ -159,9 +159,6 @@ const ResumePage = () => {
                     <Ul>
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
-                        web3 지갑 로그인 지원을 위한 web3-react, wagmi 적용
-                      </li>
-                      <li>
                         iframe을 통한 game client 연동 및 postMessage를 활용한
                         이벤트 통신 작업
                       </li>
@@ -191,13 +188,25 @@ const ResumePage = () => {
                         Paypal 티켓 구매 기능 추가
                         <ul className="pl-[18px]">
                           <li>
-                            Paypal을 통해 티켓 및 재화를 좀 더 쉽게 구매 할 수
-                            있도록 지원 - `react-paypal-js` 지원 버튼위젯 및
+                            NFT 마켓에 가서 ticket NFT를 구매하여 변환하는 과정
+                            없이 Paypal을 통해 티켓 및 재화를 좀 더 쉽게 구매 할
+                            수 있도록 지원- `react-paypal-js` 지원 버튼위젯 및
                             이벤트 함수 활용
                           </li>
                         </ul>
                       </li>
-                      <li>출석기능 및 플로우 구현</li>
+                      <li>
+                        출석기능 및 플로우 구현
+                        <ul className="pl-[18px]">
+                          <li>
+                            유저가 로그인시 재화보상을 받을 수 있도록 하기 위한
+                            출석 보드 및 출석 인증 모달 컴포넌트 작업 진행
+                          </li>
+                          <li>
+                            출석인지를 위한 도장 애니메이션 적용 작업 진행
+                          </li>
+                        </ul>
+                      </li>
                       <li>
                         Guest 로그인 기능 추가
                         <ul className="pl-[18px]">
@@ -209,6 +218,34 @@ const ResumePage = () => {
                         </ul>
                       </li>
                       <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
+                      <li>
+                        web3 지갑 로그인 지원을 위한 web3-react, wagmi 적용
+                      </li>
+                      <li>
+                        WalletConnectV2 마이그레이션 작업
+                        <div>
+                          기존{" "}
+                          <a
+                            href="https://medium.com/walletconnect/weve-reset-the-clock-on-the-walletconnect-v1-0-shutdown-now-scheduled-for-june-28-2023-ead2d953b595"
+                            target="_blank"
+                          >
+                            WalletConnectV1 서비스 종료
+                          </a>
+                          로 V2로 마이그레이션을 진행해야 됐습니다. 진행하는데
+                          있었던 문제점들은 다음과 같습니다:
+                        </div>
+                        <ul className="pl-[18px]">
+                          <li>
+                            `web3-react`를 통해 마이그레이션을 진행한다면 V8
+                            버전으로 업데이트 해야되는데 해당 버전이 현재
+                            사용하고 있는 V6와 완전 다른 구조와 사용 방법을
+                            가지고 있어 부작용이 클거 같다고 생각이 들었으며
+                            몇몇 지갑은 V8에서 지원이 안되고 있어 공식문서 에서
+                            권장하고 있는 `wagmi` 를 활용하는 방법을 선택하게
+                            되었습니다.
+                          </li>
+                        </ul>
+                      </li>
                     </Ul>
                   </div>
                 </div>
