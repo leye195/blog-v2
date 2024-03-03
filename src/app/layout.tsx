@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     url: "https://www.dantechblog.xyz/",
     siteName: "Dan DevLog",
     type: "website",
+    images: [
+      {
+        url: "https://www.dantechblog.xyz/assets/pageImage.png",
+      },
+    ],
   },
 };
 
