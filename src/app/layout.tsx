@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
 import AppProvider from "@/components/AppProvider";
@@ -10,9 +9,7 @@ import NProgressBar from "@/components/NProgressBar";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "nprogress/nprogress.css";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dantechblog.xyz"),
@@ -52,7 +49,7 @@ export default function RootLayout({
           content="7a776dd7427332ce7d4ad3c3128f30cf9064ae22"
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <GoogleAnalytics />
         <AppProvider>
           <Suspense fallback={<></>}>
