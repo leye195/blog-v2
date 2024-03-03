@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 
+import { generateImageUrl } from "@/libs/utils";
 import Avatar from "@/components/common/Avatar";
 import Flex from "@/components/common/Flex";
 import SectionWithLabel from "@/components/common/SectionWithLabel";
@@ -14,15 +14,37 @@ const MainPage = () => {
         $alignItems="flex-end"
         $justifyContent="center"
       >
-        <Image
-          className="md:h-[420px] h-[240px] w-full z-[-1]"
-          src="/assets/bg.jpg"
-          alt=""
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8c+hMPQAHlwLbS5qbuQAAAABJRU5ErkJggg=="
-          fill
-          priority
-        />
+        <picture
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            color: "transparent",
+          }}
+        >
+          <source
+            srcSet={generateImageUrl({
+              fileName: "blog-bg",
+              format: "webp",
+              option: "q_60,c_fill",
+            })}
+            type="image/webp"
+          />
+          <img
+            className="md:h-[420px] h-[240px] w-full z-[-1]"
+            src={generateImageUrl({
+              fileName: "blog-bg",
+              format: "jpg",
+              option: "q_60,c_fill",
+            })}
+            alt=""
+          />
+        </picture>
+
         <Avatar
           className="md:w-[200px] md:h-[200px] w-[120px] h-[120px]  translate-y-[64px] border-spacing-4 border-2 border-gray-300"
           size={200}
