@@ -15,6 +15,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.dantechblog.xyz"),
   title: {
     default: "Dan DevLog",
     template: "%s | Dan DevLog",
@@ -46,7 +47,10 @@ export default function RootLayout({
           title="Dan DevLog Feed RSS"
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="naver-site-verification" content="7a776dd7427332ce7d4ad3c3128f30cf9064ae22" />
+        <meta
+          name="naver-site-verification"
+          content="7a776dd7427332ce7d4ad3c3128f30cf9064ae22"
+        />
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
