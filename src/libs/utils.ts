@@ -40,3 +40,15 @@ export const getPostsByCategory = (data: Post[], category: string) => {
   if (category === "all") return data;
   return data.filter(({ tag }) => tag.some(({ name }) => name === category));
 };
+
+export const generateImageUrl = ({
+  fileName,
+  format,
+  option = "q_auto,c_fill",
+}: {
+  fileName: string;
+  format?: "jpg" | "webp";
+  option?: string;
+}) => {
+  return `https://res.cloudinary.com/dodgocm3u/image/upload/${option}/v1709461304/${format}/${fileName}.${format}`;
+};
