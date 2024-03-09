@@ -203,24 +203,28 @@ const ResumePage = () => {
                             출석 보드 및 출석 인증 모달 컴포넌트 작업 진행
                           </li>
                           <li>
-                            출석인지를 위한 도장 애니메이션 적용 작업 진행
+                            유저의 출석인지를 위한 도장 애니메이션 적용 작업
                           </li>
                         </ul>
                       </li>
                       <li>
-                        Guest 로그인 기능 추가
+                        Social(Google, Apple),Guest 로그인 기능 추가
                         <ul className="pl-[18px]">
                           <li>
                             Web3 환경에 익숙하지 않은 유저들도 서비스를 체험 및
-                            경험을 통해 참여 하도록 유도하기 위한 Guest 로그인
-                            지원
+                            경험을 통해 참여 하도록 유도하기 위한 Social&Guest
+                            로그인 지원
+                          </li>
+                          <li>
+                            google,apple 로그인의 경우 각 각
+                            `@react-oauth/google`와 `react-apple-login`
+                            라이브러리 활용하였으며 공통적인 인자를 전달 받아
+                            처리하기 위한 SocialLoginButton 컴포넌트 추가
                           </li>
                         </ul>
                       </li>
                       <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
-                      <li>
-                        web3 지갑 로그인 지원을 위한 web3-react, wagmi 적용
-                      </li>
+                      <li>web3 지갑 연동 지원을 위한 web3-react, wagmi 적용</li>
                       <li>
                         WalletConnectV2 마이그레이션 작업
                         <div>
