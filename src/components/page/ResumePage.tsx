@@ -203,24 +203,28 @@ const ResumePage = () => {
                             출석 보드 및 출석 인증 모달 컴포넌트 작업 진행
                           </li>
                           <li>
-                            출석인지를 위한 도장 애니메이션 적용 작업 진행
+                            유저의 출석인지를 위한 도장 애니메이션 적용 작업
                           </li>
                         </ul>
                       </li>
                       <li>
-                        Guest 로그인 기능 추가
+                        Social(Google, Apple),Guest 로그인 기능 추가
                         <ul className="pl-[18px]">
                           <li>
                             Web3 환경에 익숙하지 않은 유저들도 서비스를 체험 및
-                            경험을 통해 참여 하도록 유도하기 위한 Guest 로그인
-                            지원
+                            경험을 통해 참여 하도록 유도하기 위한 Social&Guest
+                            로그인 지원
+                          </li>
+                          <li>
+                            google,apple 로그인의 경우 각 각
+                            `@react-oauth/google`와 `react-apple-login`
+                            라이브러리 활용하였으며 공통적인 인자를 전달 받아
+                            처리하기 위한 SocialLoginButton 컴포넌트 추가
                           </li>
                         </ul>
                       </li>
                       <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
-                      <li>
-                        web3 지갑 로그인 지원을 위한 web3-react, wagmi 적용
-                      </li>
+                      <li>web3 지갑 연동 지원을 위한 web3-react, wagmi 적용</li>
                       <li>
                         WalletConnectV2 마이그레이션 작업
                         <div>
@@ -285,8 +289,44 @@ const ResumePage = () => {
                       <li>
                         NFT 상세 페이지
                         <Ul className="pl-[18px]">
-                          <li>NFT(ERC-721) 구매 기능 구현</li>
-                          <li>Order(판매 제안) cancel 기능 구현</li>
+                          <li>
+                            NFT(ERC-721) 구매 기능 구현
+                            <Ul className="pl-[18px]">
+                              <li>
+                                redux에 item order 정보를 전달받아 market SDK
+                                인스턴스의 거래 함수를 호출하는 reducer함수를
+                                정의, 페이지에서는 event state에 따라 modal을
+                                통해 현재 step을 보여주도록 구현 - 이전 SDK
+                                인스턴스를 재초기화 및 api 호출을 통해 order 및
+                                category 정보를 받아오는 불필요 로직 제거
+                              </li>
+                            </Ul>
+                          </li>
+                          <li>
+                            Order(판매 제안) cancel 기능 구현
+                            <Ul className="pl-[18px]">
+                              <li>
+                                isCancelListing과 취소 로직을 실행하는
+                                handleCancelListing 함수를 리턴하는
+                                useListingCancel hook을 생성하여 sell, makeOffer
+                                등록 취소시 hook 활용을 통해 불필요한 반복
+                                코드를 줄이도록 개선 및 구현
+                              </li>
+                            </Ul>
+                          </li>
+                          <li>
+                            metadata 갱신 기능 구현
+                            <Ul className="pl-[18px]">
+                              <li>
+                                nft metadata 정보가 비어있는 경우에 대하여
+                                클릭시 api 응답 여부와 관련 없이 toast 메시지를
+                                통해 refresh 진행 중임을 알려주도록 하였으며
+                                useToastMessage hook을 통해 position, duration
+                                옵션을 설정,리턴하는 handleUpdateToast를 통해
+                                toast 메시지 노출하도록 작업
+                              </li>
+                            </Ul>
+                          </li>
                         </Ul>
                       </li>
                       <li>
@@ -424,6 +464,8 @@ const ResumePage = () => {
             </Flex>
           </Flex>
         </Flex>
+        <br />
+        <br />
         <Flex $direction="column" $gap="8px">
           <h2 className="text-[32px] mb-3">
             <b>Skills</b>
