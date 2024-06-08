@@ -36,7 +36,7 @@ const ResumePage = () => {
       <Flex $direction="column">
         <h1 className="text-[42px]">
           <b>안녕하세요! </b>
-          {isMdDown && <br />}
+          <br className="max-md:hidden" />
           <b>저는 이영재 입니다.</b>
         </h1>
         <Flex $direction="column" $gap="4px">
@@ -125,18 +125,73 @@ const ResumePage = () => {
                 <h3 className="text-[22px] mb-1">
                   <b>Tournament 개발팀</b>
                 </h3>
-                <small className="text-[16px]">2022.08 ~</small>
+                <small className="text-[16px]">2022.08 ~ </small>
                 <div className="my-[10px]">
                   <h4 className="text-[20px]">
                     <b>
                       <Anchor
-                        href="https://tournament.playdapp.com"
+                        href="https://ezplay.playdapp.com"
                         target="_blank"
                       >
-                        PlayDapp Tournaments
+                        EZPlay
                       </Anchor>
                     </b>{" "}
-                    <span className="text-base">(2022.08 ~ )</span>
+                    <span className="text-base">(2024.06 ~ )</span>
+                  </h4>
+                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
+                    <Tag name="typescript" type="outline" size="sm" />
+                    <Tag name="react" type="outline" size="sm" />
+                    <Tag name="next.js" type="outline" size="sm" />
+                    <Tag name="ky" type="outline" size="sm" />
+                    <Tag name="zustand" type="outline" size="sm" />
+                    <Tag name="tailwind" type="outline" size="sm" />
+                    <Tag name="react-query" type="outline" size="sm" />
+                    <Tag name="wagmi" type="outline" size="sm" />
+                  </Flex>
+                  <P>
+                    EZplay는 dnp게임을 플레이하고 보상을 받는것에 집중하는 것이
+                    아닌 유저가 웹 게임을 쉽게 즐기도록 하는 서비스입니다.
+                  </P>
+                  <b>주요 역할 및 성과:</b>
+                  <div className="pl-[24px]">
+                    <ul>
+                      <li>
+                        공통 컴포넌트 개발
+                        <ul className="pl-[18px]">
+                          <li>
+                            Modal, Popup, Dropdown 등의 재사용 가능한 컴포넌트를
+                            구현하여 개발 효율성을 높였습니다.
+                          </li>
+                        </ul>
+                      </li>
+                      <li></li>
+                      <li>
+                        소셜 로그인 기능
+                        <ul className="pl-[18px]">
+                          <li>
+                            Google, Apple 소셜 로그인 기능을 구현하여 사용자
+                            접근성을 향상
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        지갑 연동 및 Web3 기능 지원
+                        <ul className="pl-[18px]">
+                          <li>
+                            Wagmi를 통해 지갑 연동을 설정하고, Web3 기능을
+                            지원하기 위한 hook 및 유틸함수 생성
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="my-[10px]">
+                  <h4 className="text-[20px]">
+                    <b>
+                      <Anchor target="_blank">PlayDapp Tournaments</Anchor>
+                    </b>{" "}
+                    <span className="text-base">(2022.08 ~ 2024.06)</span>
                   </h4>
                   <Flex className="my-2" $gap="6px" $flexWrap="wrap">
                     <Tag name="typescript" type="outline" size="sm" />
@@ -149,12 +204,12 @@ const ResumePage = () => {
                     <Tag name="wagmi" type="outline" size="sm" />
                   </Flex>
                   <P>
-                    재화(Gold,Ticket) 소비를 통해 참여한 Single 및 Multi 게임
-                    플레이 순위 및 대결 결과에 따른 보상을 제공하는 BlockChain
-                    Game Platform 입니다. TF로 합류하여 서비스 소프트런칭에
-                    기여하였으며 이후 정식으로 팀에 합류하여 서비스 개발 및
-                    개선에 참여하고 있습니다
+                    재화(Gold,Ticket) 소비를 통해 참여한 게임 플레이 순위 및
+                    대결 결과에 따른 보상을 제공하는 BlockChain Game Platform
+                    입니다. TF로 합류하여 서비스 소프트런칭에 기여하였으며 이후
+                    정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
                   </P>
+                  <b>주요 역할 및 성과:</b>
                   <div className="pl-[24px]">
                     <Ul>
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
@@ -188,15 +243,15 @@ const ResumePage = () => {
                         Paypal 티켓 구매 기능 추가
                         <ul className="pl-[18px]">
                           <li>
-                            NFT 마켓에 가서 ticket NFT를 구매하여 변환하는 과정
-                            없이 Paypal을 통해 티켓 및 재화를 좀 더 쉽게 구매 할
-                            수 있도록 지원- `react-paypal-js` 지원 버튼위젯 및
-                            이벤트 함수 활용
+                            react-paypal-js를 사용하여 유저가 MarketPlace에서
+                            NFT를 구매한 뒤 burn하는 과정 없이 Paypal을 통해
+                            직접 티켓을 구매할 수 있도록 하여 편의성을
+                            높였습니다.
                           </li>
                         </ul>
                       </li>
                       <li>
-                        출석기능 및 플로우 구현
+                        출석 기능 및 플로우 구현
                         <ul className="pl-[18px]">
                           <li>
                             유저가 로그인시 재화보상을 받을 수 있도록 하기 위한
@@ -208,12 +263,11 @@ const ResumePage = () => {
                         </ul>
                       </li>
                       <li>
-                        Social(Google, Apple),Guest 로그인 기능 추가
+                        소셜(Google, Apple),게스트 로그인 기능 추가
                         <ul className="pl-[18px]">
                           <li>
-                            Web3 환경에 익숙하지 않은 유저들도 서비스를 체험 및
-                            경험을 통해 참여 하도록 유도하기 위한 Social&Guest
-                            로그인 지원
+                            Web3 환경에 익숙하지 않은 유저들도 서비스에 쉽게
+                            접근 할 수 있도록 Social&Guest 로그인 지원
                           </li>
                           <li>
                             google,apple 로그인의 경우 각 각
@@ -223,6 +277,7 @@ const ResumePage = () => {
                           </li>
                         </ul>
                       </li>
+                      <li>유저 재화 Migration 기능 구현</li>
                       <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
                       <li>web3 지갑 연동 지원을 위한 web3-react, wagmi 적용</li>
                       <li>
@@ -282,7 +337,11 @@ const ResumePage = () => {
                     <Tag name="web3-react" type="outline" size="sm" />
                     <Tag name="etherjs" type="outline" size="sm" />
                   </Flex>
-                  <P>NFT를 거래할 수 있는 C2C 마켓플레이스 서비스 입니다.</P>
+                  <P>
+                    PlayDapp MarketPlace는 사용자가 NFT를 거래할 수 있는 C2C
+                    마켓플레이스입니다.
+                  </P>
+                  <b>주요 역할 및 성과:</b>
                   <div className="pl-[24px]">
                     <Ul>
                       <li>v1/v2 리뉴얼 프론트엔드 개발</li>
@@ -357,6 +416,7 @@ const ResumePage = () => {
                     있는 nft를 스테이킹 하고 게임내 일일임무, PvP 보상을
                     받아갈수 있도록 해주는 서비스 입니다
                   </P>
+                  <b>주요 역할 및 성과:</b>
                   <div className="pl-[24px]">
                     <Ul>
                       <li>
@@ -375,7 +435,7 @@ const ResumePage = () => {
                           <li>
                             각 페이지에서 공통적으로 보여줘야 하는 내구도
                             게이지, 경고 메시지 등 컴포넌트들에 대해 모듈화를
-                            진행하여 UI를 구성
+                            진행하여 UI를 구성했습니다.
                           </li>
                         </Ul>
                       </li>
@@ -414,6 +474,7 @@ const ResumePage = () => {
                     <Tag name="emotion" type="outline" size="sm" />
                   </Flex>
                   <P>GEO.DOMAIN NFT 이벤트 프로모션 페이지 입니다.</P>
+                  <b>주요 역할 및 성과:</b>
                   <div className="pl-[24px]">
                     <Ul>
                       <li>
