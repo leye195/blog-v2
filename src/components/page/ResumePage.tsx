@@ -149,8 +149,8 @@ const ResumePage = () => {
                     <Tag name="wagmi" type="outline" size="sm" />
                   </Flex>
                   <P>
-                    EZplay는 dnp게임을 플레이하고 보상을 받는것에 집중하는 것이
-                    아닌 유저가 웹 게임을 쉽게 즐기도록 하는 서비스입니다.
+                    EZplay는 유저가 웹 게임을 쉽게 즐기도록 하기 위한 web3 미니
+                    게임 플렛폼 입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-[24px]">
@@ -164,7 +164,6 @@ const ResumePage = () => {
                           </li>
                         </ul>
                       </li>
-                      <li></li>
                       <li>
                         소셜 로그인 기능
                         <ul className="pl-[18px]">
@@ -178,8 +177,8 @@ const ResumePage = () => {
                         지갑 연동 및 Web3 기능 지원
                         <ul className="pl-[18px]">
                           <li>
-                            Wagmi를 통해 지갑 연동을 설정하고, Web3 기능을
-                            지원하기 위한 hook 및 유틸함수 생성
+                            지갑 연동 그리고, Web3 기능을 지원하기 위한 hook 및
+                            유틸함수 생성
                           </li>
                         </ul>
                       </li>
@@ -244,9 +243,9 @@ const ResumePage = () => {
                         <ul className="pl-[18px]">
                           <li>
                             react-paypal-js를 사용하여 유저가 MarketPlace에서
-                            NFT를 구매한 뒤 burn하는 과정 없이 Paypal을 통해
-                            직접 티켓을 구매할 수 있도록 하여 편의성을
-                            높였습니다.
+                            NFT를 구매한 뒤 burn하는 과정 없이 Paypal 카드
+                            결제를 통해 직접 티켓을 구매할 수 있도록 하여
+                            편의성을 높였습니다.
                           </li>
                         </ul>
                       </li>
