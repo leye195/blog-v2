@@ -2,7 +2,7 @@ import { type CSSProperties } from "react";
 import styled from "styled-components";
 import Button, { type ButtonProps } from "@/components/common/Button";
 
-type Props = {
+type FloatingButtonProps = {
   bottom: CSSProperties["bottom"];
   right: CSSProperties["right"];
 } & ButtonProps;
@@ -30,7 +30,7 @@ const FloatingButton = ({
   bottom,
   children,
   ...restProps
-}: Props) => {
+}: FloatingButtonProps) => {
   return (
     <Container className={className} $right={right} $bottom={bottom}>
       <Button {...restProps}>{children}</Button>

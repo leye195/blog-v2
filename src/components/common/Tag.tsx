@@ -1,6 +1,6 @@
 import { classnames } from "@/libs/utils";
 
-type Props = {
+type TagProps = {
   type?: "normal" | "outline";
   size?: "sm" | "md" | "lg";
   color?: string;
@@ -12,7 +12,7 @@ const Tag = ({
   type = "normal",
   color = "white",
   size = "sm",
-}: Props) => {
+}: TagProps) => {
   return (
     <div
       className={classnames(

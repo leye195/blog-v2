@@ -1,10 +1,14 @@
 import { type ComponentProps } from "react";
 
-type Props = {
+type SectionWithLabelProps = {
   title: React.ReactNode;
 } & Omit<ComponentProps<"section">, "title">;
 
-const SectionWithLabel = ({ title, children, className }: Props) => {
+const SectionWithLabel = ({
+  title,
+  children,
+  className,
+}: SectionWithLabelProps) => {
   return (
     <section className={className}>
       {title}

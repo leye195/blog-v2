@@ -3,14 +3,14 @@ import Image from "next/image";
 import { classnames } from "@/libs/utils";
 import Flex from "@/components/common/Flex";
 
-type Props = {
+type AvatarProps = {
   size: number;
   src: string;
   className?: string;
   priority?: boolean;
 };
 
-const Avatar = ({ className, size, src, priority }: Props) => {
+const Avatar = ({ className, size, src, priority }: AvatarProps) => {
   return (
     <Flex
       className={classnames(

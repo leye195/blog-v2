@@ -4,9 +4,9 @@ import Flex from "@/components/common/Flex";
 import Tag from "@/components/common/Tag";
 import type { Post } from "@/types/notion";
 
-type Props = ComponentProps<"div"> & Omit<Post, "id">;
+type PostCardProps = ComponentProps<"div"> & Omit<Post, "id">;
 
-const PostCard = ({ date, name, tag }: Props) => {
+const PostCard = ({ date, name, tag }: PostCardProps) => {
   return (
     <Flex className="w-[inherit] p-[1rem]" $direction="column" $gap="10px">
       <Flex $gap="8px">

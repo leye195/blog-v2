@@ -4,7 +4,7 @@ import { forwardRef, type ComponentProps } from "react";
 import styled from "styled-components";
 import { type Flex } from "@/styles/mixin";
 
-type Props = Flex & ComponentProps<"div">;
+type FlexProps = Flex & ComponentProps<"div">;
 
 const StyledDiv = styled.div<Flex>`
   display: ${({ $display }) => $display ?? "flex"};
@@ -15,7 +15,7 @@ const StyledDiv = styled.div<Flex>`
   flex-wrap: ${({ $flexWrap }) => $flexWrap};
 `;
 
-const Flex = forwardRef<HTMLDivElement, Props>(
+const Flex = forwardRef<HTMLDivElement, FlexProps>(
   ({ children, ...restProps }, ref) => (
     <StyledDiv {...restProps} ref={ref}>
       {children}
