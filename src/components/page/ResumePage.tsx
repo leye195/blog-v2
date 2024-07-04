@@ -1,12 +1,12 @@
 "use client";
 
-import styled from "styled-components";
 import { useMedia } from "react-use";
+import styled from "styled-components";
 
-import { getBreakpointQuery } from "@/libs/utils";
-import breakpoints from "@/styles/breakpoints";
 import Flex from "@/components/common/Flex";
 import Tag from "@/components/common/Tag";
+import { getBreakpointQuery } from "@/libs/utils";
+import breakpoints from "@/styles/breakpoints";
 
 const P = styled.p`
   ${breakpoints.down("md")} {

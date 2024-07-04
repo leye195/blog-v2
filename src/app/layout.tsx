@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
+import type { Metadata } from "next";
 
 import AppProvider from "@/components/AppProvider";
-import Layout from "@/components/layout";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Layout from "@/components/layout";
 import NProgressBar from "@/components/NProgressBar";
 
 import "react-notion-x/src/styles.css";

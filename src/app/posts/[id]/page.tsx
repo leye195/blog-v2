@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { getPageTitle } from "notion-utils";
+
+import NotionPage from "@/components/page/PostDetailPage";
 import { getNotionPage } from "@/libs/notion";
 import type { PageProps } from "@/types/page";
-import NotionPage from "@/components/page/PostDetailPage";
 
 export async function generateMetadata({
   params,

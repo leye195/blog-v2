@@ -1,5 +1,5 @@
-import { useKBar } from "kbar";
 import { useState } from "react";
+import { useKBar } from "kbar";
 import styled from "styled-components";
 
 const Input = styled.input`

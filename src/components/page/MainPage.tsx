@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { generateImageUrl } from "@/libs/utils";
 import Avatar from "@/components/common/Avatar";
 import Flex from "@/components/common/Flex";
 import SectionWithLabel from "@/components/common/SectionWithLabel";
 import PostList from "@/components/posts/PostList";
+import { generateImageUrl } from "@/libs/utils";
 
 const MainPage = () => {
   return (

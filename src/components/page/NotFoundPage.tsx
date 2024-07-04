@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { paletteColor } from "@/styles/variable";
 import Button from "@/components/common/Button";
 import Flex from "@/components/common/Flex";
+import { paletteColor } from "@/styles/variable";
 
 const NotFoundPage = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { cn } from "@/libs/utils";
 import Flex from "@/components/common/Flex";
+import { cn } from "@/libs/utils";
 
 type AvatarProps = {
   size: number;

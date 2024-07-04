@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styled from "styled-components";
 
+import KBarToggleButton from "@/components/kbar/KBarToggleButton";
 import breakpoints from "@/styles/breakpoints";
 import { flex } from "@/styles/mixin";
-import KBarToggleButton from "@/components/kbar/KBarToggleButton";
 
 const Container = styled.header`
   ${flex({ $alignItems: "center" })};

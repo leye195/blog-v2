@@ -25,10 +25,7 @@ export type RowType = {
       }
     ];
   };
-  tag: {
-    id: string;
-    name: string;
-  }[];
+  tag: Tag[];
   date: {
     id: string;
     date: {

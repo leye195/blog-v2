@@ -1,23 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useAnimate } from "framer-motion";
+import Link from "next/link";
 
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import Button from "@/components/common/Button";
+import Flex from "@/components/common/Flex";
+import FloatingButton from "@/components/common/FloatingButton";
+import PostCard from "@/components/common/PostCard";
+import Tag from "@/components/common/Tag";
+import { ArrowUp } from "@/components/icon";
 import useFetchTags from "@/hooks/useFetchTags";
+import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import useScrollValue from "@/hooks/useScrollValue";
 import { cn, getPostsByCategory } from "@/libs/utils";
 import { paletteColor } from "@/styles/variable";
 import type { Post } from "@/types/notion";
 import type { Data } from "@/types/page";
-
-import { ArrowUp } from "@/components/icon";
-import Flex from "@/components/common/Flex";
-import PostCard from "@/components/common/PostCard";
-import Tag from "@/components/common/Tag";
-import Button from "@/components/common/Button";
-import FloatingButton from "@/components/common/FloatingButton";
 
 const PostPage = ({
   data,

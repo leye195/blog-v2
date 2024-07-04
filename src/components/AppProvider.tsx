@@ -1,17 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { ComponentProps, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Action, KBarProvider, useRegisterActions } from "kbar";
+import { useRouter } from "next/navigation";
 
 import { getPosts } from "@/apis";
-import useMounted from "@/hooks/useMounted";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import StyledComponentsRegistry from "@/libs/registry";
-import { generateKBarAction } from "@/libs/kbarActions";
-import type { Post } from "@/types/notion";
 import KBarComponent from "@/components/KBarComponent";
+import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import useMounted from "@/hooks/useMounted";
+import { generateKBarAction } from "@/libs/kbarActions";
+import StyledComponentsRegistry from "@/libs/registry";
+import type { Post } from "@/types/notion";
 
 const queryClient = new QueryClient();
 

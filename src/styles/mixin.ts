@@ -1,5 +1,5 @@
-import { css } from "styled-components";
 import { type CSSProperties } from "react";
+import { css } from "styled-components";
 
 export type Flex = {
   $display?: "flex" | "inline-flex";
