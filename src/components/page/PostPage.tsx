@@ -73,11 +73,11 @@ const PostPage = ({
           $flexWrap="wrap"
         >
           <Button padding="0" onClick={handleClickTag("all")}>
-            <Tag name="All" type="outline" size="lg" color="white" />
+            <Tag name="All" type="outline" size="lg" />
           </Button>
           {tags?.map((tag: string) => (
             <Button key={tag} padding="0" onClick={handleClickTag(tag)}>
-              <Tag name={tag} type="outline" size="lg" color="white" />
+              <Tag name={tag} type="outline" size="lg" />
             </Button>
           ))}
         </Flex>

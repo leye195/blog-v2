@@ -13,12 +13,7 @@ type AvatarProps = {
 const Avatar = ({ className, size, src, priority }: AvatarProps) => {
   return (
     <Flex
-      className={cn(
-        "rounded-full",
-        "bg-white",
-        "overflow-hidden",
-        className ?? ""
-      )}
+      className={cn("rounded-full", "bg-white", "overflow-hidden", className)}
       $alignItems="center"
       $justifyContent="center"
     >

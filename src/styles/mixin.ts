@@ -1,6 +1,12 @@
 import { type CSSProperties } from "react";
 import { css } from "styled-components";
 
+declare module "react" {
+  interface CSSProperties {
+    [key: `--${string}`]: string | number;
+  }
+}
+
 export type Flex = {
   $display?: "flex" | "inline-flex";
   $direction?: CSSProperties["flexDirection"];
