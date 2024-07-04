@@ -57,7 +57,7 @@ const PostPage = ({
   return (
     <Flex
       ref={scope}
-      className="w-full p-[1rem] mt-[48px]"
+      className="w-full p-4 mt-12"
       $direction="column"
       $alignItems="center"
     >
@@ -67,7 +67,7 @@ const PostPage = ({
       </h1>
       <Flex className="w-[inherit]" $direction="column" $gap="12px">
         <Flex
-          className="my-[10px] pb-[16px] w-[inherit]"
+          className="my-[10px] pb-4 w-[inherit]"
           $gap="8px"
           $justifyContent="center"
           $flexWrap="wrap"

@@ -25,5 +25,5 @@ async function fetchNotionData() {
 
 export default async function Posts() {
   const { data, tags } = await fetchNotionData();
-  return <PostPage data={data} tagsData={tags ?? []} />;
+  return <PostPage data={data} tagsData={tags} />;
 }

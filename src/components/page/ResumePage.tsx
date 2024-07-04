@@ -28,11 +28,7 @@ const ResumePage = () => {
   const isMdDown = useMedia(getBreakpointQuery(breakpoints.down("md")), false);
 
   return (
-    <Flex
-      className="max-w-[1000px] mx-auto p-[16px]"
-      $direction="column"
-      $gap="8px"
-    >
+    <Flex className="max-w-[1000px] mx-auto p-4" $direction="column" $gap="8px">
       <Flex $direction="column">
         <h1 className="text-[42px]">
           <b>안녕하세요! </b>
@@ -40,7 +36,7 @@ const ResumePage = () => {
           <b>저는 이영재 입니다.</b>
         </h1>
         <Flex $direction="column" $gap="4px">
-          <ul className="flex flex-col gap-2 text-[18px] pl-[24px] mb-[12px]">
+          <ul className="flex flex-col gap-2 text-[18px] pl-6 mb-3">
             <li>
               <b>Github:</b>{" "}
               <Anchor
@@ -117,7 +113,7 @@ const ResumePage = () => {
               <span className="text-[16px]">Frontend Developer</span>
             </div>
             <Flex
-              className="border-blue-400  border-l-4 pl-4"
+              className="border-blue-400 border-l-4 pl-4"
               $direction="column"
               $gap="12px"
             >
@@ -153,7 +149,7 @@ const ResumePage = () => {
                     게임 플렛폼 입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-[24px]">
+                  <div className="pl-6">
                     <ul>
                       <li>
                         공통 컴포넌트 개발
@@ -209,7 +205,7 @@ const ResumePage = () => {
                     정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-[24px]">
+                  <div className="pl-6">
                     <Ul>
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
@@ -341,7 +337,7 @@ const ResumePage = () => {
                     마켓플레이스입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-[24px]">
+                  <div className="pl-6">
                     <Ul>
                       <li>v1/v2 리뉴얼 프론트엔드 개발</li>
                       <li>
@@ -416,7 +412,7 @@ const ResumePage = () => {
                     받아갈수 있도록 해주는 서비스 입니다
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-[24px]">
+                  <div className="pl-6">
                     <Ul>
                       <li>
                         Repair 기능 구현
@@ -474,7 +470,7 @@ const ResumePage = () => {
                   </Flex>
                   <P>GEO.DOMAIN NFT 이벤트 프로모션 페이지 입니다.</P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-[24px]">
+                  <div className="pl-6">
                     <Ul>
                       <li>
                         GEO.DOMAIN NFT 오픈 이벤트 프로모션 프로젝트 환경 구성
@@ -496,7 +492,7 @@ const ResumePage = () => {
             <h3 className="text-[22px] mb-2">
               <b>Front-End</b>
             </h3>
-            <Ul className="text-[18px] flex flex-col gap-1  pl-[24px]">
+            <Ul className="text-[18px] flex flex-col gap-1  pl-6">
               <li>HTML / CSS</li>
               <li>React.js</li>
               <li>NextJS</li>
@@ -508,7 +504,7 @@ const ResumePage = () => {
             <h3 className="text-[22px] mb-2">
               <b>Back-End</b>
             </h3>
-            <Ul className="text-[18px] flex flex-col gap-1  pl-[24px]">
+            <Ul className="text-[18px] flex flex-col gap-1 pl-6">
               <li>Node.js</li>
             </Ul>
           </div>
@@ -516,7 +512,7 @@ const ResumePage = () => {
             <h3 className="text-[22px] mb-2">
               <b>Etc</b>
             </h3>
-            <Ul className="text-[18px] flex flex-col gap-1 pl-[24px]">
+            <Ul className="text-[18px] flex flex-col gap-1 pl-6">
               <li>Git / Github</li>
               <li>Jira</li>
             </Ul>
