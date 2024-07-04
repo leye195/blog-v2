@@ -1,3 +1,6 @@
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 import type { Post } from "@/types/notion";
 
 /**
@@ -26,9 +29,7 @@ export const convertPascalCase = (value: string) =>
 export const setComma = (num: number): string =>
   num.toLocaleString(undefined, { maximumFractionDigits: 4 });
 
-export const classnames = (...classnames: string[]) => {
-  return classnames.join(" ");
-};
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 /**
  *
