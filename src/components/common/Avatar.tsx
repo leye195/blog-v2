@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { classnames } from "@/libs/utils";
+import { cn } from "@/libs/utils";
 import Flex from "@/components/common/Flex";
 
 type AvatarProps = {
@@ -13,7 +13,7 @@ type AvatarProps = {
 const Avatar = ({ className, size, src, priority }: AvatarProps) => {
   return (
     <Flex
-      className={classnames(
+      className={cn(
         "rounded-full",
         "bg-white",
         "overflow-hidden",

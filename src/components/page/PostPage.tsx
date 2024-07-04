@@ -7,7 +7,7 @@ import { useAnimate } from "framer-motion";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import useFetchTags from "@/hooks/useFetchTags";
 import useScrollValue from "@/hooks/useScrollValue";
-import { classnames, getPostsByCategory } from "@/libs/utils";
+import { cn, getPostsByCategory } from "@/libs/utils";
 import { paletteColor } from "@/styles/variable";
 import type { Post } from "@/types/notion";
 import type { Data } from "@/types/page";
@@ -62,7 +62,7 @@ const PostPage = ({
       $direction="column"
       $alignItems="center"
     >
-      <h1 className={classnames("text-[42px]", "flex")}>
+      <h1 className={cn("text-[42px]", "flex")}>
         <b className="text-center">{category.toUpperCase()}</b>
         <span className="text-base text-slate-600">({posts.length})</span>
       </h1>
@@ -99,7 +99,7 @@ const PostPage = ({
         </Flex>
       </Flex>
       <FloatingButton
-        className={classnames(...[y > 10 ? "show" : ""])}
+        className={cn(...[y > 10 ? "show" : ""])}
         bottom={40}
         right={40}
         padding="12px"

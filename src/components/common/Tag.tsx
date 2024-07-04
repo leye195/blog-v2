@@ -1,4 +1,4 @@
-import { classnames } from "@/libs/utils";
+import { cn } from "@/libs/utils";
 
 type TagProps = {
   type?: "normal" | "outline";
@@ -15,8 +15,8 @@ const Tag = ({
 }: TagProps) => {
   return (
     <div
-      className={classnames(
-        "px-[0.5rem]",
+      className={cn(
+        "px-2",
         "rounded-md",
         `text-[${color}]`,
         `text-${size}`,
