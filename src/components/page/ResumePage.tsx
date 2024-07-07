@@ -73,11 +73,11 @@ const ResumePage = () => {
           </h2>
           <div>
             <P>
-              저는 SuperTree(PlayDapp) 에서 블록체인 웹 서비스를 개발하고 있는
-              웹 프론트엔드 개발자입니다.
+              저는 블록체인 스타트업에서 웹 서비스를 개발하고 있는 웹 프론트엔드
+              개발자입니다.
             </P>
             <P>
-              개발자로서 주어진 업무만 처리하는것 뿐만 아니라, 그외 일들도
+              개발자로서 주어진 업무만 처리하는것 이 아닌, 그외 일들도
               주도적으로 찾아 진행하는것을 좋아합니다. 한 가지 예로 서비스
               성능을 분석하며{" "}
               <Anchor
@@ -137,7 +137,7 @@ const ResumePage = () => {
                   <Flex className="my-2" $gap="6px" $flexWrap="wrap">
                     <Tag name="typescript" type="outline" size="sm" />
                     <Tag name="react" type="outline" size="sm" />
-                    <Tag name="next.js" type="outline" size="sm" />
+                    <Tag name="next.js14" type="outline" size="sm" />
                     <Tag name="ky" type="outline" size="sm" />
                     <Tag name="zustand" type="outline" size="sm" />
                     <Tag name="tailwind" type="outline" size="sm" />
@@ -159,6 +159,10 @@ const ResumePage = () => {
                             구현하여 개발 효율성을 높였습니다.
                           </li>
                         </ul>
+                      </li>
+                      <li>
+                        서버컴포넌트 내 data fetching 처리를 통한 네트워크 비용
+                        감소
                       </li>
                       <li>
                         소셜 로그인 기능
@@ -210,7 +214,7 @@ const ResumePage = () => {
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
                         iframe을 통한 game client 연동 및 postMessage를 활용한
-                        이벤트 통신 작업
+                        game 플레이, 결과 노출 이벤트 통신 작업
                       </li>
                       <li>
                         점검 페이지 노출
@@ -221,6 +225,23 @@ const ResumePage = () => {
                             처리
                           </li>
                         </Ul>
+                      </li>
+                      <li>
+                        프로젝트 번들 사이즈 최적화
+                        <ul className="pl-[18px]">
+                          <li>
+                            bundle-analyzer 활용 프로젝트 번들 크기 분석을 통한
+                            대체 가능 혹은 불필요 패키지 제거
+                          </li>
+                          <li>
+                            모달 혹은 상호작용시 노출이 필요 혹은 우선순위가
+                            낮은 컴포넌트들에 대하여 code splitting 적용을 통한
+                          </li>
+                          <li>
+                            First Load JS 용량 <b>`470kb`</b>에서 <b>`162kb`</b>
+                            로 감소
+                          </li>
+                        </ul>
                       </li>
                       <li>가상화폐(ERC-20) 보상 출금 기능 추가</li>
                       <li>
@@ -339,12 +360,31 @@ const ResumePage = () => {
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <Ul>
-                      <li>v1/v2 리뉴얼 프론트엔드 개발</li>
+                      <li>
+                        v1/v2 리뉴얼 프론트엔드 개발
+                        <Ul className="pl-[18px]">
+                          <li>
+                            javascript로 되어 있는는 CRA 기반 v1 코드 파악후,
+                            typescript 기반 nextjs로 마이그레이션 및 UI 리뉴얼
+                            개선 작업 진행
+                          </li>
+                        </Ul>
+                      </li>
                       <li>
                         NFT 상세 페이지
                         <Ul className="pl-[18px]">
                           <li>NFT(ERC-721) 구매 기능 구현</li>
-                          <li>Order(판매 제안) cancel 기능 구현</li>
+                          <li>
+                            Order(판매 제안) cancel 기능 구현
+                            <Ul className="pl-[18px]">
+                              <li>
+                                isCancelListing과 취소 로직을 실행하는
+                                handleCancelListing 함수를 리턴하는
+                                useListingCancel hook 생성 및 활용을 통한 중복
+                                코드
+                              </li>
+                            </Ul>
+                          </li>
                         </Ul>
                       </li>
                       <li>
@@ -357,8 +397,28 @@ const ResumePage = () => {
                       <li>
                         Email 인증 페이지
                         <Ul className="pl-[18px]">
-                          <li>email 인증 요청 기능 구현</li>
-                          <li>email 인증 결과 페이지</li>
+                          <li>
+                            email 인증 요청 기능 구현
+                            <ul className="pl-[18px]">
+                              <li>
+                                react-hook-form 제공 register 함수를 통한 입력
+                                값 유효성 체크 및 handleSubmit 함수를 활용하여
+                                submit 요청에 대한 성공 및 에러 대한 처리를
+                                진행하도록 구현
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            email 인증 결과 페이지
+                            <ul className="pl-[18px]">
+                              <li>
+                                각 결과에 대한 페이지를 별도 작성하는것이 아닌
+                                getStaticPaths와 getStaticProps를 활용하여 인증
+                                결과 및 에러 값을 동적 라우팅 경로로 전달받아
+                                결과에 대한 페이지를 랜더링하여 보여주도록 구현
+                              </li>
+                            </ul>
+                          </li>
                         </Ul>
                       </li>
                       <li>
@@ -374,7 +434,7 @@ const ResumePage = () => {
                       </li>
                       <li>
                         멀티월렛 지원 확장을 위한, web3-react 도입
-                        <ul>
+                        <ul className="pl-[18px]">
                           <li>
                             metamask, portis을 제외한 다른 월렛(walletLink,
                             walletConnect) 로그인을 지원하기 위해 web3-react를
