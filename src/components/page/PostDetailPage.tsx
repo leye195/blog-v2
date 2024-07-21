@@ -41,7 +41,7 @@ const NotionPage = ({
 }: Props) => {
   return (
     <Flex
-      className="max-w-[1000px] mx-auto p-[16px]"
+      className="max-w-[1000px] mx-auto p-4"
       $alignItems="center"
       $direction="column"
       $gap={12}

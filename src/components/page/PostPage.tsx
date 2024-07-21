@@ -88,7 +88,7 @@ const PostPage = ({
         >
           {posts.map(({ id, name, date, tag, url }) => (
             <Link
-              className="transition duration-500 border-2 rounded-xl w-[inherit] hover:border-blue-200 "
+              className="transition duration-500 border-2 rounded-xl w-[inherit] hover:border-blue-200"
               key={id}
               href={`/posts/${id}`}
             >

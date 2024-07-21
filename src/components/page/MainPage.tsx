@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <Flex $direction="column" $gap="64px">
       <Flex
-        className="md:h-[420px] h-[240px] w-full p-[20px] relative"
+        className="md:h-[420px] h-[240px] w-full p-5 relative"
         $alignItems="flex-end"
         $justifyContent="center"
       >
@@ -46,26 +46,24 @@ const MainPage = () => {
         </picture>
 
         <Avatar
-          className="md:w-[200px] md:h-[200px] w-[120px] h-[120px]  translate-y-[64px] border-spacing-4 border-2 border-gray-300"
+          className="md:w-[200px] md:h-[200px] w-[120px] h-[120px] translate-y-16 border-spacing-4 border-2 border-gray-300"
           size={200}
           src="/assets/avatar.gif"
           priority
         />
       </Flex>
       <SectionWithLabel
-        className="w-full px-[1rem]"
+        className="w-full px-4"
         title={
           <Flex className="w-full" $justifyContent="space-between">
-            <h3 className="md:text-2xl text-xl font-bold mb-[8px]">
-              Recent Posts
-            </h3>
+            <h3 className="md:text-2xl text-xl font-bold mb-2">Recent Posts</h3>
             <Link className="md:text-xl text-lg hover:underline" href="/posts">
               더보기
             </Link>
           </Flex>
         }
       >
-        <PostList count={5} />
+        <PostList count={10} />
       </SectionWithLabel>
     </Flex>
   );
