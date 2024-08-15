@@ -1,26 +1,8 @@
-"use client";
-
 import * as React from "react";
-import { NotionRenderer } from "react-notion-x";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import { type ExtendedRecordMap } from "notion-types";
 import Flex from "@/components/common/Flex";
 import Giscus from "@/components/Giscus";
-
-const Code = dynamic(
-  () => import("react-notion-x/build/third-party/code").then((m) => m.Code),
-  { ssr: false }
-);
-const Collection = dynamic(
-  () =>
-    import("react-notion-x/build/third-party/collection").then(
-      (m) => m.Collection
-    ),
-  {
-    ssr: false,
-  }
-);
+import PostRenderer from "@/components/posts/PostRenderer";
 
 type Props = {
   title?: string;
@@ -47,24 +29,16 @@ const NotionPage = ({
       $gap={12}
     >
       {title && (
-        <h1 className="mb-0">
+        <h1 className="mb-0 max-sm:text-[22px]">
           <b>{title}</b>
         </h1>
       )}
-      <NotionRenderer
-        className="p-0"
+      <PostRenderer
         recordMap={recordMap}
-        darkMode={false}
         rootDomain={rootDomain}
         rootPageId={rootPageId}
-        previewImages={previewImagesEnabled}
-        components={{
-          Collection,
-          Code,
-          nextImage: Image,
-        }}
+        previewImagesEnabled={previewImagesEnabled}
         disableHeader={disableHeader}
-        isImageZoomable
       />
       <Giscus />
     </Flex>
