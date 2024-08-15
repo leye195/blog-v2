@@ -1,26 +1,43 @@
 "use client";
 
 import { forwardRef, type ComponentProps } from "react";
-import styled from "styled-components";
+import { cn } from "@/libs/utils";
 import { type Flex } from "@/styles/mixin";
 
 type FlexProps = Flex & ComponentProps<"div">;
 
-const StyledDiv = styled.div<Flex>`
-  display: ${({ $display }) => $display ?? "flex"};
-  align-items: ${({ $alignItems }) => $alignItems ?? "flex-start"};
-  justify-content: ${({ $justifyContent }) => $justifyContent ?? "flex-start"};
-  flex-direction: ${({ $direction }) => $direction ?? "row"};
-  gap: ${({ $gap }) => $gap ?? "0"};
-  flex-wrap: ${({ $flexWrap }) => $flexWrap};
-`;
-
 const Flex = forwardRef<HTMLDivElement, FlexProps>(
-  ({ children, ...restProps }, ref) => (
-    <StyledDiv {...restProps} ref={ref}>
-      {children}
-    </StyledDiv>
-  )
+  (
+    {
+      children,
+      $display,
+      $alignItems,
+      $justifyContent,
+      $gap,
+      $direction,
+      $flexWrap,
+      ...restProps
+    },
+    ref
+  ) => {
+    return (
+      <div
+        {...restProps}
+        className={cn(restProps.className)}
+        ref={ref}
+        style={{
+          display: $display ?? "flex",
+          justifyContent: $justifyContent ?? "flex-start",
+          flexDirection: $direction ?? "row",
+          alignItems: $alignItems ?? "flex-start",
+          gap: $gap ?? 0,
+          flexWrap: $flexWrap,
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
 );
 
 Flex.displayName = "Flex";

@@ -1,5 +1,4 @@
 import { type ComponentProps } from "react";
-
 import Flex from "@/components/common/Flex";
 import Tag from "@/components/common/Tag";
 import type { Post } from "@/types/notion";

@@ -1,23 +1,9 @@
 import { useState } from "react";
 import { useKBar } from "kbar";
-import styled from "styled-components";
-
-const Input = styled.input`
-  width: 100%;
-  padding: 14px 20px;
-  background-color: transparent;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-
-  &:focus::placeholder {
-    opacity: 1;
-    transition: opacity 0.25s ease 0s;
-  }
-`;
+import { cn } from "@/libs/utils";
 
 const KBarSearch = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
-  const [input, setInput] = useState("");
+  const [value, setValue] = useState("");
   const { query, search, actions, currentRootActionId } = useKBar((state) => ({
     search: state.searchQuery,
     currentRootActionId: state.currentRootActionId,
@@ -25,14 +11,19 @@ const KBarSearch = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
   }));
 
   return (
-    <Input
+    <input
+      className={cn(
+        "outline-none border-none bg-transparent",
+        "px-5 py-3.5 w-full box-border",
+        "placeholder:focus:opacity-100 placeholder:focus:transition-opacity"
+      )}
       ref={query.inputRefSetter}
-      value={input}
+      value={value}
       placeholder="Cmd (or Ctrl) + K to toggle"
       onChange={(event) => {
         props.onChange?.(event);
         query.setSearch(event.target.value);
-        setInput(event.target.value);
+        setValue(event.target.value);
       }}
       onKeyDown={(event) => {
         if (currentRootActionId && !search && event.key === "Backspace") {
