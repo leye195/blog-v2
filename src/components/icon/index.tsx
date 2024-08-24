@@ -1,10 +1,15 @@
-export const Light = () => (
+import { ComponentProps } from "react";
+import { cn } from "@/libs/utils";
+
+export const Light = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-sun"
+    className={cn("humbleicons hi-sun", className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -16,13 +21,15 @@ export const Light = () => (
   </svg>
 );
 
-export const Dark = () => (
+export const Dark = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-moon"
+    className={cn("humbleicons hi-moon", className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -34,13 +41,15 @@ export const Dark = () => (
   </svg>
 );
 
-export const GitHub = () => (
+export const GitHub = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-brand-github"
+    className={cn("humbleicons hi-brand-github", className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +62,15 @@ export const GitHub = () => (
   </svg>
 );
 
-export const Email = () => (
+export const Email = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-mail"
+    className={cn("humbleicons hi-mail", className)}
   >
     <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="2">
       <path
@@ -71,13 +82,15 @@ export const Email = () => (
   </svg>
 );
 
-export const RSS = () => (
+export const RSS = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-rss"
+    className={cn("humbleicons hi-rss", className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -96,13 +109,15 @@ export const RSS = () => (
   </svg>
 );
 
-export const Search = () => (
+export const Search = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-search"
+    className={cn("humbleicons hi-search", className)}
   >
     <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="2">
       <path strokeLinecap="round" d="M20 20l-6-6" />
@@ -111,13 +126,16 @@ export const Search = () => (
   </svg>
 );
 
-export const ArrowUp = () => (
+export const ArrowUp = ({
+  className,
+}: Pick<ComponentProps<"div">, "className">) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className="humbleicons hi-arrow-up"
+    className={cn("humbleicons hi-arrow-up", className)}
+    color="currentColor"
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
