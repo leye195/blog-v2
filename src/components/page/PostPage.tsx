@@ -3,14 +3,12 @@
 import { useState } from "react";
 import { useAnimate } from "framer-motion";
 import Link from "next/link";
-
 import Button from "@/components/common/Button";
 import Flex from "@/components/common/Flex";
 import PostCard from "@/components/common/PostCard";
 import Tag from "@/components/common/Tag";
 import useFetchTags from "@/hooks/useFetchTags";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import useScrollValue from "@/hooks/useScrollValue";
 import { cn, getPostsByCategory } from "@/libs/utils";
 import type { Post } from "@/types/notion";
 import type { Data } from "@/types/page";
@@ -24,7 +22,6 @@ const PostPage = ({
 
   const [scope, animate] = useAnimate();
   const { data: tags } = useFetchTags({ initialData: tagsData });
-  const { y } = useScrollValue();
 
   const handleClickTag = (name: string) => () => {
     const animateTemplate = {
