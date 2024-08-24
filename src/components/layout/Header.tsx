@@ -1,9 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import styled from "styled-components";
 
 import KBarToggleButton from "@/components/kbar/KBarToggleButton";
+import useScrollUp from "@/hooks/useScrollUp";
+import { cn } from "@/libs/utils";
 import breakpoints from "@/styles/breakpoints";
 import { flex } from "@/styles/mixin";
+import { paletteColor } from "@/styles/variable";
+import { ArrowUp } from "../icon";
 
 const Container = styled.header`
   ${flex({ $alignItems: "center" })};
@@ -36,6 +42,8 @@ const Nav = styled.nav`
 `;
 
 const Header = () => {
+  const { y, handleToTop, FloatingButton } = useScrollUp();
+
   return (
     <Container className="border-b-2 border-black-50 bg-white z-[1]">
       <Nav>
@@ -54,6 +62,18 @@ const Header = () => {
           <KBarToggleButton />
         </div>
       </Nav>
+      <FloatingButton
+        className={cn(...[y > 30 ? "show" : ""])}
+        bottom={40}
+        right={40}
+        padding="12px"
+        borderRadius="50px"
+        bgColor={paletteColor.blue200}
+        hoverBgColor={paletteColor.blue200}
+        onClick={handleToTop}
+      >
+        <ArrowUp className="!w-5 !h-5 max-md:!w-4 max-md:!h-4" />
+      </FloatingButton>
     </Container>
   );
 };

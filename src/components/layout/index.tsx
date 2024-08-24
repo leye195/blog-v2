@@ -1,6 +1,3 @@
-"use client";
-
-import Flex from "@/components/common/Flex";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
@@ -10,13 +7,13 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Flex className="w-full min-h-[100vh]" $direction="column">
+    <div className="flex flex-col w-full min-h-[100vh]">
       <Header />
       <main className="w-full max-w-[1600px] min-h-[calc(100vh-240px)] mx-auto mb-[4rem] pt-[4rem]">
         {children}
       </main>
       <Footer />
-    </Flex>
+    </div>
   );
 };
 
