@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
 import KBarToggleButton from "@/components/kbar/KBarToggleButton";
+import useEventListener from "@/hooks/useEventListener";
 import useScrollUp from "@/hooks/useScrollUp";
 import { cn } from "@/libs/utils";
 import breakpoints from "@/styles/breakpoints";
@@ -43,9 +45,19 @@ const Nav = styled.nav`
 
 const Header = () => {
   const { y, handleToTop, FloatingButton } = useScrollUp();
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEventListener("scroll", () => {
+    setIsScrolling(window.scrollY !== 0);
+  });
 
   return (
-    <Container className="border-b-2 border-black-50 bg-white z-[1]">
+    <Container
+      className={cn(
+        "border-b border-black-50 bg-white z-[1]",
+        isScrolling && "shadow-sm"
+      )}
+    >
       <Nav>
         <div className="left-side">
           <Link href="/">
