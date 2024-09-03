@@ -157,11 +157,11 @@ const ResumePage = () => {
                   <div className="pl-6">
                     <ul>
                       <li>
-                        공통 컴포넌트 개발
+                        공통 컴포넌트 개발:
                         <ul className="pl-[18px]">
                           <li>
                             Modal, Popup, Dropdown 등의 재사용 가능한 컴포넌트를
-                            구현하여 개발 효율성을 높였습니다.
+                            구현하여 코드 재활용성을 높이고 개발 효율성 향상.
                           </li>
                         </ul>
                       </li>
@@ -170,7 +170,7 @@ const ResumePage = () => {
                         감소
                       </li>
                       <li>
-                        소셜 로그인 기능
+                        소셜 로그인 기능:
                         <ul className="pl-[18px]">
                           <li>
                             Google, Apple 소셜 로그인 기능을 구현하여 사용자
@@ -179,7 +179,7 @@ const ResumePage = () => {
                         </ul>
                       </li>
                       <li>
-                        지갑 연동 및 Web3 기능 지원
+                        지갑 연동 및 Web3 기능 지원:
                         <ul className="pl-[18px]">
                           <li>
                             지갑 연동 그리고, Web3 기능을 지원하기 위한 hook 및
@@ -218,25 +218,29 @@ const ResumePage = () => {
                     <Ul>
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
-                        iframe을 통한 game client 연동 및 postMessage를 활용한
-                        game 플레이, 결과 노출 이벤트 통신 작업
-                      </li>
-                      <li>
-                        점검 페이지 노출
+                        게임 클라이언트 통합 및 이벤트 통신:
                         <Ul className="pl-[18px]">
                           <li>
-                            페이지 접근시 점검 진행 중인 경우 nextjs의
-                            middleware api 활용을 통한 점검페이지로 redirect
-                            처리
+                            iframe과 postMessage를 활용한 게임 클라이언트 연동
+                            및 이벤트 통신 구현
                           </li>
                         </Ul>
                       </li>
                       <li>
-                        프로젝트 번들 사이즈 최적화
+                        점검 페이지 노출 및 접근 처리:
+                        <Ul className="pl-[18px]">
+                          <li>
+                            페이지 접근시 점검 진행 중인 경우 nextjs middleware
+                            api 활용을 통한 점검페이지 redirect 구현
+                          </li>
+                        </Ul>
+                      </li>
+                      <li>
+                        프로젝트 번들 사이즈 최적화:
                         <ul className="pl-[18px]">
                           <li>
-                            bundle-analyzer 활용 프로젝트 번들 크기 분석을 통한
-                            대체 가능 혹은 불필요 패키지 제거
+                            <b>bundle-analyzer</b> 를 활용하여 프로젝트 번들
+                            크기 분석을 통한 대체 가능 혹은 불필요 패키지 제거
                           </li>
                           <li>
                             모달 혹은 상호작용시 노출이 필요 혹은 우선순위가
@@ -250,29 +254,29 @@ const ResumePage = () => {
                       </li>
                       <li>가상화폐(ERC-20) 보상 출금 기능 추가</li>
                       <li>
-                        Ticket NFT Convert 기능 구현
+                        Ticket NFT Convert 기능 구현:
                         <Ul className="pl-[18px]">
                           <li>
-                            MarketPlace에서 구매한 Ticket NFT를 토너먼트내에서
-                            사용 할 수 있게 하기 위한 기능으로 - contract abi의
-                            burn 함수과 rest api호출을 통해 NFT 소각 및
-                            지급되도록 구현 진행
+                            Marketplace에서 구매한 Ticket NFT를 토너먼트에서
+                            사용할 수 있도록, contract ABI의 burn 함수와 REST
+                            API 호출을 통해 NFT를 소각하고 보상을 지급하는 기능
+                            구현
                           </li>
                         </Ul>
                       </li>
                       <li>
-                        Paypal 티켓 구매 기능 추가
+                        Paypal 티켓 구매 기능 추가:
                         <ul className="pl-[18px]">
                           <li>
-                            react-paypal-js를 사용하여 유저가 MarketPlace에서
-                            NFT를 구매한 뒤 burn하는 과정 없이 Paypal 카드
-                            결제를 통해 직접 티켓을 구매할 수 있도록 하여
-                            편의성을 높였습니다.
+                            <b>react-paypal-js</b>를 사용하여 유저가
+                            MarketPlace에서 NFT를 구매한 뒤 burn하는 과정 없이
+                            Paypal 카드 결제를 통해 직접 티켓을 구매할 수 있는
+                            기능 추가 하여 편의성을 높였습니다.
                           </li>
                         </ul>
                       </li>
                       <li>
-                        출석 기능 및 플로우 구현
+                        출석 기능 및 플로우 구현:
                         <ul className="pl-[18px]">
                           <li>
                             유저가 로그인시 재화보상을 받을 수 있도록 하기 위한
@@ -284,45 +288,42 @@ const ResumePage = () => {
                         </ul>
                       </li>
                       <li>
-                        소셜(Google, Apple),게스트 로그인 기능 추가
+                        소셜(Google, Apple),게스트 로그인 기능 추가:
                         <ul className="pl-[18px]">
                           <li>
                             Web3 환경에 익숙하지 않은 유저들도 서비스에 쉽게
                             접근 할 수 있도록 Social&Guest 로그인 지원
                           </li>
                           <li>
-                            google,apple 로그인의 경우 각 각
                             `@react-oauth/google`와 `react-apple-login`
-                            라이브러리 활용하였으며 공통적인 인자를 전달 받아
-                            처리하기 위한 SocialLoginButton 컴포넌트 추가
+                            라이브러리 사용하여 소셜 로그인 기능을 구현하였으며,
+                            공통 인자를 전달 받아 처리하기 하는
+                            <b> SocialLoginButton</b> 컴포넌트 추가
                           </li>
                         </ul>
                       </li>
-                      <li>유저 재화 Migration 기능 구현</li>
-                      <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
-                      <li>web3 지갑 연동 지원을 위한 web3-react, wagmi 적용</li>
                       <li>
-                        WalletConnectV2 마이그레이션 작업
-                        <div>
-                          기존{" "}
-                          <a
-                            href="https://medium.com/walletconnect/weve-reset-the-clock-on-the-walletconnect-v1-0-shutdown-now-scheduled-for-june-28-2023-ead2d953b595"
-                            target="_blank"
-                          >
-                            WalletConnectV1 서비스 종료
-                          </a>
-                          로 V2로 마이그레이션을 진행해야 됐습니다. 진행하는데
-                          있었던 문제점들은 다음과 같습니다:
-                        </div>
+                        유저 및 트래픽 분석 도구 연동:
                         <ul className="pl-[18px]">
                           <li>
-                            `web3-react`를 통해 마이그레이션을 진행한다면 V8
-                            버전으로 업데이트 해야되는데 해당 버전이 현재
-                            사용하고 있는 V6와 완전 다른 구조와 사용 방법을
-                            가지고 있어 부작용이 클거 같다고 생각이 들었으며
-                            몇몇 지갑은 V8에서 지원이 안되고 있어 공식문서 에서
-                            권장하고 있는 `wagmi` 를 활용하는 방법을 선택하게
-                            되었습니다.
+                            GA와 Mixpanel 연동을 통한 유저 및 트래픽 분석 지원
+                          </li>
+                        </ul>
+                      </li>
+                      <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
+                      <li>
+                        web3 지갑 연동 지원:
+                        <ul className="pl-[18px]">
+                          <li>
+                            web3-react와 wagmi를 적용하여 Web3 지갑 연동을 지원
+                          </li>
+                          <li>
+                            WalletConnect V2로의 마이그레이션 작업을
+                            진행하였으며, 기존 WalletConnect V1 지원 종료로 인해
+                            발생한 문제를 해결하기 위해 web3-react V8 버전으로의
+                            업데이트를 검토하였습니다. 이 과정에서 몇몇 지갑이
+                            web3-react V8에서 지원되지 않음을 발견하고, 공식
+                            문서에서 권장하는 방법을 따르기로 결정하였습니다.
                           </li>
                         </ul>
                       </li>
@@ -551,18 +552,53 @@ const ResumePage = () => {
         </Flex>
         <Flex $direction="column" $gap="8px">
           <h2 className="text-[32px] mb-3">
+            <b>Open Sources</b>
+          </h2>
+          <div>
+            <h3 className="text-[22px] mb-2">
+              <b>
+                <Anchor
+                  href="https://github.com/WintrCat/freechess"
+                  target="_blank"
+                >
+                  freechess
+                </Anchor>
+              </b>
+            </h3>
+            <Ul className="text-lg flex flex-col gap-1 pl-6">
+              <li>
+                <Anchor
+                  href="https://github.com/WintrCat/freechess/pull/48"
+                  target="_blank"
+                >
+                  Contribute review panel UI
+                </Anchor>
+              </li>
+              <li>
+                <Anchor
+                  href="https://github.com/WintrCat/freechess/pull/52"
+                  target="_blank"
+                >
+                  Contribute report card component
+                </Anchor>
+              </li>
+            </Ul>
+          </div>
+        </Flex>
+        <Flex $direction="column" $gap="8px">
+          <h2 className="text-[32px] mb-3">
             <b>Skills</b>
           </h2>
           <div>
             <h3 className="text-[22px] mb-2">
               <b>Front-End</b>
             </h3>
-            <Ul className="text-[18px] flex flex-col gap-1  pl-6">
+            <Ul className="text-lg flex flex-col gap-1 pl-6">
               <li>HTML / CSS</li>
               <li>React.js</li>
               <li>NextJS</li>
               <li>JavaScript, TypeScript</li>
-              <li>Emotion, Styled-Component</li>
+              <li>Emotion, Styled-Component, TailwindCSS</li>
             </Ul>
           </div>
           <div>
@@ -577,7 +613,7 @@ const ResumePage = () => {
             <h3 className="text-[22px] mb-2">
               <b>Etc</b>
             </h3>
-            <Ul className="text-[18px] flex flex-col gap-1 pl-6">
+            <Ul className="text-lg flex flex-col gap-1 pl-6">
               <li>Git / Github</li>
               <li>Jira</li>
             </Ul>
