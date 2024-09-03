@@ -310,7 +310,6 @@ const ResumePage = () => {
                           </li>
                         </ul>
                       </li>
-                      <li>유저 및 트래픽 분석을 위한 GA, Mixpanel 연동</li>
                       <li>
                         web3 지갑 연동 지원:
                         <ul className="pl-[18px]">
