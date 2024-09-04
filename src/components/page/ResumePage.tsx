@@ -75,8 +75,9 @@ const ResumePage = () => {
           </h2>
           <div>
             <P>
-              저는 블록체인 스타트업에서 웹 서비스를 개발하고 있는 웹 프론트엔드
-              개발자입니다.
+              블록체인 스타트업에서 웹 프론트엔드 개발자로서 일을 하였습니다.
+              개발자로 업무를 수행하는 한 편 잠깐이지만 토너먼트 라는 프로젝트의
+              프론트엔드 리드를 진행한 경험도 있습니다.
             </P>
             <P>
               주어진 업무를 성실히 수행하는 것뿐만 아니라, 서비스의 가치를
@@ -91,7 +92,6 @@ const ResumePage = () => {
               작업을 진행한 경험이 있습니다. 또한, 개발 생산성을 높이기 위해
               새로운 툴 도입을 위한 내부 리서치를 주도한 적도 있습니다.
             </P>
-
             <P>
               저는 항상 더 나은 개발자가 되기 위해 지속적으로 성장하고자
               노력하고 있습니다. 이러한 성장의 일환으로, 제가 경험한 것과
@@ -114,8 +114,9 @@ const ResumePage = () => {
                   </Anchor>
                 </b>
               </h3>
-              <small className="text-[16px]">2020.10 ~ </small>
-              <span className="text-[16px]">Frontend Developer</span>
+              <small className="text-[16px]">2020.10 ~ 2024.09</small>
+              <br />
+              <span className="text-[16px]">Frontend Engineer</span>
             </div>
             <Flex
               className="border-blue-400 border-l-4 pl-4"
@@ -126,7 +127,7 @@ const ResumePage = () => {
                 <h3 className="text-[22px] mb-1">
                   <b>Tournament 개발팀</b>
                 </h3>
-                <small className="text-[16px]">2022.08 ~ </small>
+                <small className="text-[16px]">2022.08 ~ 2024.09 </small>
                 <div className="my-[10px]">
                   <h4 className="text-[20px]">
                     <b>
@@ -137,7 +138,7 @@ const ResumePage = () => {
                         EZPlay
                       </Anchor>
                     </b>{" "}
-                    <span className="text-base">(2024.06 ~ )</span>
+                    <span className="text-base">(2024.06 ~ 2024.09)</span>
                   </h4>
                   <Flex className="my-2" $gap="6px" $flexWrap="wrap">
                     <Tag name="typescript" type="outline" size="sm" />
