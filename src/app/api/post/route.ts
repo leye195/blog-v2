@@ -1,4 +1,4 @@
-import { retrieveDatabase } from "@/libs/notion";
+import { queryDatabase } from "@/libs/notion";
 import type { RowType } from "@/types/notion";
 
 export async function GET(req: Request) {
@@ -7,7 +7,7 @@ export async function GET(req: Request) {
 
   if (!id) throw new Error("Missing notion secret or DB ID");
 
-  const query = await retrieveDatabase();
+  const query = await queryDatabase();
   const rows = query.results.map((res) => {
     //@ts-ignore
     const { properties, url } = res;

@@ -16,7 +16,7 @@ export const notionToMD = new NotionToMarkdown({
   },
 });
 
-export const retrieveDatabase = async () => {
+export const queryDatabase = async () => {
   if (!notionDatabase || !notionSecret) {
     throw new Error("Missing notion secret or DB ID");
   }
@@ -30,6 +30,7 @@ export const retrieveDatabase = async () => {
       },
     ],
   });
+
   return query;
 };
 

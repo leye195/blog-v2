@@ -1,15 +1,16 @@
-import { retrieveDatabase } from "@/libs/notion";
+import { queryDatabase } from "@/libs/notion";
 import type { RowType } from "@/types/notion";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const count = searchParams.get("count");
   const category = searchParams.get("category") ?? "all";
-  const query = await retrieveDatabase();
+  const query = await queryDatabase();
 
   const rows = query.results.map((res) => {
     //@ts-ignore
     const { properties, url } = res;
+
     return {
       ...properties,
       id: res.id,
