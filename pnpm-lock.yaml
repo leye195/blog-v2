@@ -29,18 +29,12 @@ dependencies:
   ky:
     specifier: ^1.2.3
     version: 1.2.3
-  markdown-to-text:
-    specifier: ^0.1.1
-    version: 0.1.1
   next:
     specifier: 14.1.4
     version: 14.1.4(@babel/core@7.25.2)(react-dom@18.2.0)(react@18.2.0)
   notion-client:
     specifier: ^6.16.0
     version: 6.16.0
-  notion-page-to-html:
-    specifier: ^1.2.0
-    version: 1.2.0
   notion-to-md:
     specifier: ^3.1.1
     version: 3.1.1(encoding@0.1.13)
@@ -1422,10 +1416,6 @@ packages:
       '@types/responselike': 1.0.3
     dev: false
 
-  /@types/chai@4.3.12:
-    resolution: {integrity: sha512-zNKDHG/1yxm8Il6uCCVsm+dRdEsJlFoDu73X17y09bId6UwoYww+vFBsAcRzl8knM1sab3Dp1VRikFQwDOtDDw==}
-    dev: false
-
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -1457,10 +1447,6 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 20.16.3
-    dev: false
-
-  /@types/mocha@8.2.3:
-    resolution: {integrity: sha512-ekGvFhFgrc2zYQoX4JeZPmVzZxw6Dtllga7iGHzfbYIYkAMUx/sAFP2GdFpLff+vdHXu5fl7WX9AT+TtqYcsyw==}
     dev: false
 
   /@types/node-fetch@2.6.11:
@@ -4133,13 +4119,6 @@ packages:
       repeat-string: 1.6.1
     dev: false
 
-  /markdown-to-text@0.1.1:
-    resolution: {integrity: sha512-co/J5l8mJ2RK9wD/nQRGwO7JxoeyfvVNtOZll016EdAX2qYkwCWMdtYvJO42b41Ho7GFEJMuly9llf0Nj+ReQw==}
-    dependencies:
-      '@types/chai': 4.3.12
-      '@types/mocha': 8.2.3
-    dev: false
-
   /mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
     dev: false
@@ -4384,10 +4363,6 @@ packages:
       notion-types: 6.16.0
       notion-utils: 6.16.0
       p-map: 5.5.0
-    dev: false
-
-  /notion-page-to-html@1.2.0:
-    resolution: {integrity: sha512-AOWjFABQlN2R3i5hcj1b6QFk5ctINFrKiu1vUcUEyundvRSHxRYAIoPXTJ1gx7S4Yfdh+2NcwEm1119k9awEeA==}
     dev: false
 
   /notion-to-md@3.1.1(encoding@0.1.13):
