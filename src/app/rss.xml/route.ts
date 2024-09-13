@@ -1,5 +1,3 @@
-import removeMarkdown from "markdown-to-text";
-import NotionPageToHtml from "notion-page-to-html";
 import Rss from "rss";
 import { getPosts } from "@/apis";
 import type { Post } from "@/types/notion";
@@ -16,34 +14,21 @@ const generateRssFeed = async () => {
       feed_url: `${baseURL}rss.xml`,
     });
 
-    const parsedPosts = await Promise.all(
-      posts.map(async (post: Post) => {
-        const { html } = await NotionPageToHtml.convert(post.url, {
-          bodyContentOnly: true,
-        });
-        const description = removeMarkdown(html);
-
-        return {
-          title: post.name,
-          url: `${baseURL}/posts/${post.id}`,
-          date: post.date,
-          description,
-          content: html,
-        };
-      })
-    );
+    const parsedPosts = posts.map(async (post: Post) => {
+      return {
+        title: post.name,
+        url: `${baseURL}/posts/${post.id}`,
+        date: post.date,
+        description: "",
+      };
+    });
 
     parsedPosts.forEach(({ title, description, url, date }: any) => {
       feed.item({
         title,
-        description: `${description?.slice(0, 100)}...`,
+        description,
         url,
         date,
-        custom_elements: [
-          {
-            "content:encoded": description,
-          },
-        ],
       });
     });
 
