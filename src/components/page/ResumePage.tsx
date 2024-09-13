@@ -619,6 +619,18 @@ const ResumePage = () => {
             </Ul>
           </div>
         </Flex>
+        <Flex $direction="column" $gap="8px">
+          <h2 className="text-[32px] mb-3">
+            <b>Education</b>
+          </h2>
+          <div>
+            <p className="text-[22px] mb-2">
+              <b className="underline">Beihang University</b> /{" "}
+              <span>software engineering</span>
+            </p>
+            <span className="text-base">2013.09 ~ 2019.07</span>
+          </div>
+        </Flex>
       </Flex>
     </Flex>
   );
