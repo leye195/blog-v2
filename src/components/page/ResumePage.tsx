@@ -108,7 +108,7 @@ const ResumePage = () => {
             <div className="min-w-[165px]">
               <h3 className="text-[20px] mb-1">
                 <b>
-                  <Anchor href="https://supertree.co/" target="_blank">
+                  <Anchor href="https://adenasoft.com" target="_blank">
                     Adena Software
                   </Anchor>
                 </b>
@@ -130,10 +130,7 @@ const ResumePage = () => {
                 <div className="my-[10px]">
                   <h4 className="text-[18px]">
                     <b>
-                      <Anchor
-                        href="https://ezplay.playdapp.com"
-                        target="_blank"
-                      >
+                      <Anchor href="https://coinness.com" target="_blank">
                         Coinness - Web
                       </Anchor>
                     </b>{" "}
