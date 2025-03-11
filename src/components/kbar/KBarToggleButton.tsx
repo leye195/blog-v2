@@ -1,6 +1,6 @@
-import { useKBar } from "kbar";
-import Button from "@/components/common/Button";
-import { Search } from "@/components/icon";
+import { useKBar } from 'kbar';
+import Button from '@/components/common/Button';
+import { Search } from '@/components/icon';
 
 const KBarToggleButton = () => {
   const { query } = useKBar();

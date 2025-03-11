@@ -1,13 +1,13 @@
-import { type Metadata } from "next";
-import ResumePage from "@/components/page/ResumePage";
+import { type Metadata } from 'next';
+import ResumePage from '@/components/page/ResumePage';
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: 'Resume',
   alternates: {
-    canonical: "https://www.dantechblog.xyz/resume",
+    canonical: 'https://www.dantechblog.xyz/resume',
   },
   openGraph: {
-    title: "Resume",
+    title: 'Resume',
   },
 };
 

@@ -1,16 +1,13 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: "*",
-        allow: "/",
+        userAgent: '*',
+        allow: '/',
       },
     ],
-    sitemap: [
-      "https://www.dantechblog.xyz/sitemap.xml",
-      "https://dantechblog.xyz/sitemap.xml",
-    ],
+    sitemap: ['https://www.dantechblog.xyz/sitemap.xml', 'https://dantechblog.xyz/sitemap.xml'],
   };
 }

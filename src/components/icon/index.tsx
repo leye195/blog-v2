@@ -1,15 +1,13 @@
-import { ComponentProps } from "react";
-import { cn } from "@/libs/utils";
+import { ComponentProps } from 'react';
+import { cn } from '@/libs/utils';
 
-export const Light = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const Light = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-sun", className)}
+    className={cn('humbleicons hi-sun', className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -21,15 +19,13 @@ export const Light = ({
   </svg>
 );
 
-export const Dark = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const Dark = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-moon", className)}
+    className={cn('humbleicons hi-moon', className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -41,15 +37,13 @@ export const Dark = ({
   </svg>
 );
 
-export const GitHub = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const GitHub = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-brand-github", className)}
+    className={cn('humbleicons hi-brand-github', className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -62,15 +56,13 @@ export const GitHub = ({
   </svg>
 );
 
-export const Email = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const Email = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-mail", className)}
+    className={cn('humbleicons hi-mail', className)}
   >
     <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="2">
       <path
@@ -82,15 +74,13 @@ export const Email = ({
   </svg>
 );
 
-export const RSS = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const RSS = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-rss", className)}
+    className={cn('humbleicons hi-rss', className)}
   >
     <path
       xmlns="http://www.w3.org/2000/svg"
@@ -99,25 +89,17 @@ export const RSS = ({
       strokeWidth="2"
       d="M13 19a8 8 0 00-8-8M19 19c0-7.732-6.268-14-14-14"
     />
-    <circle
-      xmlns="http://www.w3.org/2000/svg"
-      cx="6"
-      cy="18"
-      r="2"
-      fill="currentColor"
-    />
+    <circle xmlns="http://www.w3.org/2000/svg" cx="6" cy="18" r="2" fill="currentColor" />
   </svg>
 );
 
-export const Search = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const Search = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-search", className)}
+    className={cn('humbleicons hi-search', className)}
   >
     <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="2">
       <path strokeLinecap="round" d="M20 20l-6-6" />
@@ -126,15 +108,13 @@ export const Search = ({
   </svg>
 );
 
-export const ArrowUp = ({
-  className,
-}: Pick<ComponentProps<"div">, "className">) => (
+export const ArrowUp = ({ className }: Pick<ComponentProps<'div'>, 'className'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
-    className={cn("humbleicons hi-arrow-up", className)}
+    className={cn('humbleicons hi-arrow-up', className)}
     color="currentColor"
   >
     <path

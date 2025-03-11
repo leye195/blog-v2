@@ -1,5 +1,5 @@
-import { queryDatabase } from "@/libs/notion";
-import type { Tag } from "@/types/notion";
+import { queryDatabase } from '@/libs/notion';
+import type { Tag } from '@/types/notion';
 
 export async function GET() {
   const query = await queryDatabase();

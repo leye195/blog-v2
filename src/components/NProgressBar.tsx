@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import NProgress from "nprogress";
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import NProgress from 'nprogress';
 
 NProgress.configure({
   minimum: 0.2,
-  easing: "ease",
+  easing: 'ease',
   speed: 800,
   showSpinner: false,
 });

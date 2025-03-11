@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Script from "next/script";
-import { GA_TRACKING_ID, pageview } from "@/libs/gtag";
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import Script from 'next/script';
+import { GA_TRACKING_ID, pageview } from '@/libs/gtag';
 
 const GoogleAnalytics = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname && process.env.NODE_ENV !== "development") {
+    if (pathname && process.env.NODE_ENV !== 'development') {
       pageview(pathname);
     }
   }, [pathname]);
 
-  if (process.env.NODE_ENV === "development") return null;
+  if (process.env.NODE_ENV === 'development') return null;
 
   return (
     <>

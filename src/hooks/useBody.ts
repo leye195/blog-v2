@@ -7,10 +7,7 @@ type Props = {
   onCleanUp?: (body: HTMLElement) => void;
 };
 
-const useBody = (
-  { className, onMount, onCleanUp }: Props,
-  dependency?: DependencyList,
-) => {
+const useBody = ({ className, onMount, onCleanUp }: Props, dependency?: DependencyList) => {
   useIsomorphicLayoutEffect(() => {
     const body = document.body;
 

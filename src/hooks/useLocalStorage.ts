@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
+import { useState } from 'react';
+import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 type Props<T> = {
   key: string;
@@ -8,7 +8,7 @@ type Props<T> = {
 
 const useLocalStorage = <T>({ key, initialValue }: Props<T>) => {
   const [value, setValue] = useState<T>(() => {
-    if (typeof window === "undefined") {
+    if (typeof window === 'undefined') {
       return initialValue;
     }
 

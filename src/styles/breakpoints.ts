@@ -27,8 +27,7 @@ const breakpoints: Breakpoints = {} as Breakpoints;
 
 breakpoints.values = (key: BreakpointsKey) => breakpointsValue[key];
 
-breakpoints.up = (key: BreakpointsKey) =>
-  `@media (min-width: ${breakpointsValue[key]}px)`;
+breakpoints.up = (key: BreakpointsKey) => `@media (min-width: ${breakpointsValue[key]}px)`;
 
 breakpoints.down = (key: Omit<BreakpointsKey, 'xs'>) =>
   `@media (max-width: ${breakpointsValue[key as BreakpointsKey] - 1}px)`;

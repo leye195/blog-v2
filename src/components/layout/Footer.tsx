@@ -1,9 +1,9 @@
-import { Email, GitHub, RSS } from "@/components/icon";
+import { Email, GitHub, RSS } from '@/components/icon';
 
 const Footer = () => {
   return (
-    <div className="flex items-center justify-center flex-col gap-3 w-[inherit] border-t-2 border-black-50 py-8 bg-gray-200 ">
-      <div className="flex gap-[10px] lg:text-[32px] text-[24px]">
+    <div className="border-black-50 flex w-[inherit] flex-col items-center justify-center gap-3 border-t-2 bg-gray-200 py-8">
+      <div className="flex gap-[10px] text-[24px] lg:text-[32px]">
         <a href="https://github.com/leye195" target="_blank" rel="noopener">
           <GitHub />
         </a>
@@ -14,10 +14,10 @@ const Footer = () => {
           <RSS />
         </a>
       </div>
-      <p className="lg:text-xl text-lg">
+      <p className="text-lg lg:text-xl">
         © {new Date().getFullYear()} dan.dev.log, All right reserved.
       </p>
-      <p className="lg:text-lg text-base">Built with NextJS</p>
+      <p className="text-base lg:text-lg">Built with NextJS</p>
     </div>
   );
 };

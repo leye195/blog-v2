@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "@/apis";
-import type { Post } from "@/types/notion";
+import { useQuery } from '@tanstack/react-query';
+import { getPosts } from '@/apis';
+import type { Post } from '@/types/notion';
 
 type Props = {
   initData: Post[];
@@ -9,7 +9,7 @@ type Props = {
 
 const useFetchPosts = ({ category, initData }: Props) => {
   const { data, isLoading, isFetched } = useQuery<Post[]>({
-    queryKey: ["posts", category],
+    queryKey: ['posts', category],
     queryFn: async () => {
       const data = await getPosts(category);
       return data;

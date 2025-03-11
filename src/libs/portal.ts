@@ -6,9 +6,7 @@ export function createPortalRoot(id: string): HTMLDivElement {
 }
 
 export function lockBody(body: HTMLElement) {
-  body.dataset['hidden'] = (
-    Number(body?.dataset['hidden'] ?? 0) + 1
-  ).toString();
+  body.dataset['hidden'] = (Number(body?.dataset['hidden'] ?? 0) + 1).toString();
   body.classList.add('hidden');
 }
 

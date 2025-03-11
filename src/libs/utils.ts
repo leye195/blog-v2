@@ -1,14 +1,14 @@
-import { ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import type { Post } from "@/types/notion";
+import type { Post } from '@/types/notion';
 
 /**
  * @description breakpoint의 미디어 쿼리 조건만 반환합니다(useMedia에서 사용)
  * @param mediaQuery 미디어 쿼리
  */
 export const getBreakpointQuery = (mediaQuery: string): string => {
-  return mediaQuery.replace(/@media /, "");
+  return mediaQuery.replace(/@media /, '');
 };
 
 /**
@@ -20,7 +20,7 @@ export const convertPascalCase = (value: string) =>
     ? value.replace(/\w+/g, (word) => {
         return word[0].toUpperCase() + word.slice(1).toLowerCase();
       })
-    : "";
+    : '';
 
 /**
  * @description 1,000단위 콤마
@@ -38,17 +38,17 @@ export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
  * @returns
  */
 export const getPostsByCategory = (data: Post[], category: string) => {
-  if (category === "all") return data;
+  if (category === 'all') return data;
   return data.filter(({ tag }) => tag.some(({ name }) => name === category));
 };
 
 export const generateImageUrl = ({
   fileName,
   format,
-  option = "q_auto,c_fill",
+  option = 'q_auto,c_fill',
 }: {
   fileName: string;
-  format?: "jpg" | "webp";
+  format?: 'jpg' | 'webp';
   option?: string;
 }) => {
   return `https://res.cloudinary.com/dodgocm3u/image/upload/${option}/v1709461304/${format}/${fileName}.${format}`;

@@ -1,11 +1,11 @@
-import { queryDatabase } from "@/libs/notion";
-import type { RowType } from "@/types/notion";
+import { queryDatabase } from '@/libs/notion';
+import type { RowType } from '@/types/notion';
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const id = searchParams.get("id");
+  const id = searchParams.get('id');
 
-  if (!id) throw new Error("Missing notion secret or DB ID");
+  if (!id) throw new Error('Missing notion secret or DB ID');
 
   const query = await queryDatabase();
   const rows = query.results.map((res) => {
@@ -21,10 +21,7 @@ export async function GET(req: Request) {
   const reStructed = rows
     .map((row) => ({
       id: row.id,
-      name: row.name.title.reduce(
-        (prev, cur) => `${prev}${cur.text.content}`,
-        ""
-      ),
+      name: row.name.title.reduce((prev, cur) => `${prev}${cur.text.content}`, ''),
       tag: row.tag.map((tag) => ({
         id: tag.id,
         name: tag.name,
@@ -34,7 +31,7 @@ export async function GET(req: Request) {
     }))
     .filter((post) => post.id == id);
 
-  if (!reStructed) throw new Error("data not exist");
+  if (!reStructed) throw new Error('data not exist');
 
   return Response.json(reStructed[0]);
 }

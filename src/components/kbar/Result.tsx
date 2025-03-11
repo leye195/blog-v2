@@ -1,33 +1,33 @@
-import { KBarResults, useMatches } from "kbar";
-import styled from "styled-components";
-import { flex } from "@/styles/mixin";
-import { paletteColor } from "@/styles/variable";
+import { KBarResults, useMatches } from 'kbar';
+import styled from 'styled-components';
+import { flex } from '@/styles/mixin';
+import { paletteColor } from '@/styles/variable';
 
 const ItemWrapper = styled.div<{ active: string }>`
-  ${flex({ $alignItems: "center" })};
+  ${flex({ $alignItems: 'center' })};
   position: relative;
   width: 100%;
   padding: 4px 16px;
   cursor: pointer;
-  opacity: ${({ active }) => (active === "true" ? 0.8 : 1)};
+  opacity: ${({ active }) => (active === 'true' ? 0.8 : 1)};
   transition: background-color 0.2s;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 4px;
     height: 100%;
     background-color: ${paletteColor.white50};
-    transform: scaleX(${({ active }) => (active === "true" ? "100%" : "0")});
+    transform: scaleX(${({ active }) => (active === 'true' ? '100%' : '0')});
     transform-origin: left;
     transition: transform 0.2s;
   }
 `;
 
 const TitleWrapper = styled.div`
-  ${flex({ $direction: "column", $justifyContent: "center" })}
+  ${flex({ $direction: 'column', $justifyContent: 'center' })}
   width: inherit;
   height: 2.5rem;
 `;
@@ -58,7 +58,7 @@ const KBarResult = () => {
     <KBarResults
       items={results}
       onRender={({ item, active }) =>
-        typeof item === "string" ? (
+        typeof item === 'string' ? (
           <Scope>{item}</Scope>
         ) : (
           <ItemWrapper active={active.toString()}>

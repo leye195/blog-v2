@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { getPosts } from "@/apis";
-import Flex from "@/components/common/Flex";
-import PostCard from "@/components/common/PostCard";
+import Link from 'next/link';
+import { getPosts } from '@/apis';
+import Flex from '@/components/common/Flex';
+import PostCard from '@/components/common/PostCard';
 
 type Props = {
   count?: number;
 };
 
 async function fetchNotionData(count?: number) {
-  const data = await getPosts("all", count ?? undefined);
+  const data = await getPosts('all', count ?? undefined);
   return data;
 }
 
@@ -18,7 +18,7 @@ export default async function PostList({ count }: Props) {
     <Flex className="w-[inherit]" $direction="column" $gap="12px">
       {data.map(({ id, name, date, tag, url }) => (
         <Link
-          className="transition duration-500 border-2 rounded-xl w-[inherit] hover:border-blue-200 "
+          className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"
           key={id}
           href={`/posts/${id}`}
         >

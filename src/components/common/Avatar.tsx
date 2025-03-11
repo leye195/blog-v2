@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import Flex from "@/components/common/Flex";
-import { cn } from "@/libs/utils";
+import Flex from '@/components/common/Flex';
+import { cn } from '@/libs/utils';
 
 type AvatarProps = {
   size: number;
@@ -13,7 +13,7 @@ type AvatarProps = {
 const Avatar = ({ className, size, src, priority }: AvatarProps) => {
   return (
     <Flex
-      className={cn("rounded-full", "bg-white", "overflow-hidden", className)}
+      className={cn('rounded-full', 'bg-white', 'overflow-hidden', className)}
       $alignItems="center"
       $justifyContent="center"
     >

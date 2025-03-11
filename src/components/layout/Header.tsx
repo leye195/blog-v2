@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import styled from "styled-components";
+import { useState } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import KBarToggleButton from "@/components/kbar/KBarToggleButton";
-import useEventListener from "@/hooks/useEventListener";
-import useScrollUp from "@/hooks/useScrollUp";
-import { cn } from "@/libs/utils";
-import breakpoints from "@/styles/breakpoints";
-import { flex } from "@/styles/mixin";
-import { paletteColor } from "@/styles/variable";
-import { ArrowUp } from "../icon";
+import KBarToggleButton from '@/components/kbar/KBarToggleButton';
+import useEventListener from '@/hooks/useEventListener';
+import useScrollUp from '@/hooks/useScrollUp';
+import { cn } from '@/libs/utils';
+import breakpoints from '@/styles/breakpoints';
+import { flex } from '@/styles/mixin';
+import { paletteColor } from '@/styles/variable';
+import { ArrowUp } from '../icon';
 
 const Container = styled.header`
-  ${flex({ $alignItems: "center" })};
+  ${flex({ $alignItems: 'center' })};
   width: inherit;
   height: 4rem;
   padding: 0 1rem;
@@ -22,7 +22,7 @@ const Container = styled.header`
 `;
 
 const Nav = styled.nav`
-  ${flex({ $alignItems: "center", $justifyContent: "space-between" })};
+  ${flex({ $alignItems: 'center', $justifyContent: 'space-between' })};
   max-width: 1600px;
   width: inherit;
   margin: 0 auto;
@@ -32,10 +32,10 @@ const Nav = styled.nav`
   }
 
   .right-side {
-    ${flex({ $alignItems: "center" })}
+    ${flex({ $alignItems: 'center' })}
     gap: 10px;
 
-    ${breakpoints.down("md")} {
+    ${breakpoints.down('md')} {
       b {
         font-size: 16px;
       }
@@ -47,16 +47,13 @@ const Header = () => {
   const { y, handleToTop, FloatingButton } = useScrollUp();
   const [isScrolling, setIsScrolling] = useState(false);
 
-  useEventListener("scroll", () => {
+  useEventListener('scroll', () => {
     setIsScrolling(window.scrollY !== 0);
   });
 
   return (
     <Container
-      className={cn(
-        "border-b border-black-50 bg-white z-[1]",
-        isScrolling && "shadow-sm"
-      )}
+      className={cn('border-black-50 z-[1] border-b bg-white', isScrolling && 'shadow-sm')}
     >
       <Nav>
         <div className="left-side">
@@ -75,7 +72,7 @@ const Header = () => {
         </div>
       </Nav>
       <FloatingButton
-        className={cn(...[y > 30 ? "show" : ""])}
+        className={cn(...[y > 30 ? 'show' : ''])}
         bottom={40}
         right={40}
         padding="12px"
@@ -84,7 +81,7 @@ const Header = () => {
         hoverBgColor={paletteColor.blue200}
         onClick={handleToTop}
       >
-        <ArrowUp className="!w-5 !h-5 max-md:!w-4 max-md:!h-4" />
+        <ArrowUp className="!h-5 !w-5 max-md:!h-4 max-md:!w-4" />
       </FloatingButton>
     </Container>
   );

@@ -1,22 +1,18 @@
-"use client";
+'use client';
 
-import { NotionRenderer } from "react-notion-x";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import { ExtendedRecordMap } from "notion-types";
+import { NotionRenderer } from 'react-notion-x';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { ExtendedRecordMap } from 'notion-types';
 
-const Code = dynamic(
-  () => import("react-notion-x/build/third-party/code").then((m) => m.Code),
-  { ssr: false }
-);
+const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code), {
+  ssr: false,
+});
 const Collection = dynamic(
-  () =>
-    import("react-notion-x/build/third-party/collection").then(
-      (m) => m.Collection
-    ),
+  () => import('react-notion-x/build/third-party/collection').then((m) => m.Collection),
   {
     ssr: false,
-  }
+  },
 );
 
 type Props = {

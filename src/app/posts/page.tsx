@@ -1,20 +1,20 @@
-import { type Metadata } from "next";
-import { getPosts, getTags } from "@/apis";
-import PostPage from "@/components/page/PostPage";
+import { type Metadata } from 'next';
+import { getPosts, getTags } from '@/apis';
+import PostPage from '@/components/page/PostPage';
 
 export const metadata: Metadata = {
-  title: "Posts",
+  title: 'Posts',
   alternates: {
-    canonical: "https://www.dantechblog.xyz/posts",
+    canonical: 'https://www.dantechblog.xyz/posts',
   },
   openGraph: {
-    title: "Posts",
+    title: 'Posts',
   },
 };
 
 async function fetchNotionData() {
   try {
-    const data = await getPosts("all");
+    const data = await getPosts('all');
     const tags = await getTags();
 
     return { data, tags };

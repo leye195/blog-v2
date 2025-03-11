@@ -22,7 +22,7 @@ export type RowType = {
     title: [
       {
         text: { content: string };
-      }
+      },
     ];
   };
   tag: Tag[];

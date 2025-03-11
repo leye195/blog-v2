@@ -5,7 +5,6 @@ import { useEffect, useLayoutEffect } from 'react';
  * clientside인 경우 useLayoutEffect, serverside인 경우 useEffect를 사용하도록 하는 목적의 커스텀 훅
  */
 
-const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default useIsomorphicLayoutEffect;

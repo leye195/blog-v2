@@ -1,9 +1,9 @@
-import { KBarAnimator, KBarPortal, KBarPositioner } from "kbar";
+import { KBarAnimator, KBarPortal, KBarPositioner } from 'kbar';
 
-import BackDrop from "@/components/common/BackDrop";
-import KBarResult from "@/components/kbar/Result";
-import KBarSearch from "@/components/kbar/Search";
-import { cn } from "@/libs/utils";
+import BackDrop from '@/components/common/BackDrop';
+import KBarResult from '@/components/kbar/Result';
+import KBarSearch from '@/components/kbar/Search';
+import { cn } from '@/libs/utils';
 
 const KBarComponent = () => {
   return (
@@ -12,8 +12,8 @@ const KBarComponent = () => {
       <KBarPositioner className="z-[1]">
         <KBarAnimator
           className={cn(
-            "max-w-[500px] w-full rounded-lg overflow-hidden",
-            "bg-white text-[#808080] shadow-[-1px_3px_11px_#808080]"
+            'w-full max-w-[500px] overflow-hidden rounded-lg',
+            'bg-white text-[#808080] shadow-[-1px_3px_11px_#808080]',
           )}
         >
           <KBarSearch />

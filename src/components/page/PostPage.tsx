@@ -1,24 +1,21 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useAnimate } from "framer-motion";
-import Link from "next/link";
-import Button from "@/components/common/Button";
-import Flex from "@/components/common/Flex";
-import PostCard from "@/components/common/PostCard";
-import Tag from "@/components/common/Tag";
-import useFetchTags from "@/hooks/useFetchTags";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import { cn, getPostsByCategory } from "@/libs/utils";
-import type { Post } from "@/types/notion";
-import type { Data } from "@/types/page";
+import { useState } from 'react';
+import { useAnimate } from 'framer-motion';
+import Link from 'next/link';
+import Button from '@/components/common/Button';
+import Flex from '@/components/common/Flex';
+import PostCard from '@/components/common/PostCard';
+import Tag from '@/components/common/Tag';
+import useFetchTags from '@/hooks/useFetchTags';
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
+import { cn, getPostsByCategory } from '@/libs/utils';
+import type { Post } from '@/types/notion';
+import type { Data } from '@/types/page';
 
-const PostPage = ({
-  data,
-  tagsData,
-}: Data<Post[]> & { tagsData: string[] }) => {
+const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => {
   const [posts, setPosts] = useState(data);
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState('all');
 
   const [scope, animate] = useAnimate();
   const { data: tags } = useFetchTags({ initialData: tagsData });
@@ -30,10 +27,10 @@ const PostPage = ({
     };
 
     setCategory(name);
-    animate("h1", animateTemplate, {
+    animate('h1', animateTemplate, {
       duration: 0.5,
     });
-    animate(".posts", animateTemplate, {
+    animate('.posts', animateTemplate, {
       duration: 0.5,
     });
   };
@@ -49,24 +46,19 @@ const PostPage = ({
   }, [category, data]);
 
   return (
-    <Flex
-      ref={scope}
-      className="w-full p-4 mt-12"
-      $direction="column"
-      $alignItems="center"
-    >
-      <h1 className={cn("text-[42px]", "flex")}>
+    <Flex ref={scope} className="mt-12 w-full p-4" $direction="column" $alignItems="center">
+      <h1 className={cn('text-[42px]', 'flex')}>
         <b className="text-center">{category.toUpperCase()}</b>
         <span className="text-base text-slate-600">({posts.length})</span>
       </h1>
       <Flex className="w-[inherit]" $direction="column" $gap="12px">
         <Flex
-          className="my-[10px] pb-4 w-[inherit]"
+          className="my-[10px] w-[inherit] pb-4"
           $gap="8px"
           $justifyContent="center"
           $flexWrap="wrap"
         >
-          <Button padding="0" onClick={handleClickTag("all")}>
+          <Button padding="0" onClick={handleClickTag('all')}>
             <Tag name="All" type="outline" size="lg" />
           </Button>
           {tags?.map((tag: string) => (
@@ -75,14 +67,10 @@ const PostPage = ({
             </Button>
           ))}
         </Flex>
-        <Flex
-          className="posts animate-fade-in w-full"
-          $direction="column"
-          $gap="12px"
-        >
+        <Flex className="posts w-full animate-fade-in" $direction="column" $gap="12px">
           {posts.map(({ id, name, date, tag, url }) => (
             <Link
-              className="transition duration-500 border-2 rounded-xl w-[inherit] hover:border-blue-200"
+              className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"
               key={id}
               href={`/posts/${id}`}
             >

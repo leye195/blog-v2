@@ -1,24 +1,15 @@
-"use client";
+'use client';
 
-import { forwardRef, type ComponentProps } from "react";
-import { cn } from "@/libs/utils";
-import { type Flex } from "@/styles/mixin";
+import { forwardRef, type ComponentProps } from 'react';
+import { cn } from '@/libs/utils';
+import { type Flex } from '@/styles/mixin';
 
-type FlexProps = Flex & ComponentProps<"div">;
+type FlexProps = Flex & ComponentProps<'div'>;
 
 const Flex = forwardRef<HTMLDivElement, FlexProps>(
   (
-    {
-      children,
-      $display,
-      $alignItems,
-      $justifyContent,
-      $gap,
-      $direction,
-      $flexWrap,
-      ...restProps
-    },
-    ref
+    { children, $display, $alignItems, $justifyContent, $gap, $direction, $flexWrap, ...restProps },
+    ref,
   ) => {
     return (
       <div
@@ -26,10 +17,10 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(
         className={cn(restProps.className)}
         ref={ref}
         style={{
-          display: $display ?? "flex",
-          justifyContent: $justifyContent ?? "flex-start",
-          flexDirection: $direction ?? "row",
-          alignItems: $alignItems ?? "flex-start",
+          display: $display ?? 'flex',
+          justifyContent: $justifyContent ?? 'flex-start',
+          flexDirection: $direction ?? 'row',
+          alignItems: $alignItems ?? 'flex-start',
           gap: $gap ?? 0,
           flexWrap: $flexWrap,
         }}
@@ -37,9 +28,9 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
-Flex.displayName = "Flex";
+Flex.displayName = 'Flex';
 
 export default Flex;

@@ -1,8 +1,8 @@
-import * as React from "react";
-import { type ExtendedRecordMap } from "notion-types";
-import Flex from "@/components/common/Flex";
-import Giscus from "@/components/Giscus";
-import PostRenderer from "@/components/posts/PostRenderer";
+import * as React from 'react';
+import { type ExtendedRecordMap } from 'notion-types';
+import Flex from '@/components/common/Flex';
+import Giscus from '@/components/Giscus';
+import PostRenderer from '@/components/posts/PostRenderer';
 
 type Props = {
   title?: string;
@@ -22,12 +22,7 @@ const NotionPage = ({
   disableHeader = true,
 }: Props) => {
   return (
-    <Flex
-      className="max-w-[1000px] mx-auto p-4"
-      $alignItems="center"
-      $direction="column"
-      $gap={12}
-    >
+    <Flex className="mx-auto max-w-[1000px] p-4" $alignItems="center" $direction="column" $gap={12}>
       {title && (
         <h1 className="mb-0 max-sm:text-[22px]">
           <b>{title}</b>

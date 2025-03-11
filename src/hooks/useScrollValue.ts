@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useIsomorphicLayout from "@/hooks/useIsomorphicLayoutEffect";
+import { useState } from 'react';
+import useIsomorphicLayout from '@/hooks/useIsomorphicLayoutEffect';
 
 type UseScrollValueOutput = {
   x: number;
@@ -20,10 +20,10 @@ const useScrollValue = (): UseScrollValueOutput => {
   };
 
   useIsomorphicLayout(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
