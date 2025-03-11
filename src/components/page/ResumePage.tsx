@@ -20,12 +20,6 @@ const Anchor = styled.a`
   text-decoration: underline;
 `;
 
-const Ul = styled.ul`
-  ${breakpoints.down('md')} {
-    font-size: 14px;
-  }
-`;
-
 const ResumePage = () => {
   const isMdDown = useMedia(getBreakpointQuery(breakpoints.down('md')), false);
 
@@ -38,7 +32,7 @@ const ResumePage = () => {
           <b>저는 이영재 입니다.</b>
         </h1>
         <Flex $direction="column" $gap="4px">
-          <ul className="mb-3 flex flex-col gap-2 pl-6 text-[18px]">
+          <ul className="mb-3 flex list-disc flex-col gap-2 pl-6 text-[18px]">
             <li>
               <b>Github:</b>{' '}
               <Anchor className="text-blue-500" href="https://github.com/leye195" target="_blank">
@@ -123,7 +117,7 @@ const ResumePage = () => {
                     <span className="text-base">(2024.10 ~ )</span>
                   </h4>
                   <div className="pl-6">
-                    <ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>
                         eslint 설정 개선 및 sort import, unused-imports 등 추가 도입을 통한 개발
                         생산성 향상
@@ -132,6 +126,10 @@ const ResumePage = () => {
                         버튼 debounce 적용을 통한 api 요청 감소 및 optimistic ui update를 통한 ux
                         개선
                       </li>
+                      <li>
+                        유저통합으로 인한 국내/글로벌 가입 인증 프로세스 메일인증으로 통일 적용
+                      </li>
+                      <li>어드민 개발 및 유지보수</li>
                     </ul>
                   </div>
                 </div>
@@ -181,10 +179,10 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
-                    <ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>
                         공통 컴포넌트 개발:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             Modal, Popup, Dropdown 등의 재사용 가능한 컴포넌트를 구현하여 코드
                             재활용성을 높이고 개발 효율성 향상.
@@ -194,13 +192,13 @@ const ResumePage = () => {
                       <li>서버컴포넌트 내 data fetching 처리를 통한 네트워크 비용 감소</li>
                       <li>
                         소셜 로그인 기능:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>Google, Apple 소셜 로그인 기능을 구현하여 사용자 접근성을 향상</li>
                         </ul>
                       </li>
                       <li>
                         지갑 연동 및 Web3 기능 지원:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>지갑 연동 그리고, Web3 기능을 지원하기 위한 hook 및 유틸함수 생성</li>
                         </ul>
                       </li>
@@ -231,28 +229,28 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
-                    <Ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
                         게임 클라이언트 통합 및 이벤트 통신:
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             iframe과 postMessage를 활용한 게임 클라이언트 연동 및 이벤트 통신 구현
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         점검 페이지 노출 및 접근 처리:
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             페이지 접근시 점검 진행 중인 경우 nextjs middleware api 활용을 통한
                             점검페이지 redirect 구현
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         프로젝트 번들 사이즈 최적화:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             <b>bundle-analyzer</b> 를 활용하여 프로젝트 번들 크기 분석을 통한 대체
                             가능 혹은 불필요 패키지 제거
@@ -270,17 +268,17 @@ const ResumePage = () => {
                       <li>가상화폐(ERC-20) 보상 출금 기능 추가</li>
                       <li>
                         Ticket NFT Convert 기능 구현:
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             Marketplace에서 구매한 Ticket NFT를 토너먼트에서 사용할 수 있도록,
                             contract ABI의 burn 함수와 REST API 호출을 통해 NFT를 소각하고 보상을
                             지급하는 기능 구현
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         Paypal 티켓 구매 기능 추가:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             <b>react-paypal-js</b>를 사용하여 유저가 MarketPlace에서 NFT를 구매한 뒤
                             burn하는 과정 없이 Paypal 카드 결제를 통해 직접 티켓을 구매할 수 있는
@@ -290,7 +288,7 @@ const ResumePage = () => {
                       </li>
                       <li>
                         출석 기능 및 플로우 구현:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             유저가 로그인시 재화보상을 받을 수 있도록 하기 위한 출석 보드 및 출석
                             인증 모달 컴포넌트 작업 진행
@@ -300,7 +298,7 @@ const ResumePage = () => {
                       </li>
                       <li>
                         소셜(Google, Apple),게스트 로그인 기능 추가:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             Web3 환경에 익숙하지 않은 유저들도 서비스에 쉽게 접근 할 수 있도록
                             Social&Guest 로그인 지원
@@ -314,13 +312,13 @@ const ResumePage = () => {
                       </li>
                       <li>
                         유저 및 트래픽 분석 도구 연동:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>GA와 Mixpanel 연동을 통한 유저 및 트래픽 분석 지원</li>
                         </ul>
                       </li>
                       <li>
                         web3 지갑 연동 지원:
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>web3-react와 wagmi를 적용하여 Web3 지갑 연동을 지원</li>
                           <li>
                             WalletConnect V2로의 마이그레이션 작업을 진행하였으며, 기존
@@ -331,7 +329,7 @@ const ResumePage = () => {
                           </li>
                         </ul>
                       </li>
-                    </Ul>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -365,44 +363,44 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
-                    <Ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>
                         v1/v2 리뉴얼 프론트엔드 개발
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             javascript로 되어 있는는 CRA 기반 v1 코드 파악후, typescript 기반
                             nextjs로 마이그레이션 및 UI 리뉴얼 개선 작업 진행
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         NFT 상세 페이지
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>NFT(ERC-721) 구매 기능 구현</li>
                           <li>
                             Order(판매 제안) cancel 기능 구현
-                            <Ul className="pl-[18px]">
+                            <ul className="list-disc pl-[18px]">
                               <li>
                                 isCancelListing과 취소 로직을 실행하는 handleCancelListing 함수를
                                 리턴하는 useListingCancel hook 생성 및 활용을 통한 중복 코드
                               </li>
-                            </Ul>
+                            </ul>
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         My Offers 페이지
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>Offer(판매 제안) 승인 기능 구현</li>
                           <li>Offer Table, OfferAccept 모달 컴포넌트 구현</li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         Email 인증 페이지
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             email 인증 요청 기능 구현
-                            <ul className="pl-[18px]">
+                            <ul className="list-disc pl-[18px]">
                               <li>
                                 react-hook-form 제공 register 함수를 통한 입력 값 유효성 체크 및
                                 handleSubmit 함수를 활용하여 submit 요청에 대한 성공 및 에러 대한
@@ -412,7 +410,7 @@ const ResumePage = () => {
                           </li>
                           <li>
                             email 인증 결과 페이지
-                            <ul className="pl-[18px]">
+                            <ul className="list-disc pl-[18px]">
                               <li>
                                 각 결과에 대한 페이지를 별도 작성하는것이 아닌 getStaticPaths와
                                 getStaticProps를 활용하여 인증 결과 및 에러 값을 동적 라우팅 경로로
@@ -420,28 +418,28 @@ const ResumePage = () => {
                               </li>
                             </ul>
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         OOZ 티징 페이지
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             마켓내 등록될 IPX (라인프렌즈)의 OOZ NFT 관련 티징 페이지 작업으로 IPX
                             측 디자이너와 협업을 통해 개발한 페이지로 one page scroll 형식으로 한
                             번에 한 페이지 씩 노출되도록 구현 진행
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         멀티월렛 지원 확장을 위한, web3-react 도입
-                        <ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             metamask, portis을 제외한 다른 월렛(walletLink, walletConnect) 로그인을
                             지원하기 위해 web3-react를 도입하였습니다.
                           </li>
                         </ul>
                       </li>
-                    </Ul>
+                    </ul>
                   </div>
                 </div>
                 <div className="my-[10px]">
@@ -468,38 +466,38 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
-                    <Ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>
                         Repair 기능 구현
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             유저가 itemManager에 스테이킹한 nft들에 대해서 PLA를 지불하여 내구도를
                             수리 할 수 있도록 로직을 구현하여 지속적으로 보상을 받아갈 수 있도록
                             하였습니다.
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         공통 컴포넌트 개발
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             각 페이지에서 공통적으로 보여줘야 하는 내구도 게이지, 경고 메시지 등
                             컴포넌트들에 대해 모듈화를 진행하여 UI를 구성했습니다.
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
                       <li>
                         멀티 월렛 지원 - walletConnect
-                        <Ul className="pl-[18px]">
+                        <ul className="list-disc pl-[18px]">
                           <li>
                             기존에 portis 월렛을 통한 로그인 만 지원하는 경우 portis 월렛 제품
                             자체에서 에러가 발생하여 로그인이 안되는 이슈가 많아 walletConnect 월렛
                             로그인도 추가적으로 지원하여 유저가 다른 경로를 통해 로그인을 할 수
                             있도록 개선 하였습니다.
                           </li>
-                        </Ul>
+                        </ul>
                       </li>
-                    </Ul>
+                    </ul>
                   </div>
                 </div>
                 <div>
@@ -521,10 +519,10 @@ const ResumePage = () => {
                   <P>GEO.DOMAIN NFT 이벤트 프로모션 페이지 입니다.</P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
-                    <Ul>
+                    <ul className="list-disc max-md:text-[14px]">
                       <li>GEO.DOMAIN NFT 오픈 이벤트 프로모션 프로젝트 환경 구성 및 페이지 구현</li>
                       <li>i18n 활용 영어, 한글 다국어 지원</li>
-                    </Ul>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -543,7 +541,7 @@ const ResumePage = () => {
                 </Anchor>
               </b>
             </h3>
-            <Ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex flex-col gap-1 pl-6 text-lg">
               <li>
                 <Anchor href="https://github.com/WintrCat/freechess/pull/48" target="_blank">
                   Contribute review panel UI
@@ -554,7 +552,7 @@ const ResumePage = () => {
                   Contribute report card component
                 </Anchor>
               </li>
-            </Ul>
+            </ul>
           </div>
         </Flex>
         <Flex $direction="column" $gap="8px">
@@ -565,30 +563,30 @@ const ResumePage = () => {
             <h3 className="mb-2 text-[22px]">
               <b>Front-End</b>
             </h3>
-            <Ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex flex-col gap-1 pl-6 text-lg">
               <li>HTML / CSS</li>
               <li>React.js</li>
               <li>NextJS</li>
               <li>JavaScript, TypeScript</li>
               <li>Emotion, Styled-Component, TailwindCSS</li>
-            </Ul>
+            </ul>
           </div>
           <div>
             <h3 className="mb-2 text-[22px]">
               <b>Back-End</b>
             </h3>
-            <Ul className="flex flex-col gap-1 pl-6 text-[18px]">
+            <ul className="flex flex-col gap-1 pl-6 text-[18px]">
               <li>Node.js</li>
-            </Ul>
+            </ul>
           </div>
           <div>
             <h3 className="mb-2 text-[22px]">
               <b>Etc</b>
             </h3>
-            <Ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex flex-col gap-1 pl-6 text-lg">
               <li>Git / Github</li>
               <li>Jira</li>
-            </Ul>
+            </ul>
           </div>
         </Flex>
         <Flex $direction="column" $gap="8px">
