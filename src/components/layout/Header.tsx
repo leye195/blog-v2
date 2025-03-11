@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <Container
-      className={cn('border-black-50 z-[1] border-b bg-white', isScrolling && 'shadow-sm')}
+      className={cn('border-black-50 z-1 border-b bg-white', isScrolling && 'shadow-xs')}
     >
       <Nav>
         <div className="left-side">
@@ -81,7 +81,7 @@ const Header = () => {
         hoverBgColor={paletteColor.blue200}
         onClick={handleToTop}
       >
-        <ArrowUp className="!h-5 !w-5 max-md:!h-4 max-md:!w-4" />
+        <ArrowUp className="h-5! w-5! max-md:h-4! max-md:w-4!" />
       </FloatingButton>
     </Container>
   );

@@ -13,9 +13,9 @@ const KBarSearch = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <input
       className={cn(
-        'border-none bg-transparent outline-none',
+        'border-none bg-transparent outline-hidden',
         'box-border w-full px-5 py-3.5',
-        'placeholder:focus:opacity-100 placeholder:focus:transition-opacity',
+        'focus:placeholder:opacity-100 focus:placeholder:transition-opacity',
       )}
       ref={query.inputRefSetter}
       value={value}

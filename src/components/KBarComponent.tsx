@@ -9,7 +9,7 @@ const KBarComponent = () => {
   return (
     <KBarPortal>
       <BackDrop />
-      <KBarPositioner className="z-[1]">
+      <KBarPositioner className="z-1">
         <KBarAnimator
           className={cn(
             'w-full max-w-[500px] overflow-hidden rounded-lg',
