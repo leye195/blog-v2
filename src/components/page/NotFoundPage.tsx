@@ -15,7 +15,7 @@ const NotFoundPage = () => {
         <b>404</b>
       </h1>
       <p className="text-xl lg:text-3xl">This page could not be found.</p>
-      <Button className="rounded-[8px] bg-[#4B4D58] px-[12px] py-[8px] text-lg text-white hover:bg-[#4B4D58] lg:text-xl">
+      <Button className="bg-dgray-400 hover:bg-dgray-400 rounded-[8px] px-[12px] py-[8px] text-lg text-white lg:text-xl">
         <Link href="/" replace>
           Return to Home
         </Link>

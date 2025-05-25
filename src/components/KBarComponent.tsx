@@ -13,7 +13,7 @@ const KBarComponent = () => {
         <KBarAnimator
           className={cn(
             'w-full max-w-[500px] overflow-hidden rounded-lg',
-            'bg-white text-[#808080] shadow-[-1px_3px_11px_#808080]',
+            'text-white-50 bg-white shadow-[-1px_3px_11px_#808080]',
           )}
         >
           <KBarSearch />

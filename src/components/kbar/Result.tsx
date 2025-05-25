@@ -15,7 +15,7 @@ const KBarResult = () => {
             className={cn(
               'flex w-full cursor-pointer items-center px-[16px] py-[4px] transition-all',
               'before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:content-[""]',
-              'before:scale-x-0 before:bg-[#808080] before:transition-all',
+              'before:bg-white-50 before:scale-x-0 before:transition-all',
               active && 'opacity-80 before:scale-x-100',
             )}
           >
