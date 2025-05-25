@@ -1,24 +1,24 @@
 'use client';
 
+import { ComponentProps } from 'react';
 import { useMedia } from 'react-use';
-import styled from 'styled-components';
 
 import Flex from '@/components/common/Flex';
 import Tag from '@/components/common/Tag';
-import { getBreakpointQuery } from '@/libs/utils';
+import { cn, getBreakpointQuery } from '@/libs/utils';
 import breakpoints from '@/styles/breakpoints';
 
-const P = styled.p`
-  margin-bottom: 4px;
+const P = ({ children, className, ...props }: ComponentProps<'p'>) => (
+  <p className={cn('mb-[4px] max-md:text-[14px]', className)} {...props}>
+    {children}
+  </p>
+);
 
-  ${breakpoints.down('md')} {
-    font-size: 14px;
-  }
-`;
-
-const Anchor = styled.a`
-  text-decoration: underline;
-`;
+const Anchor = ({ children, className, ...props }: ComponentProps<'a'>) => (
+  <a className={cn('underline', className)} {...props}>
+    {children}
+  </a>
+);
 
 const ResumePage = () => {
   const isMdDown = useMedia(getBreakpointQuery(breakpoints.down('md')), false);

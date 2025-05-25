@@ -10,7 +10,6 @@ import KBarComponent from '@/components/KBarComponent';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import useMounted from '@/hooks/useMounted';
 import { generateKBarAction } from '@/libs/kbarActions';
-import StyledComponentsRegistry from '@/libs/registry';
 import type { Post } from '@/types/notion';
 
 const queryClient = new QueryClient();
@@ -22,11 +21,9 @@ const AppProvider = ({ children }: ComponentProps<'div'>) => {
   return (
     <KBarProvider actions={kbarActions}>
       <QueryClientProvider client={queryClient}>
-        <StyledComponentsRegistry>
-          <HandleActionWithRoute />
-          <KBarComponent />
-          {children}
-        </StyledComponentsRegistry>
+        <HandleActionWithRoute />
+        <KBarComponent />
+        {children}
       </QueryClientProvider>
     </KBarProvider>
   );

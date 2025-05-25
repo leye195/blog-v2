@@ -1,55 +1,5 @@
 import { KBarResults, useMatches } from 'kbar';
-import styled from 'styled-components';
-import { flex } from '@/styles/mixin';
-import { paletteColor } from '@/styles/variable';
-
-const ItemWrapper = styled.div<{ active: string }>`
-  ${flex({ $alignItems: 'center' })};
-  position: relative;
-  width: 100%;
-  padding: 4px 16px;
-  cursor: pointer;
-  opacity: ${({ active }) => (active === 'true' ? 0.8 : 1)};
-  transition: background-color 0.2s;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background-color: ${paletteColor.white50};
-    transform: scaleX(${({ active }) => (active === 'true' ? '100%' : '0')});
-    transform-origin: left;
-    transition: transform 0.2s;
-  }
-`;
-
-const TitleWrapper = styled.div`
-  ${flex({ $direction: 'column', $justifyContent: 'center' })}
-  width: inherit;
-  height: 2.5rem;
-`;
-
-const Scope = styled.p`
-  width: inherit;
-  padding: 8px 10px;
-  font-size: 12px;
-  font-weight: 600;
-`;
-
-const Title = styled.span`
-  width: 100%;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-`;
-
-const SubTitle = styled.span`
-  font-size: 12px;
-`;
+import { cn } from '@/libs/utils';
 
 const KBarResult = () => {
   const { results } = useMatches();
@@ -59,14 +9,21 @@ const KBarResult = () => {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <Scope>{item}</Scope>
+          <p className="w-[inherit] px-[10px] py-[8px] text-[12px] font-semibold">{item}</p>
         ) : (
-          <ItemWrapper active={active.toString()}>
-            <TitleWrapper>
-              <Title>{item.name}</Title>
-              {item.subtitle && <SubTitle>{item.subtitle}</SubTitle>}
-            </TitleWrapper>
-          </ItemWrapper>
+          <div
+            className={cn(
+              'flex w-full cursor-pointer items-center px-[16px] py-[4px] transition-all',
+              'before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:content-[""]',
+              'before:scale-x-0 before:bg-[#808080] before:transition-all',
+              active && 'opacity-80 before:scale-x-100',
+            )}
+          >
+            <div className="flex h-[2.5rem] w-[inherit] flex-col justify-center">
+              <p className="w-full truncate text-left">{item.name}</p>
+              {item.subtitle && <span className="text-[12px]">{item.subtitle}</span>}
+            </div>
+          </div>
         )
       }
     />

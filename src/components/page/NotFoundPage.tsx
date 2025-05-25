@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/common/Button';
 import Flex from '@/components/common/Flex';
-import { paletteColor } from '@/styles/variable';
 
 const NotFoundPage = () => {
   return (
@@ -16,14 +15,7 @@ const NotFoundPage = () => {
         <b>404</b>
       </h1>
       <p className="text-xl lg:text-3xl">This page could not be found.</p>
-      <Button
-        className="text-lg lg:text-xl"
-        padding="8px 12px"
-        bgColor={paletteColor.dgray400}
-        hoverBgColor={paletteColor.dgray400}
-        color={paletteColor.white}
-        borderRadius="8px"
-      >
+      <Button className="rounded-[8px] bg-[#4B4D58] px-[12px] py-[8px] text-lg text-white hover:bg-[#4B4D58] lg:text-xl">
         <Link href="/" replace>
           Return to Home
         </Link>

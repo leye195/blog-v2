@@ -58,16 +58,16 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
           $justifyContent="center"
           $flexWrap="wrap"
         >
-          <Button padding="0" onClick={handleClickTag('all')}>
+          <Button className="p-0" onClick={handleClickTag('all')}>
             <Tag name="All" type="outline" size="lg" />
           </Button>
           {tags?.map((tag: string) => (
-            <Button key={tag} padding="0" onClick={handleClickTag(tag)}>
+            <Button key={tag} className="p-0" onClick={handleClickTag(tag)}>
               <Tag name={tag} type="outline" size="lg" />
             </Button>
           ))}
         </Flex>
-        <Flex className="posts w-full animate-fade-in" $direction="column" $gap="12px">
+        <Flex className="posts animate-fade-in w-full" $direction="column" $gap="12px">
           {posts.map(({ id, name, date, tag, url }) => (
             <Link
               className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"

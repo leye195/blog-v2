@@ -1,76 +1,22 @@
 'use client';
 
-import { CSSProperties, ComponentPropsWithRef } from 'react';
-import styled from 'styled-components';
+import { ComponentPropsWithRef } from 'react';
 
-export type ButtonProps = {
-  width?: CSSProperties['width'];
-  height?: CSSProperties['height'];
-  bgColor?: CSSProperties['backgroundColor'];
-  hoverBgColor?: CSSProperties['backgroundColor'];
-  disableBgColor?: CSSProperties['backgroundColor'];
-  padding?: CSSProperties['padding'];
-  borderRadius?: CSSProperties['borderRadius'];
-} & ComponentPropsWithRef<'button'>;
+import { cn } from '@/libs/utils';
 
-const Container = styled.button<{
-  $padding: ButtonProps['padding'];
-  $width: ButtonProps['width'];
-  $height: ButtonProps['height'];
-  $color?: ButtonProps['color'];
-  $bgColor: ButtonProps['bgColor'];
-  $hoverBgColor: ButtonProps['hoverBgColor'];
-  $disableBgColor: ButtonProps['disableBgColor'];
-  $borderRadius: ButtonProps['borderRadius'];
-}>`
-  padding: ${({ $padding }) => $padding};
-  width: ${({ $width }) => $width};
-  height: ${({ $height }) => $height};
-  color: ${({ $color }) => $color};
-  background: ${({ $bgColor }) => $bgColor};
-  border-radius: ${({ $borderRadius }) => $borderRadius};
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ $hoverBgColor }) => $hoverBgColor};
-  }
-
-  &:disabled {
-    background: ${({ $disableBgColor }) => $disableBgColor};
-    cursor: not-allowed;
-  }
-`;
-
-const Button = ({
-  className,
-  children,
-  disabled,
-  width = 'auto',
-  height = 'auto',
-  padding = '4px 8px',
-  bgColor = 'transparent',
-  borderRadius = '0px',
-  hoverBgColor = 'transparent',
-  disableBgColor = 'transparent',
-  color = 'black',
-  onClick,
-}: ButtonProps) => {
+const Button = ({ className, children, disabled, onClick }: ComponentPropsWithRef<'button'>) => {
   return (
-    <Container
-      className={className}
-      disabled={disabled}
+    <button
+      className={cn(
+        'h-auto w-auto cursor-pointer bg-transparent px-[8px] py-[4px] text-black',
+        'rounded-none hover:bg-transparent disabled:cursor-not-allowed disabled:bg-transparent',
+        className,
+      )}
       onClick={onClick}
-      $width={width}
-      $height={height}
-      $padding={padding}
-      $color={color}
-      $bgColor={bgColor}
-      $borderRadius={borderRadius}
-      $hoverBgColor={hoverBgColor}
-      $disableBgColor={disableBgColor}
+      disabled={disabled}
     >
       {children}
-    </Container>
+    </button>
   );
 };
 

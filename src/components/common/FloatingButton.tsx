@@ -1,38 +1,14 @@
-import { type CSSProperties } from 'react';
-import styled from 'styled-components';
-import Button, { type ButtonProps } from '@/components/common/Button';
+import { ComponentPropsWithRef } from 'react';
+import Button from '@/components/common/Button';
+import { cn } from '@/libs/utils';
 
-type FloatingButtonProps = {
-  bottom: CSSProperties['bottom'];
-  right: CSSProperties['right'];
-} & ButtonProps;
+type FloatingButtonProps = ComponentPropsWithRef<'button'>;
 
-const Container = styled.div<{
-  $bottom: CSSProperties['bottom'];
-  $right: CSSProperties['right'];
-}>`
-  position: fixed;
-  bottom: ${({ $bottom }) => (typeof $bottom === 'number' ? `${$bottom}px` : $bottom)};
-  right: ${({ $right }) => (typeof $right === 'number' ? `${$right}px` : $right)};
-  transition: opacity 0.25s;
-  opacity: 0;
-
-  &.show {
-    opacity: 1;
-  }
-`;
-
-const FloatingButton = ({
-  className,
-  right,
-  bottom,
-  children,
-  ...restProps
-}: FloatingButtonProps) => {
+const FloatingButton = ({ className, children, ...restProps }: FloatingButtonProps) => {
   return (
-    <Container className={className} $right={right} $bottom={bottom}>
+    <div className={cn('fixed opacity-0 transition-all duration-200', className)}>
       <Button {...restProps}>{children}</Button>
-    </Container>
+    </div>
   );
 };
 
