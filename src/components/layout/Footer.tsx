@@ -2,7 +2,7 @@ import { Email, GitHub, RSS } from '@/components/icon';
 
 const Footer = () => {
   return (
-    <div className="border-black-50 flex w-[inherit] flex-col items-center justify-center gap-3 border-t-2 bg-gray-200 py-8">
+    <div className="border-black-50 flex w-[inherit] flex-col items-center justify-center gap-3 border-t-2 bg-gray-200 py-8 text-white">
       <div className="flex gap-[10px] text-[24px] lg:text-[32px]">
         <a href="https://github.com/leye195" target="_blank" rel="noopener">
           <GitHub />
