@@ -17,7 +17,7 @@ const Avatar = ({ className, size, src, priority }: AvatarProps) => {
       $alignItems="center"
       $justifyContent="center"
     >
-      <Image src={src} alt="" width={size} height={size} priority={priority} />
+      <Image src={src} alt="" width={size} height={size} priority={priority} unoptimized />
     </Flex>
   );
 };

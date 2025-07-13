@@ -1,12 +1,11 @@
-import type { Metadata } from 'next';
 import { getPageTitle } from 'notion-utils';
 
 import NotionPage from '@/components/page/PostDetailPage';
 import { getNotionPage } from '@/libs/notion';
-import type { PageProps } from '@/types/page';
+import { PageProps } from '@/types/page';
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const pageId = params.id;
+export async function generateMetadata({ params }: PageProps) {
+  const { id: pageId } = await params;
   const recordMap = await getNotionPage(pageId);
   const title = getPageTitle(recordMap);
   return {
@@ -20,8 +19,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Post({ params: { id } }: PageProps) {
-  const pageId = id;
+export default async function Post({ params }: PageProps) {
+  const { id: pageId } = await params;
   const recordMap = await getNotionPage(pageId);
   const title = getPageTitle(recordMap);
 

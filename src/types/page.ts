@@ -1,7 +1,7 @@
 export type PageProps = {
-  params: {
+  params: Promise<{
     [key: string]: string;
-  };
+  }>;
 };
 
 export type Data<T> = {
