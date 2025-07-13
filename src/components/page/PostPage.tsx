@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import { useAnimate } from 'framer-motion';
-import Link from 'next/link';
 import Button from '@/components/common/Button';
 import Flex from '@/components/common/Flex';
-import PostCard from '@/components/common/PostCard';
 import Tag from '@/components/common/Tag';
+import Posts from '@/components/posts/Posts';
 import useFetchTags from '@/hooks/useFetchTags';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import { cn, getPostsByCategory } from '@/libs/utils';
@@ -32,12 +31,6 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
     });
     animate('.posts', animateTemplate, {
       duration: 0.5,
-    });
-  };
-
-  const handleToTop = () => {
-    window.scrollTo({
-      top: 0,
     });
   };
 
@@ -68,15 +61,7 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
           ))}
         </Flex>
         <Flex className="posts animate-fade-in w-full" $direction="column" $gap="12px">
-          {posts.map(({ id, name, date, tag, url }) => (
-            <Link
-              className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"
-              key={id}
-              href={`/posts/${id}`}
-            >
-              <PostCard id={id} name={name} date={date} tag={tag} url={url} />
-            </Link>
-          ))}
+          <Posts data={posts} type="grid" />
         </Flex>
       </Flex>
     </Flex>

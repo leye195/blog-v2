@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Avatar from '@/components/common/Avatar';
 import Flex from '@/components/common/Flex';
 import SectionWithLabel from '@/components/common/SectionWithLabel';
-import PostList from '@/components/posts/PostList';
 import { generateImageUrl } from '@/libs/utils';
+import Posts from '../posts/Posts';
 
 const MainPage = () => {
   return (
@@ -63,7 +63,7 @@ const MainPage = () => {
           </Flex>
         }
       >
-        <PostList count={10} />
+        <Posts count={10} dataFromServerSide />
       </SectionWithLabel>
     </Flex>
   );

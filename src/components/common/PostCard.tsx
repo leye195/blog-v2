@@ -7,13 +7,20 @@ type PostCardProps = ComponentProps<'div'> & Omit<Post, 'id'>;
 
 const PostCard = ({ date, name, tag }: PostCardProps) => {
   return (
-    <Flex className="w-[inherit] p-[1rem]" $direction="column" $gap="10px">
-      <Flex $gap="8px">
-        {tag.map(({ name, id }) => (
-          <Tag key={id} name={name} />
-        ))}
+    <Flex
+      className="h-full w-[inherit] p-[1rem]"
+      $direction="column"
+      $gap="10px"
+      $justifyContent="space-between"
+    >
+      <Flex $direction="column" $gap="10px">
+        <Flex $gap="8px">
+          {tag.map(({ name, id }) => (
+            <Tag key={id} name={name} />
+          ))}
+        </Flex>
+        <h5 className="font-[600] md:text-[20px]">{name}</h5>
       </Flex>
-      <h5 className="font-[600] md:text-[22px]">{name}</h5>
       <Flex
         className="w-[inherit] md:text-[14px]"
         $alignItems="center"
