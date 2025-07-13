@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getPosts } from '@/apis';
 import Flex from '@/components/common/Flex';
 import PostCard from '@/components/common/PostCard';
-import { Post } from '@/types/notion';
 import { cn } from '@/libs/utils';
+import { Post } from '@/types/notion';
 
 type PostListProps = {
   data?: Post[];
