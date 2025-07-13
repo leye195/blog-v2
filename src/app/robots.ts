@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: ['https://www.dantechblog.xyz/sitemap.xml', 'https://dantechblog.xyz/sitemap.xml'],
+    sitemap: 'https://www.dantechblog.xyz/sitemap.xml',
   };
 }

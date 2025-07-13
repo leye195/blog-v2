@@ -7,9 +7,9 @@ export default async function sitemap() {
   const postSitemaps = posts.map((post: Post) => {
     return {
       url: `${baseUrl}/posts/${post.id}`,
-      lastModified: new Date(),
+      lastModified: new Date(post.date),
       priority: 0.7,
-      changeFrequency: 'daily',
+      changeFrequency: 'weekly',
     };
   });
 
@@ -17,20 +17,20 @@ export default async function sitemap() {
     {
       url: baseUrl,
       lastModified: new Date(),
-      priority: 0.7,
-      changeFrequency: 'daily',
+      priority: 0.5,
+      changeFrequency: 'weekly',
     },
     {
       url: `${baseUrl}/posts`,
       lastModified: new Date(),
-      priority: 0.7,
-      changeFrequency: 'daily',
+      priority: 0.5,
+      changeFrequency: 'weekly',
     },
     {
       url: `${baseUrl}/resume`,
       lastModified: new Date(),
-      priority: 0.7,
-      changeFrequency: 'daily',
+      priority: 0.5,
+      changeFrequency: 'monthly',
     },
     ...postSitemaps,
   ];
