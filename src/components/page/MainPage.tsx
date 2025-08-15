@@ -9,23 +9,8 @@ import Posts from '../posts/Posts';
 const MainPage = () => {
   return (
     <Flex $direction="column" $gap="64px">
-      <Flex
-        className="relative h-[240px] w-full p-5 md:h-[420px]"
-        $alignItems="flex-end"
-        $justifyContent="center"
-      >
-        <picture
-          style={{
-            position: 'absolute',
-            height: '100%',
-            width: '100%',
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
-            color: 'transparent',
-          }}
-        >
+      <div className="relative flex h-60 w-full items-end justify-center p-5 md:h-96">
+        <picture className="absolute inset-0 text-transparent">
           <source
             srcSet={generateImageUrl({
               fileName: 'blog-bg',
@@ -35,25 +20,25 @@ const MainPage = () => {
             type="image/webp"
           />
           <img
-            className="z-[-1] h-[240px] w-full md:h-[420px]"
+            className="-z-10 h-full w-full object-cover"
             src={generateImageUrl({
               fileName: 'blog-bg',
               format: 'jpg',
               option: 'q_60,c_fill',
             })}
-            alt=""
+            alt="Background"
           />
         </picture>
 
         <Avatar
-          className="h-[120px] w-[120px] border-spacing-4 translate-y-16 border-2 border-gray-300 md:h-[200px] md:w-[200px]"
+          className="h-32 w-32 translate-y-16 rounded-full border-4 border-white shadow-lg md:h-48 md:w-48"
           size={200}
           src="/assets/avatar.gif"
           priority
         />
-      </Flex>
+      </div>
       <SectionWithLabel
-        className="w-full px-4"
+        className="w-full"
         title={
           <Flex className="w-full" $justifyContent="space-between">
             <h3 className="mb-2 text-xl font-bold md:text-2xl">Recent Posts</h3>

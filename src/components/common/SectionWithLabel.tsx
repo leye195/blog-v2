@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import { type ComponentProps } from 'react';
 
 type SectionWithLabelProps = {
@@ -6,9 +7,11 @@ type SectionWithLabelProps = {
 
 const SectionWithLabel = ({ title, children, className }: SectionWithLabelProps) => {
   return (
-    <section className={className}>
-      {title}
-      {children}
+    <section className={clsx('py-8', className)}>
+      <div className="mx-auto w-full px-4">
+        {title}
+        {children}
+      </div>
     </section>
   );
 };
