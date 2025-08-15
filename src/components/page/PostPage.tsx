@@ -5,12 +5,13 @@ import { useAnimate } from 'framer-motion';
 import Button from '@/components/common/Button';
 import Flex from '@/components/common/Flex';
 import Tag from '@/components/common/Tag';
-import Posts from '@/components/posts/Posts';
+
 import useFetchTags from '@/hooks/useFetchTags';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import { cn, getPostsByCategory } from '@/libs/utils';
 import type { Post } from '@/types/notion';
 import type { Data } from '@/types/page';
+import Posts from '../posts/Posts/Client';
 
 const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => {
   const [posts, setPosts] = useState(data);
@@ -61,7 +62,7 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
           ))}
         </Flex>
         <Flex className="posts animate-fade-in w-full" $direction="column" $gap="12px">
-          <Posts data={posts} type="grid" />
+          <Posts type="grid" data={posts} />
         </Flex>
       </Flex>
     </Flex>

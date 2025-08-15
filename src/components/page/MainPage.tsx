@@ -4,7 +4,7 @@ import Avatar from '@/components/common/Avatar';
 import Flex from '@/components/common/Flex';
 import SectionWithLabel from '@/components/common/SectionWithLabel';
 import { generateImageUrl } from '@/libs/utils';
-import Posts from '../posts/Posts';
+import Posts from '../posts/Posts/Server';
 
 const MainPage = () => {
   return (

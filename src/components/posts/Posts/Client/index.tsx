@@ -1,6 +1,8 @@
+'use client';
+
 import { Post } from '@/types/notion';
-import PostGrid from './PostGrid';
-import PostList from './PostList';
+import PostGrid from './PostGridClient';
+import PostList from './PostListClient';
 
 type Props = {
   data?: Post[];

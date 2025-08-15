@@ -16,7 +16,7 @@ async function fetchNotionData(count?: number) {
   return data;
 }
 
-export default async function PostGrid({
+export default async function PostGridServer({
   data = [],
   dataFromServerSide,
   count,
