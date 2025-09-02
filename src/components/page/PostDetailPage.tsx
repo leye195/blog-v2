@@ -24,7 +24,7 @@ const NotionPage = ({
   return (
     <Flex className="mx-auto max-w-[1000px] p-4" $alignItems="center" $direction="column" $gap={12}>
       {title && (
-        <h1 className="mb-0 max-sm:text-[22px]">
+        <h1 className="mb-0 text-[28px] max-sm:text-[22px]">
           <b>{title}</b>
         </h1>
       )}
