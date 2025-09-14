@@ -27,9 +27,7 @@ const ResumePage = () => {
     <Flex className="mx-auto max-w-[1000px] p-4" $direction="column" $gap="8px">
       <Flex $direction="column">
         <h1 className="text-[42px]">
-          <b>안녕하세요! </b>
-          <br className="max-md:hidden" />
-          <b>저는 이영재 입니다.</b>
+          <b>이영재(YoungJae Lee)</b>
         </h1>
         <Flex $direction="column" $gap="4px">
           <ul className="mb-3 flex list-disc flex-col gap-2 pl-6 text-[18px]">
@@ -60,10 +58,7 @@ const ResumePage = () => {
             <b>Introduction</b>
           </h2>
           <div>
-            <P>
-              웹 프론트엔드 개발자로 업무를 수행하며 프로젝트의 프론트엔드 리드를 진행한 경험도
-              있습니다.
-            </P>
+            <P>웹 프론트엔드 개발자 이영재 입니다.</P>
             <P>
               주어진 업무를 성실히 수행하는 것뿐만 아니라, 서비스의 가치를 높이기 위해 주도적으로
               문제를 발견하고 해결하는 것을 좋아합니다. 예를 들어 서비스 성능을 분석하며{' '}
@@ -82,6 +77,8 @@ const ResumePage = () => {
               이 기록들이 다른 개발자들에게 도움이 되길 바라며, 저 역시 이를 통해 새로운 인사이트를
               얻고 있습니다.
             </P>
+            <br />
+            <P>현재 Coinness 개발팀에서 frontend lead 역할을 수행하고 있습니다.</P>
           </div>
         </Flex>
         <Flex $direction="column" $gap="8px">
@@ -116,6 +113,10 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2024.10 ~ )</span>
                   </h4>
+                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
+                    <Tag name="typescript" type="outline" size="sm" />
+                    <Tag name="react" type="outline" size="sm" />
+                  </Flex>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
                       <li>
@@ -128,6 +129,14 @@ const ResumePage = () => {
                       </li>
                       <li>
                         유저통합으로 인한 국내/글로벌 가입 인증 프로세스 메일인증으로 통일 적용
+                      </li>
+                      <li>
+                        Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축, 수동 작업
+                        제거와 코드 충돌 최소화
+                      </li>
+                      <li>
+                        서비스 기능 개발: 대시보드,투자내역, PnL 공유, Live 개편 등 신규 기능 개발
+                        진행
                       </li>
                       <li>어드민 개발 및 유지보수</li>
                     </ul>
@@ -181,21 +190,11 @@ const ResumePage = () => {
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
                       <li>
-                        공통 컴포넌트 개발:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Modal, Popup, Dropdown 등의 재사용 가능한 컴포넌트를 구현하여 코드
-                            재활용성을 높이고 개발 효율성 향상.
-                          </li>
-                        </ul>
+                        공통 컴포넌트 개발(Modal, Popup, Dropdown 등)을 통한 컴포넌트 재활용성 및
+                        개발 효율성 향상
                       </li>
                       <li>서버컴포넌트 내 data fetching 처리를 통한 네트워크 비용 감소</li>
-                      <li>
-                        소셜 로그인 기능:
-                        <ul className="list-disc pl-[18px]">
-                          <li>Google, Apple 소셜 로그인 기능을 구현하여 사용자 접근성을 향상</li>
-                        </ul>
-                      </li>
+                      <li>소셜 로그인 기능 (Google, Apple)을 통한 지갑 로그인 불편함 감소</li>
                       <li>
                         지갑 연동 및 Web3 기능 지원:
                         <ul className="list-disc pl-[18px]">
@@ -224,7 +223,7 @@ const ResumePage = () => {
                   </Flex>
                   <P>
                     재화(Gold,Ticket) 소비를 통해 참여한 게임 플레이 순위 및 대결 결과에 따른 보상을
-                    제공하는 BlockChain Game Platform 입니다. TF로 합류하여 서비스 소프트런칭에
+                    제공하는 BlockChain Game Platform 입니다. TF팀 일원으로 서비스 소프트런칭에
                     기여하였으며 이후 정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
@@ -257,10 +256,7 @@ const ResumePage = () => {
                           </li>
                           <li>
                             모달 혹은 상호작용시 노출이 필요 혹은 우선순위가 낮은 컴포넌트들에
-                            대하여 code splitting 적용을 통한
-                          </li>
-                          <li>
-                            First Load JS 용량 <b>`470kb`</b>
+                            대하여 code splitting 적용을 통한 First Load JS 용량 <b>`470kb`</b>
                             에서 <b>`162kb`</b>로 감소
                           </li>
                         </ul>
@@ -303,30 +299,14 @@ const ResumePage = () => {
                             Web3 환경에 익숙하지 않은 유저들도 서비스에 쉽게 접근 할 수 있도록
                             Social&Guest 로그인 지원
                           </li>
-                          <li>
-                            `@react-oauth/google`와 `react-apple-login` 라이브러리 사용하여 소셜
-                            로그인 기능을 구현하였으며, 공통 인자를 전달 받아 처리하기 하는
-                            <b> SocialLoginButton</b> 컴포넌트 추가
-                          </li>
                         </ul>
                       </li>
-                      <li>
-                        유저 및 트래픽 분석 도구 연동:
-                        <ul className="list-disc pl-[18px]">
-                          <li>GA와 Mixpanel 연동을 통한 유저 및 트래픽 분석 지원</li>
-                        </ul>
-                      </li>
+                      <li>유저 및 트래픽 분석 도구 (GA,Mixpanel) 연동</li>
                       <li>
                         web3 지갑 연동 지원:
                         <ul className="list-disc pl-[18px]">
                           <li>web3-react와 wagmi를 적용하여 Web3 지갑 연동을 지원</li>
-                          <li>
-                            WalletConnect V2로의 마이그레이션 작업을 진행하였으며, 기존
-                            WalletConnect V1 지원 종료로 인해 발생한 문제를 해결하기 위해 web3-react
-                            V8 버전으로의 업데이트를 검토하였습니다. 이 과정에서 몇몇 지갑이
-                            web3-react V8에서 지원되지 않음을 발견하고, 공식 문서에서 권장하는
-                            방법을 따르기로 결정하였습니다.
-                          </li>
+                          <li>WalletConnect V1 -&gt; V2 마이그레이션</li>
                         </ul>
                       </li>
                     </ul>
@@ -377,15 +357,7 @@ const ResumePage = () => {
                         NFT 상세 페이지
                         <ul className="list-disc pl-[18px]">
                           <li>NFT(ERC-721) 구매 기능 구현</li>
-                          <li>
-                            Order(판매 제안) cancel 기능 구현
-                            <ul className="list-disc pl-[18px]">
-                              <li>
-                                isCancelListing과 취소 로직을 실행하는 handleCancelListing 함수를
-                                리턴하는 useListingCancel hook 생성 및 활용을 통한 중복 코드
-                              </li>
-                            </ul>
-                          </li>
+                          <li>Order(판매 제안) cancel 기능 구현</li>
                         </ul>
                       </li>
                       <li>
@@ -398,26 +370,7 @@ const ResumePage = () => {
                       <li>
                         Email 인증 페이지
                         <ul className="list-disc pl-[18px]">
-                          <li>
-                            email 인증 요청 기능 구현
-                            <ul className="list-disc pl-[18px]">
-                              <li>
-                                react-hook-form 제공 register 함수를 통한 입력 값 유효성 체크 및
-                                handleSubmit 함수를 활용하여 submit 요청에 대한 성공 및 에러 대한
-                                처리를 진행하도록 구현
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            email 인증 결과 페이지
-                            <ul className="list-disc pl-[18px]">
-                              <li>
-                                각 결과에 대한 페이지를 별도 작성하는것이 아닌 getStaticPaths와
-                                getStaticProps를 활용하여 인증 결과 및 에러 값을 동적 라우팅 경로로
-                                전달받아 결과에 대한 페이지를 랜더링하여 보여주도록 구현
-                              </li>
-                            </ul>
-                          </li>
+                          <li>email 인증 요청/결과 페이지 추가 및 기능 구현</li>
                         </ul>
                       </li>
                       <li>
@@ -471,9 +424,9 @@ const ResumePage = () => {
                         Repair 기능 구현
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            유저가 itemManager에 스테이킹한 nft들에 대해서 PLA를 지불하여 내구도를
-                            수리 할 수 있도록 로직을 구현하여 지속적으로 보상을 받아갈 수 있도록
-                            하였습니다.
+                            서비스내 스테이킹한 nft들에 대해서 PLA 지불을 통해 내구도를 수리 할 수
+                            있도록 로직 구현, 내구도를 유지함으로 유저는 지속적으로 보상을 받아갈 수
+                            있음.
                           </li>
                         </ul>
                       </li>
@@ -486,42 +439,7 @@ const ResumePage = () => {
                           </li>
                         </ul>
                       </li>
-                      <li>
-                        멀티 월렛 지원 - walletConnect
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            기존에 portis 월렛을 통한 로그인 만 지원하는 경우 portis 월렛 제품
-                            자체에서 에러가 발생하여 로그인이 안되는 이슈가 많아 walletConnect 월렛
-                            로그인도 추가적으로 지원하여 유저가 다른 경로를 통해 로그인을 할 수
-                            있도록 개선 하였습니다.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-[18px]">
-                    <b>
-                      <Anchor href="https://geodomain.event.playdapp.com" target="_blank">
-                        GEO.DOMAIN Promotion
-                      </Anchor>
-                    </b>{' '}
-                    <span className="text-base">(2022.02 ~ 2022.03)</span>
-                  </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                    <Tag name="next.js" type="outline" size="sm" />
-                    <Tag name="next-i18next" type="outline" size="sm" />
-                    <Tag name="emotion" type="outline" size="sm" />
-                  </Flex>
-                  <P>GEO.DOMAIN NFT 이벤트 프로모션 페이지 입니다.</P>
-                  <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
-                      <li>GEO.DOMAIN NFT 오픈 이벤트 프로모션 프로젝트 환경 구성 및 페이지 구현</li>
-                      <li>i18n 활용 영어, 한글 다국어 지원</li>
+                      <li>멀티 월렛 지원 - walletConnect</li>
                     </ul>
                   </div>
                 </div>
