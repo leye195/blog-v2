@@ -60,22 +60,19 @@ const ResumePage = () => {
           <div>
             <P>프론트엔드 개발자 이영재 입니다.</P>
             <P>
-              서비스의 가치를 높이기 위해 주도적으로 문제를 발견하고 해결하는 것을 좋아합니다. 예를
-              들어 서비스 성능을 분석하며{' '}
+              주도적으로 문제를 발견하고 해결하는 것을 좋아합니다. 서비스 성능 최적화(
               <Anchor
                 href="https://www.dantechblog.xyz/posts/e485275b-92a8-499d-81b3-466d27f944b2"
                 target="_blank"
               >
-                번들 사이즈 개선
-              </Anchor>{' '}
-              작업을 진행한 경험이 있습니다. 또한, 개발 생산성을 높이기 위해 새로운 툴 도입을 위한
-              내부 리서치를 주도한 적도 있습니다.
+                번들 사이즈 -65%
+              </Anchor>
+              )와 CI 기반 자동화(GitLab 언어팩 파이프라인 구축), Knip 도입을 통한 데드코드 감지·관리
+              등을 통해 서비스 품질과 팀 생산성을 개선한 경험이 있습니다.
             </P>
             <P>
-              저는 항상 더 나은 개발자가 되기 위해 지속적으로 성장하고자 노력하고 있습니다. 이러한
-              성장의 일환으로, 제가 경험한 것과 공부하며 정리한 내용들을 블로그에 기록하고 있습니다.
-              이 기록들이 다른 개발자들에게 도움이 되길 바라며, 저 역시 이를 통해 새로운 인사이트를
-              얻고 있습니다.
+              또한 블로그를 통해 학습과 경험을 꾸준히 공유하고 있습니다. 저의 경험이 다른 개발자와
+              동료들에게 인사이트가 되고 저 또한 지속적으로 성장하고 있습니다.
             </P>
             <br />
             <P>현재 Coinness 개발팀에서 frontend lead 역할을 수행하고 있습니다.</P>
@@ -117,28 +114,51 @@ const ResumePage = () => {
                     <Tag name="typescript" type="outline" size="sm" />
                     <Tag name="react" type="outline" size="sm" />
                   </Flex>
+                  <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
                       <li>
-                        eslint 설정 개선 및 sort import, unused-imports 등 추가 도입을 통한 개발
-                        생산성 향상
+                        개발 생산성 및 품질 개선
+                        <ul className="list-disc pl-[18px]">
+                          <li>
+                            <b>ESLint</b> 규칙 정비(sort import, unused-imports 등 추가 도입) 및{' '}
+                            <b>Knip</b>
+                            도입으로 데드코드 관리 통한 개발 생산성 향상
+                          </li>
+                          <li>
+                            버튼 <b>debounce</b>적용을 통한 api 요청 최적화, optimistic ui update를
+                            통한 ux 개선
+                          </li>
+                        </ul>
                       </li>
                       <li>
-                        버튼 debounce 적용을 통한 api 요청 감소 및 optimistic ui update를 통한 ux
-                        개선
+                        글로벌 서비스 운영 및 인증 체계 통합
+                        <ul className="list-disc pl-[18px]">
+                          <li>
+                            국내/글로벌 회원 가입·인증 프로세스를 메일 인증 기반으로 통합하여 사용자
+                            경험 일원화 및 유지보수 부담 감소
+                          </li>
+                        </ul>
                       </li>
                       <li>
-                        유저통합으로 인한 국내/글로벌 가입 인증 프로세스 메일인증으로 통일 적용
+                        CI/CD 및 자동화 구축
+                        <ul className="list-disc pl-[18px]">
+                          <li>
+                            <a href="http://localhost:3000/posts/2628cb44-979a-803a-a79f-dcc7429c933a">
+                              Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축, 수동
+                              작업 제거와 코드 충돌 최소화
+                            </a>
+                          </li>
+                        </ul>
                       </li>
+
                       <li>
-                        Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축, 수동 작업
-                        제거와 코드 충돌 최소화
+                        서비스 기능 개발
+                        <ul className="list-disc pl-[18px]">
+                          <li>대시보드,투자내역, PnL 공유, Live 개편 등 신규 기능 개발</li>
+                          <li>운영 효율성을 위한 어드민 개발 및 유지보수</li>
+                        </ul>
                       </li>
-                      <li>
-                        서비스 기능 개발: 대시보드,투자내역, PnL 공유, Live 개편 등 신규 기능 개발
-                        진행
-                      </li>
-                      <li>어드민 개발 및 유지보수</li>
                     </ul>
                   </div>
                 </div>
@@ -386,23 +406,23 @@ const ResumePage = () => {
           <h2 className="text-[24px]">
             <b>Open Sources</b>
           </h2>
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-[18px]">
               <b>
                 <Anchor href="https://github.com/WintrCat/freechess" target="_blank">
-                  freechess
+                  freechess - UI 기여 (리뷰 패널, 리포트 카드 컴포넌트 개발)
                 </Anchor>
               </b>
             </h3>
-            <ul className="flex list-disc flex-col gap-1 pl-6 text-lg text-[16px]">
+            <ul className="list-disc pl-6 text-[16px]">
               <li>
+                PR:{' '}
                 <Anchor href="https://github.com/WintrCat/freechess/pull/48" target="_blank">
-                  Contribute review panel UI
+                  #48
                 </Anchor>
-              </li>
-              <li>
+                <span className="mx-[4px]">,</span>
                 <Anchor href="https://github.com/WintrCat/freechess/pull/52" target="_blank">
-                  Contribute report card component
+                  #52
                 </Anchor>
               </li>
             </ul>
@@ -417,9 +437,7 @@ const ResumePage = () => {
               <b>Front-End</b>
             </h3>
             <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>HTML / CSS</li>
-              <li>React.js</li>
-              <li>NextJS</li>
+              <li>React.js, NextJS</li>
               <li>JavaScript, TypeScript</li>
               <li>Emotion, Styled-Component, TailwindCSS</li>
             </ul>
@@ -437,7 +455,7 @@ const ResumePage = () => {
               <b>Etc</b>
             </h3>
             <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>Git / Github</li>
+              <li>Git / Github / Gitlab</li>
               <li>Jira</li>
             </ul>
           </div>
@@ -448,9 +466,9 @@ const ResumePage = () => {
           </h2>
           <div>
             <p className="text-[18px]">
-              <b className="underline">Beihang University</b> / <span>software engineering</span>
+              <b className="underline">Beihang University</b>, <span>Software Engineering</span> (
+              <span className="text-base">2013.09 ~ 2019.07</span>)
             </p>
-            <span className="text-base">2013.09 ~ 2019.07</span>
           </div>
         </Flex>
       </Flex>
