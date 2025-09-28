@@ -26,11 +26,11 @@ const ResumePage = () => {
   return (
     <Flex className="mx-auto max-w-[1000px] p-4" $direction="column" $gap="8px">
       <Flex $direction="column">
-        <h1 className="text-[42px]">
+        <h1 className="my-[8px] text-[38px]">
           <b>이영재(YoungJae Lee)</b>
         </h1>
         <Flex $direction="column" $gap="4px">
-          <ul className="mb-3 flex list-disc flex-col gap-2 pl-6 text-[18px]">
+          <ul className="flex list-disc flex-col gap-2 pl-6 text-[16px]">
             <li>
               <b>Github:</b>{' '}
               <Anchor className="text-blue-500" href="https://github.com/leye195" target="_blank">
@@ -46,22 +46,22 @@ const ResumePage = () => {
             <li>
               <b>Email:</b>{' '}
               <Anchor className="text-blue-500" href="mailto:leye195@naver.com">
-                mailto:leye195@naver.com
+                leye195@naver.com
               </Anchor>
             </li>
           </ul>
         </Flex>
       </Flex>
-      <Flex className="w-full" $direction="column" $gap="20px">
-        <Flex $direction="column" $gap="8px">
-          <h2 className="mb-3 text-[32px]">
+      <Flex className="w-full" $direction="column" $gap="10px">
+        <Flex $direction="column" $gap="4px">
+          <h2 className="text-[24px]">
             <b>Introduction</b>
           </h2>
           <div>
-            <P>웹 프론트엔드 개발자 이영재 입니다.</P>
+            <P>프론트엔드 개발자 이영재 입니다.</P>
             <P>
-              주어진 업무를 성실히 수행하는 것뿐만 아니라, 서비스의 가치를 높이기 위해 주도적으로
-              문제를 발견하고 해결하는 것을 좋아합니다. 예를 들어 서비스 성능을 분석하며{' '}
+              서비스의 가치를 높이기 위해 주도적으로 문제를 발견하고 해결하는 것을 좋아합니다. 예를
+              들어 서비스 성능을 분석하며{' '}
               <Anchor
                 href="https://www.dantechblog.xyz/posts/e485275b-92a8-499d-81b3-466d27f944b2"
                 target="_blank"
@@ -82,29 +82,29 @@ const ResumePage = () => {
           </div>
         </Flex>
         <Flex $direction="column" $gap="8px">
-          <h2 className="mb-3 text-[32px]">
+          <h2 className="text-[24px]">
             <b>Work Experience</b>
           </h2>
-          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="12px">
+          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="10px">
             <div className="min-w-[165px]">
-              <h3 className="mb-1 text-[20px]">
+              <h3 className="text-[18px]">
                 <b>
                   <Anchor href="https://adenasoft.com" target="_blank">
                     Adena Software
                   </Anchor>
                 </b>
               </h3>
-              <small className="text-[12px]">2024.10 ~ current</small>
+              <small className="text-[10px]">2024.10 ~ current</small>
               <br />
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
-            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="12px">
+            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="10px">
               <div>
-                <h3 className="mb-1 text-[20px]">
+                <h3 className="text-[18px]">
                   <b>Coinness 개발팀</b>
                 </h3>
-                <small className="text-[16px]">2024.10 ~</small>
-                <div className="my-[10px]">
+                <small className="text-[14px]">2024.10 ~</small>
+                <div className="my-[4px]">
                   <h4 className="text-[18px]">
                     <b>
                       <Anchor href="https://coinness.com" target="_blank">
@@ -145,29 +145,29 @@ const ResumePage = () => {
               </div>
             </Flex>
           </Flex>
-          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="12px">
+          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="10px">
             <div className="min-w-[165px]">
-              <h3 className="mb-1 text-[20px]">
+              <h3 className="text-[18px]">
                 <b>
                   <Anchor href="https://supertree.co/" target="_blank">
                     SuperTree
                   </Anchor>
                 </b>
               </h3>
-              <small className="text-[12px]">2020.10 ~ 2024.09 (3y 10m)</small>
+              <small className="text-[10px]">2020.10 ~ 2024.09 (3y 10m)</small>
               <br />
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
-            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="12px">
+            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="10px">
               <div>
-                <h3 className="mb-1 text-[20px]">
+                <h3 className="text-[18px]">
                   <b>Tournament 개발팀</b>
                 </h3>
-                <small className="text-[16px]">2022.08 ~ 2024.09 </small>
-                <div className="my-[10px]">
+                <small className="text-[14px]">2022.08 ~ 2024.09 </small>
+                <div className="my-[4px]">
                   <h4 className="text-[18px]">
                     <b>
-                      <Anchor href="https://ezplay.playdapp.com" target="_blank">
+                      <Anchor href="https://ezplay.game" target="_blank">
                         EZPlay
                       </Anchor>
                     </b>{' '}
@@ -204,7 +204,7 @@ const ResumePage = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="my-[10px]">
+                <div className="my-[4px]">
                   <h4 className="text-[18px]">
                     <b>
                       <Anchor target="_blank">PlayDapp Tournaments</Anchor>
@@ -223,90 +223,50 @@ const ResumePage = () => {
                   </Flex>
                   <P>
                     재화(Gold,Ticket) 소비를 통해 참여한 게임 플레이 순위 및 대결 결과에 따른 보상을
-                    제공하는 BlockChain Game Platform 입니다. TF팀 일원으로 서비스 소프트런칭에
-                    기여하였으며 이후 정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
+                    제공하는 블록체인 기반 게임 플랫폼 입니다. TF팀 일원으로 소프트런칭에 기여한 후
+                    정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
-                      <li>프론트 개발환경 및 프로젝트 구조 설정</li>
                       <li>
-                        게임 클라이언트 통합 및 이벤트 통신:
+                        프로젝트 구조 설정 및 성능 최적화
                         <ul className="list-disc pl-[18px]">
+                          <li>프론트엔드 개발환경 및 프로젝트 구조 설정</li>
                           <li>
-                            iframe과 postMessage를 활용한 게임 클라이언트 연동 및 이벤트 통신 구현
+                            번들 분석 및 코드 스플리팅으로 First Load JS 470kb → 162kb(-65%) 최적화
                           </li>
                         </ul>
                       </li>
                       <li>
-                        점검 페이지 노출 및 접근 처리:
+                        핵심 기능 개발 (Web3 & 결제)
                         <ul className="list-disc pl-[18px]">
+                          <li>iframe + postMessage를 활용한 게임 클라이언트 이벤트 통신</li>
                           <li>
-                            페이지 접근시 점검 진행 중인 경우 nextjs middleware api 활용을 통한
-                            점검페이지 redirect 구현
+                            ERC-20 토큰 출금 및 Ticket NFT Convert 기능 구현 (NFT 소각 + 보상 지급)
+                          </li>
+                          <li>
+                            Paypal 결제 연동을 통한 NFT 구매 과정 단축 및 사용자 결제 편의성 강화
                           </li>
                         </ul>
                       </li>
                       <li>
-                        프로젝트 번들 사이즈 최적화:
+                        사용자 접근성 및 UX 개선
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            <b>bundle-analyzer</b> 를 활용하여 프로젝트 번들 크기 분석을 통한 대체
-                            가능 혹은 불필요 패키지 제거
+                            Google·Apple 소셜 로그인 및 게스트 로그인 지원 → Web3 비경험자 유입 확대
                           </li>
-                          <li>
-                            모달 혹은 상호작용시 노출이 필요 혹은 우선순위가 낮은 컴포넌트들에
-                            대하여 code splitting 적용을 통한 First Load JS 용량 <b>`470kb`</b>
-                            에서 <b>`162kb`</b>로 감소
-                          </li>
-                        </ul>
-                      </li>
-                      <li>가상화폐(ERC-20) 보상 출금 기능 추가</li>
-                      <li>
-                        Ticket NFT Convert 기능 구현:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Marketplace에서 구매한 Ticket NFT를 토너먼트에서 사용할 수 있도록,
-                            contract ABI의 burn 함수와 REST API 호출을 통해 NFT를 소각하고 보상을
-                            지급하는 기능 구현
-                          </li>
+                          <li>출석 리워드 기능 구현으로 사용자 참여도 향상</li>
                         </ul>
                       </li>
                       <li>
-                        Paypal 티켓 구매 기능 추가:
+                        운영 및 분석 지원
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            <b>react-paypal-js</b>를 사용하여 유저가 MarketPlace에서 NFT를 구매한 뒤
-                            burn하는 과정 없이 Paypal 카드 결제를 통해 직접 티켓을 구매할 수 있는
-                            기능 추가 하여 편의성을 높였습니다.
+                            Web3 지갑 연동 지원 (web3-react, wagmi), WalletConnect V1 → V2
+                            마이그레이션
                           </li>
-                        </ul>
-                      </li>
-                      <li>
-                        출석 기능 및 플로우 구현:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            유저가 로그인시 재화보상을 받을 수 있도록 하기 위한 출석 보드 및 출석
-                            인증 모달 컴포넌트 작업 진행
-                          </li>
-                          <li>유저의 출석인지를 위한 도장 애니메이션 적용 작업</li>
-                        </ul>
-                      </li>
-                      <li>
-                        소셜(Google, Apple),게스트 로그인 기능 추가:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Web3 환경에 익숙하지 않은 유저들도 서비스에 쉽게 접근 할 수 있도록
-                            Social&Guest 로그인 지원
-                          </li>
-                        </ul>
-                      </li>
-                      <li>유저 및 트래픽 분석 도구 (GA,Mixpanel) 연동</li>
-                      <li>
-                        web3 지갑 연동 지원:
-                        <ul className="list-disc pl-[18px]">
-                          <li>web3-react와 wagmi를 적용하여 Web3 지갑 연동을 지원</li>
-                          <li>WalletConnect V1 -&gt; V2 마이그레이션</li>
+                          <li>GA·Mixpanel 연동을 통한 사용자 행동 데이터 수집 지원</li>
                         </ul>
                       </li>
                     </ul>
@@ -315,11 +275,11 @@ const ResumePage = () => {
               </div>
               <hr className="w-full bg-slate-50" />
               <div>
-                <h3 className="mb-1 text-[20px]">
+                <h3 className="text-[18px]">
                   <b>Marketplace 개발팀</b>
                 </h3>
-                <small className="text-[16px]">2020.10 ~ 2022.08</small>
-                <div className="my-[10px]">
+                <small className="text-[14px]">2020.10 ~ 2022.08</small>
+                <div className="my-[4px]">
                   <h4 className="text-[18px]">
                     <b>
                       <Anchor href="https://market.playdapp.com" target="_blank">
@@ -338,64 +298,51 @@ const ResumePage = () => {
                     <Tag name="web3-react" type="outline" size="sm" />
                     <Tag name="etherjs" type="outline" size="sm" />
                   </Flex>
-                  <P>
-                    PlayDapp MarketPlace는 사용자가 NFT를 거래할 수 있는 C2C 마켓플레이스입니다.
-                  </P>
+                  <P>사용자가 NFT를 자유롭게 거래할 수 있는 C2C 마켓플레이스 입니다</P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
                       <li>
-                        v1/v2 리뉴얼 프론트엔드 개발
+                        서비스 리뉴얼 및 마이그레이션
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            javascript로 되어 있는는 CRA 기반 v1 코드 파악후, typescript 기반
-                            nextjs로 마이그레이션 및 UI 리뉴얼 개선 작업 진행
+                            CRA + JavaScript 기반 v1 프로젝트를 Next.js + TypeScript 기반 v2로
+                            마이그레이션
                           </li>
+                          <li>UI/UX 리뉴얼 및 구조 개선을 통해 코드 안정성과 유지보수성 향상</li>
                         </ul>
                       </li>
                       <li>
-                        NFT 상세 페이지
+                        NFT 거래 핵심 기능 개발
                         <ul className="list-disc pl-[18px]">
-                          <li>NFT(ERC-721) 구매 기능 구현</li>
-                          <li>Order(판매 제안) cancel 기능 구현</li>
+                          <li>NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현</li>
+                          <li>My Offers 페이지 및 관련 UI 컴포넌트 개발로 거래 기능 플로우 구현</li>
                         </ul>
                       </li>
                       <li>
-                        My Offers 페이지
-                        <ul className="list-disc pl-[18px]">
-                          <li>Offer(판매 제안) 승인 기능 구현</li>
-                          <li>Offer Table, OfferAccept 모달 컴포넌트 구현</li>
-                        </ul>
-                      </li>
-                      <li>
-                        Email 인증 페이지
-                        <ul className="list-disc pl-[18px]">
-                          <li>email 인증 요청/결과 페이지 추가 및 기능 구현</li>
-                        </ul>
-                      </li>
-                      <li>
-                        OOZ 티징 페이지
+                        대외 협업 및 신규 기능 개발
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            마켓내 등록될 IPX (라인프렌즈)의 OOZ NFT 관련 티징 페이지 작업으로 IPX
-                            측 디자이너와 협업을 통해 개발한 페이지로 one page scroll 형식으로 한
-                            번에 한 페이지 씩 노출되도록 구현 진행
+                            IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지 스크롤 UI
+                            구현)
                           </li>
+                          <li>이메일 인증 플로우 추가로 사용자 보안 및 신뢰성 강화</li>
                         </ul>
                       </li>
                       <li>
-                        멀티월렛 지원 확장을 위한, web3-react 도입
+                        Web3 지갑 확장 지원
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            metamask, portis을 제외한 다른 월렛(walletLink, walletConnect) 로그인을
-                            지원하기 위해 web3-react를 도입하였습니다.
+                            web3-react 도입을 통한 멀티월렛 연동 (Metamask, Portis, WalletConnect,
+                            WalletLink 등)
                           </li>
+                          <li>사용자 접근성 향상 및 지갑 선택권 확대</li>
                         </ul>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="my-[10px]">
+                <div className="my-[4px]">
                   <h4 className="text-[18px]">
                     <b>
                       <Anchor href="https://itemmanager.playdapp.com/" target="_blank">
@@ -413,33 +360,21 @@ const ResumePage = () => {
                     <Tag name="web3-react" type="outline" size="sm" />
                   </Flex>
                   <P>
-                    Multihoming 2.0 버전 지원을 위한 ItemManager에 내구제 기능 적용 작업을
-                    진행하였습니다. itemManager는 유저가 소유하고 있는 nft를 스테이킹 하고 게임내
-                    일일임무, PvP 보상을 받아갈수 있도록 해주는 서비스 입니다
+                    유저가 보유한 NFT를 스테이킹하여 일일 임무 및 PvP 보상을 획득할 수 있는
+                    서비스입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
                       <li>
-                        Repair 기능 구현
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            서비스내 스테이킹한 nft들에 대해서 PLA 지불을 통해 내구도를 수리 할 수
-                            있도록 로직 구현, 내구도를 유지함으로 유저는 지속적으로 보상을 받아갈 수
-                            있음.
-                          </li>
-                        </ul>
+                        Repair 기능 구현: NFT 스테이킹 아이템의 내구도 회복 기능을 도입하여 사용자가
+                        지속적으로 보상을 획득할 수 있도록 개선
                       </li>
                       <li>
-                        공통 컴포넌트 개발
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            각 페이지에서 공통적으로 보여줘야 하는 내구도 게이지, 경고 메시지 등
-                            컴포넌트들에 대해 모듈화를 진행하여 UI를 구성했습니다.
-                          </li>
-                        </ul>
+                        공통 컴포넌트 개발: 내구도 게이지, 알림 등 UI 요소를 공통화하여 재사용성 및
+                        유지보수성 향상
                       </li>
-                      <li>멀티 월렛 지원 - walletConnect</li>
+                      <li>멀티 월렛 지원: WalletConnect 적용을 통한 다양한 지갑 연동 지원</li>
                     </ul>
                   </div>
                 </div>
@@ -447,19 +382,19 @@ const ResumePage = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex $direction="column" $gap="8px">
-          <h2 className="mb-3 text-[32px]">
+        <Flex $direction="column" $gap="4px">
+          <h2 className="text-[24px]">
             <b>Open Sources</b>
           </h2>
           <div>
-            <h3 className="mb-2 text-[22px]">
+            <h3 className="text-[18px]">
               <b>
                 <Anchor href="https://github.com/WintrCat/freechess" target="_blank">
                   freechess
                 </Anchor>
               </b>
             </h3>
-            <ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex list-disc flex-col gap-1 pl-6 text-lg text-[16px]">
               <li>
                 <Anchor href="https://github.com/WintrCat/freechess/pull/48" target="_blank">
                   Contribute review panel UI
@@ -473,15 +408,15 @@ const ResumePage = () => {
             </ul>
           </div>
         </Flex>
-        <Flex $direction="column" $gap="8px">
-          <h2 className="mb-3 text-[32px]">
+        <Flex $direction="column" $gap="4px">
+          <h2 className="text-[24px]">
             <b>Skills</b>
           </h2>
           <div>
-            <h3 className="mb-2 text-[22px]">
+            <h3 className="text-[18px]">
               <b>Front-End</b>
             </h3>
-            <ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex list-disc flex-col gap-1 pl-6">
               <li>HTML / CSS</li>
               <li>React.js</li>
               <li>NextJS</li>
@@ -490,29 +425,29 @@ const ResumePage = () => {
             </ul>
           </div>
           <div>
-            <h3 className="mb-2 text-[22px]">
+            <h3 className="text-[18px]">
               <b>Back-End</b>
             </h3>
-            <ul className="flex flex-col gap-1 pl-6 text-[18px]">
+            <ul className="flex list-disc flex-col gap-1 pl-6">
               <li>Node.js</li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-2 text-[22px]">
+            <h3 className="text-[18px]">
               <b>Etc</b>
             </h3>
-            <ul className="flex flex-col gap-1 pl-6 text-lg">
+            <ul className="flex list-disc flex-col gap-1 pl-6">
               <li>Git / Github</li>
               <li>Jira</li>
             </ul>
           </div>
         </Flex>
         <Flex $direction="column" $gap="8px">
-          <h2 className="mb-3 text-[32px]">
+          <h2 className="text-[24px]">
             <b>Education</b>
           </h2>
           <div>
-            <p className="mb-2 text-[22px]">
+            <p className="text-[18px]">
               <b className="underline">Beihang University</b> / <span>software engineering</span>
             </p>
             <span className="text-base">2013.09 ~ 2019.07</span>
