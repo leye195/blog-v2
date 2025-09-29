@@ -67,8 +67,15 @@ const ResumePage = () => {
               >
                 번들 사이즈 -65%
               </Anchor>
-              )와 CI 기반 자동화(GitLab 언어팩 파이프라인 구축), Knip 도입을 통한 데드코드 감지·관리
-              등을 통해 서비스 품질과 팀 생산성을 개선한 경험이 있습니다.
+              )와 CI 기반 자동화(
+              <Anchor
+                href="https://www.dantechblog.xyz/posts/2628cb44-979a-803a-a79f-dcc7429c933a"
+                target="_blank"
+              >
+                GitLab 언어팩 파이프라인 구축
+              </Anchor>
+              ), Knip 도입을 통한 데드코드 감지·관리 등을 통해 서비스 품질과 팀 생산성을 개선한
+              경험이 있습니다.
             </P>
             <P>
               또한 블로그를 통해 학습과 경험을 꾸준히 공유하고 있습니다. 저의 경험이 다른 개발자와
@@ -322,25 +329,18 @@ const ResumePage = () => {
                   <b>주요 역할 및 성과:</b>
                   <div className="pl-6">
                     <ul className="list-disc max-md:text-[14px]">
+                      <li>서비스 리뉴얼: v1(CRA+JS) → v2(Next.js+TS) 마이그레이션 및 UI 리뉴얼</li>
                       <li>
-                        서비스 리뉴얼 및 마이그레이션
+                        NFT 거래 핵심 기능 개발:
                         <ul className="list-disc pl-[18px]">
                           <li>
-                            CRA + JavaScript 기반 v1 프로젝트를 Next.js + TypeScript 기반 v2로
-                            마이그레이션
+                            NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현 및 My
+                            Offers 페이지 개발
                           </li>
-                          <li>UI/UX 리뉴얼 및 구조 개선을 통해 코드 안정성과 유지보수성 향상</li>
                         </ul>
                       </li>
                       <li>
-                        NFT 거래 핵심 기능 개발
-                        <ul className="list-disc pl-[18px]">
-                          <li>NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현</li>
-                          <li>My Offers 페이지 및 관련 UI 컴포넌트 개발로 거래 기능 플로우 구현</li>
-                        </ul>
-                      </li>
-                      <li>
-                        대외 협업 및 신규 기능 개발
+                        대외 협업 및 신규 기능 개발:
                         <ul className="list-disc pl-[18px]">
                           <li>
                             IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지 스크롤 UI
@@ -404,25 +404,28 @@ const ResumePage = () => {
         </Flex>
         <Flex $direction="column" $gap="4px">
           <h2 className="text-[24px]">
-            <b>Open Sources</b>
+            <b>Community Activities</b>
           </h2>
           <div className="flex flex-col">
-            <h3 className="text-[18px]">
-              <b>
-                <Anchor href="https://github.com/WintrCat/freechess" target="_blank">
-                  freechess - UI 기여 (리뷰 패널, 리포트 카드 컴포넌트 개발)
-                </Anchor>
-              </b>
-            </h3>
             <ul className="list-disc pl-6 text-[16px]">
               <li>
-                PR:{' '}
+                <Anchor href="https://github.com/WintrCat/freechess" target="_blank">
+                  freechess
+                </Anchor>{' '}
+                오픈소스 기여 (리뷰 패널, 리포트 카드 컴포넌트 개발{' '}
                 <Anchor href="https://github.com/WintrCat/freechess/pull/48" target="_blank">
-                  #48
+                  [PR #48]
                 </Anchor>
                 <span className="mx-[4px]">,</span>
                 <Anchor href="https://github.com/WintrCat/freechess/pull/52" target="_blank">
-                  #52
+                  [PR #52]
+                </Anchor>
+                )
+              </li>
+              <li>
+                개인 블로그 운영 -{' '}
+                <Anchor href="https://www.dantechblog.xyz/" target="_blank">
+                  dantechblog.xyz
                 </Anchor>
               </li>
             </ul>
@@ -437,7 +440,7 @@ const ResumePage = () => {
               <b>Front-End</b>
             </h3>
             <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>React.js, NextJS</li>
+              <li>React, Next.js</li>
               <li>JavaScript, TypeScript</li>
               <li>Emotion, Styled-Component, TailwindCSS</li>
             </ul>
@@ -467,7 +470,7 @@ const ResumePage = () => {
           <div>
             <p className="text-[18px]">
               <b className="underline">Beihang University</b>, <span>Software Engineering</span> (
-              <span className="text-base">2013.09 ~ 2019.07</span>)
+              <span className="text-base">13.09 - 19.07</span>)
             </p>
           </div>
         </Flex>
