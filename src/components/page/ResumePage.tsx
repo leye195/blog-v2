@@ -103,7 +103,7 @@ const ResumePage = () => {
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
             <Flex
-              className={cn('border-l-2 border-black pl-2.5', isMdDown && 'border-none pl-0')}
+              className={cn('border-l-0 border-black pl-4', isMdDown && 'border-none pl-0')}
               $direction="column"
               $gap="6px"
             >
@@ -187,7 +187,7 @@ const ResumePage = () => {
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
             <Flex
-              className={cn('border-l-2 border-black pl-2.5', isMdDown && 'border-none pl-0')}
+              className={cn('border-l-0 border-black pl-4', isMdDown && 'border-none pl-0')}
               $direction="column"
               $gap="6px"
             >
