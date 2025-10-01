@@ -24,13 +24,13 @@ const ResumePage = () => {
   const isMdDown = useMedia(getBreakpointQuery(breakpoints.down('md')), false);
 
   return (
-    <Flex className="mx-auto max-w-[1000px] p-4" $direction="column" $gap="8px">
+    <Flex className="mx-auto max-w-[1000px] p-4" $direction="column" $gap="6px">
       <Flex $direction="column">
-        <h1 className="my-[8px] text-[38px]">
+        <h1 className="mt-0 mb-[8px] text-[32px]">
           <b>이영재(YoungJae Lee)</b>
         </h1>
-        <Flex $direction="column" $gap="4px">
-          <ul className="flex list-disc flex-col gap-2 pl-6 text-[16px]">
+        <Flex $direction="column" $gap="2px">
+          <ul className="flex list-disc flex-col gap-1 pl-6 text-[16px]">
             <li>
               <b>Github:</b>{' '}
               <Anchor className="text-blue-500" href="https://github.com/leye195" target="_blank">
@@ -52,9 +52,9 @@ const ResumePage = () => {
           </ul>
         </Flex>
       </Flex>
-      <Flex className="w-full" $direction="column" $gap="10px">
-        <Flex $direction="column" $gap="4px">
-          <h2 className="text-[24px]">
+      <Flex className="w-full" $direction="column" $gap="6px">
+        <Flex $direction="column" $gap="2px">
+          <h2 className="text-[22px]">
             <b>Introduction</b>
           </h2>
           <div>
@@ -81,16 +81,16 @@ const ResumePage = () => {
               또한 블로그를 통해 학습과 경험을 꾸준히 공유하고 있습니다. 저의 경험이 다른 개발자와
               동료들에게 인사이트가 되고 저 또한 지속적으로 성장하고 있습니다.
             </P>
-            <br />
+
             <P>현재 Coinness 개발팀에서 frontend lead 역할을 수행하고 있습니다.</P>
           </div>
         </Flex>
-        <Flex $direction="column" $gap="8px">
-          <h2 className="text-[24px]">
+        <Flex $direction="column" $gap="6px">
+          <h2 className="text-[22px]">
             <b>Work Experience</b>
           </h2>
-          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="10px">
-            <div className="min-w-[165px]">
+          <Flex $direction={isMdDown ? 'column' : 'row'}>
+            <div className="min-w-[150px]">
               <h3 className="text-[18px]">
                 <b>
                   <Anchor href="https://adenasoft.com" target="_blank">
@@ -102,7 +102,11 @@ const ResumePage = () => {
               <br />
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
-            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="10px">
+            <Flex
+              className={cn('border-l-2 border-black pl-2.5', isMdDown && 'border-none pl-0')}
+              $direction="column"
+              $gap="6px"
+            >
               <div>
                 <h3 className="text-[18px]">
                   <b>Coinness 개발팀</b>
@@ -117,13 +121,10 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2024.10 ~ )</span>
                   </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                  </Flex>
+
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
+                  <div>
+                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
                       <li>
                         개발 생산성 및 품질 개선
                         <ul className="list-disc pl-[18px]">
@@ -172,8 +173,8 @@ const ResumePage = () => {
               </div>
             </Flex>
           </Flex>
-          <Flex $direction={isMdDown ? 'column' : 'row'} $gap="10px">
-            <div className="min-w-[165px]">
+          <Flex $direction={isMdDown ? 'column' : 'row'}>
+            <div className="min-w-[150px]">
               <h3 className="text-[18px]">
                 <b>
                   <Anchor href="https://supertree.co/" target="_blank">
@@ -185,7 +186,11 @@ const ResumePage = () => {
               <br />
               <span className="text-[14px]">Frontend Engineer</span>
             </div>
-            <Flex className="border-l-4 border-blue-400 pl-2.5" $direction="column" $gap="10px">
+            <Flex
+              className={cn('border-l-2 border-black pl-2.5', isMdDown && 'border-none pl-0')}
+              $direction="column"
+              $gap="6px"
+            >
               <div>
                 <h3 className="text-[18px]">
                   <b>Tournament 개발팀</b>
@@ -200,27 +205,18 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2024.06 ~ 2024.09)</span>
                   </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                    <Tag name="next.js14" type="outline" size="sm" />
-                    <Tag name="ky" type="outline" size="sm" />
-                    <Tag name="zustand" type="outline" size="sm" />
-                    <Tag name="tailwind" type="outline" size="sm" />
-                    <Tag name="react-query" type="outline" size="sm" />
-                    <Tag name="wagmi" type="outline" size="sm" />
-                  </Flex>
+
                   <P>
                     EZplay는 유저가 웹 게임을 쉽게 즐기도록 하기 위한 web3 미니 게임 플렛폼 입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
+                  <div>
+                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
                       <li>
                         공통 컴포넌트 개발(Modal, Popup, Dropdown 등)을 통한 컴포넌트 재활용성 및
                         개발 효율성 향상
                       </li>
-                      <li>서버컴포넌트 내 data fetching 처리를 통한 네트워크 비용 감소</li>
+                      <li>서버컴포넌트 캐싱 전략 적용(ISR, no-store 구분)으로 API 호출 최적화</li>
                       <li>소셜 로그인 기능 (Google, Apple)을 통한 지갑 로그인 불편함 감소</li>
                       <li>
                         지갑 연동 및 Web3 기능 지원:
@@ -238,24 +234,15 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2022.08 ~ 2024.06)</span>
                   </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                    <Tag name="next.js" type="outline" size="sm" />
-                    <Tag name="rtk(redux-toolkit)" type="outline" size="sm" />
-                    <Tag name="react-query" type="outline" size="sm" />
-                    <Tag name="web3-react" type="outline" size="sm" />
-                    <Tag name="etherjs" type="outline" size="sm" />
-                    <Tag name="wagmi" type="outline" size="sm" />
-                  </Flex>
+
                   <P>
                     재화(Gold,Ticket) 소비를 통해 참여한 게임 플레이 순위 및 대결 결과에 따른 보상을
                     제공하는 블록체인 기반 게임 플랫폼 입니다. TF팀 일원으로 소프트런칭에 기여한 후
                     정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
+                  <div>
+                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
                       <li>
                         프로젝트 구조 설정 및 성능 최적화
                         <ul className="list-disc pl-[18px]">
@@ -268,7 +255,10 @@ const ResumePage = () => {
                       <li>
                         핵심 기능 개발 (Web3 & 결제)
                         <ul className="list-disc pl-[18px]">
-                          <li>iframe + postMessage를 활용한 게임 클라이언트 이벤트 통신</li>
+                          <li>
+                            Web3 게임 브릿지를 위한 웹메시징 프로토콜 구축 (iframe + postMessage
+                            기반)
+                          </li>
                           <li>
                             ERC-20 토큰 출금 및 Ticket NFT Convert 기능 구현 (NFT 소각 + 보상 지급)
                           </li>
@@ -283,7 +273,7 @@ const ResumePage = () => {
                           <li>
                             Google·Apple 소셜 로그인 및 게스트 로그인 지원 → Web3 비경험자 유입 확대
                           </li>
-                          <li>출석 리워드 기능 구현으로 사용자 참여도 향상</li>
+                          <li>출석 리워드 기능 및 스탬프 애니메이션 구현으로 사용자 참여도 향상</li>
                         </ul>
                       </li>
                       <li>
@@ -315,20 +305,11 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2020.10 ~ 2022.08)</span>
                   </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                    <Tag name="next.js" type="outline" size="sm" />
-                    <Tag name="redux" type="outline" size="sm" />
-                    <Tag name="emotion" type="outline" size="sm" />
-                    <Tag name="react-query" type="outline" size="sm" />
-                    <Tag name="web3-react" type="outline" size="sm" />
-                    <Tag name="etherjs" type="outline" size="sm" />
-                  </Flex>
+
                   <P>사용자가 NFT를 자유롭게 거래할 수 있는 C2C 마켓플레이스 입니다</P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
+                  <div>
+                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
                       <li>서비스 리뉴얼: v1(CRA+JS) → v2(Next.js+TS) 마이그레이션 및 UI 리뉴얼</li>
                       <li>
                         NFT 거래 핵심 기능 개발:
@@ -371,21 +352,13 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2022.03 ~ 2022.04)</span>
                   </h4>
-                  <Flex className="my-2" $gap="6px" $flexWrap="wrap">
-                    <Tag name="typescript" type="outline" size="sm" />
-                    <Tag name="react" type="outline" size="sm" />
-                    <Tag name="recoil" type="outline" size="sm" />
-                    <Tag name="emotion" type="outline" size="sm" />
-                    <Tag name="react-query" type="outline" size="sm" />
-                    <Tag name="web3-react" type="outline" size="sm" />
-                  </Flex>
                   <P>
                     유저가 보유한 NFT를 스테이킹하여 일일 임무 및 PvP 보상을 획득할 수 있는
                     서비스입니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
-                  <div className="pl-6">
-                    <ul className="list-disc max-md:text-[14px]">
+                  <div>
+                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
                       <li>
                         Repair 기능 구현: NFT 스테이킹 아이템의 내구도 회복 기능을 도입하여 사용자가
                         지속적으로 보상을 획득할 수 있도록 개선
@@ -402,8 +375,8 @@ const ResumePage = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex $direction="column" $gap="4px">
-          <h2 className="text-[24px]">
+        <Flex $direction="column" $gap="2px">
+          <h2 className="text-[22px]">
             <b>Community Activities</b>
           </h2>
           <div className="flex flex-col">
@@ -431,40 +404,16 @@ const ResumePage = () => {
             </ul>
           </div>
         </Flex>
-        <Flex $direction="column" $gap="4px">
-          <h2 className="text-[24px]">
-            <b>Skills</b>
+        <Flex $direction="column" $gap="2px">
+          <h2 className="text-[22px]">
+            <b>Skill</b>
           </h2>
           <div>
-            <h3 className="text-[18px]">
-              <b>Front-End</b>
-            </h3>
-            <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>React, Next.js</li>
-              <li>JavaScript, TypeScript</li>
-              <li>Emotion, Styled-Component, TailwindCSS</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-[18px]">
-              <b>Back-End</b>
-            </h3>
-            <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>Node.js</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-[18px]">
-              <b>Etc</b>
-            </h3>
-            <ul className="flex list-disc flex-col gap-1 pl-6">
-              <li>Git / Github / Gitlab</li>
-              <li>Jira</li>
-            </ul>
+            <p>TypeScript, JavaScript, React, Next.js, Node.js, Git, Jira</p>
           </div>
         </Flex>
-        <Flex $direction="column" $gap="8px">
-          <h2 className="text-[24px]">
+        <Flex $direction="column" $gap="2px">
+          <h2 className="text-[22px]">
             <b>Education</b>
           </h2>
           <div>
