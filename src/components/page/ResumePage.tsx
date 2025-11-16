@@ -4,7 +4,6 @@ import { ComponentProps } from 'react';
 import { useMedia } from 'react-use';
 
 import Flex from '@/components/common/Flex';
-import Tag from '@/components/common/Tag';
 import { cn, getBreakpointQuery } from '@/libs/utils';
 import breakpoints from '@/styles/breakpoints';
 
@@ -58,9 +57,9 @@ const ResumePage = () => {
             <b>Introduction</b>
           </h2>
           <div>
-            <P>프론트엔드 개발자 이영재 입니다.</P>
+            <P>주도적으로 문제를 발견하고 해결하는 것을 좋아합니다.</P>
             <P>
-              주도적으로 문제를 발견하고 해결하는 것을 좋아합니다. 서비스 성능 최적화(
+              서비스 성능 최적화(
               <Anchor
                 href="https://www.dantechblog.xyz/posts/e485275b-92a8-499d-81b3-466d27f944b2"
                 target="_blank"
@@ -78,11 +77,9 @@ const ResumePage = () => {
               경험이 있습니다.
             </P>
             <P>
-              또한 블로그를 통해 학습과 경험을 꾸준히 공유하고 있습니다. 저의 경험이 다른 개발자와
-              동료들에게 인사이트가 되고 저 또한 지속적으로 성장하고 있습니다.
+              또한 블로그를 통해 학습과 경험을 꾸준히 공유하며, 제 경험이 다른 개발자와 동료들에 게
+              인사이트가 되고 저 또한 지속적으로 성장하고 있습니다.
             </P>
-
-            <P>현재 Coinness 개발팀에서 frontend lead 역할을 수행하고 있습니다.</P>
           </div>
         </Flex>
         <Flex $direction="column" $gap="6px">
@@ -124,48 +121,32 @@ const ResumePage = () => {
 
                   <b>주요 역할 및 성과:</b>
                   <div>
-                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
+                    <ul
+                      className={cn(
+                        'list-disc pl-[18px] max-md:text-[14px]',
+                        isMdDown && 'list-none',
+                      )}
+                    >
                       <li>
-                        개발 생산성 및 품질 개선
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            <b>ESLint</b> 규칙 정비(sort import, unused-imports 등 추가 도입) 및{' '}
-                            <b>Knip</b>
-                            도입으로 데드코드 관리 통한 개발 생산성 향상
-                          </li>
-                          <li>
-                            버튼 <b>debounce</b>적용을 통한 api 요청 최적화, optimistic ui update를
-                            통한 ux 개선
-                          </li>
-                        </ul>
+                        FE 코드 컨벤션 표준화 및 데드코드 자동 관리 체계 구축(ESLint·Knip) → 코드
+                        품질 향상 및 개발 효율 개선
+                      </li>
+                      <li>Optimistic UI·버튼 debounce 적용 → API 요청 감소, 사용자 경험 개선</li>
+                      <li>
+                        글로벌 서비스 운영 및 인증 체계 통합 → 메일 인증 기반으로 통합하여 사용자
+                        경험 일원화 및 유지보수 부담 감소
                       </li>
                       <li>
-                        글로벌 서비스 운영 및 인증 체계 통합
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            국내/글로벌 회원 가입·인증 프로세스를 메일 인증 기반으로 통합하여 사용자
-                            경험 일원화 및 유지보수 부담 감소
-                          </li>
-                        </ul>
+                        <a
+                          className="underline"
+                          href="http://localhost:3000/posts/2628cb44-979a-803a-a79f-dcc7429c933a"
+                        >
+                          Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축 →  MR
+                          수동 생성 제거 및 언어팩 관련 충돌 발생률 100% 감소
+                        </a>
                       </li>
                       <li>
-                        CI/CD 및 자동화 구축
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            <a href="http://localhost:3000/posts/2628cb44-979a-803a-a79f-dcc7429c933a">
-                              Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축, 수동
-                              작업 제거와 코드 충돌 최소화
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li>
-                        서비스 기능 개발
-                        <ul className="list-disc pl-[18px]">
-                          <li>대시보드,투자내역, PnL 공유, Live 개편 등 신규 기능 개발</li>
-                          <li>운영 효율성을 위한 어드민 개발 및 유지보수</li>
-                        </ul>
+                        대시보드,투자내역, PnL 공유, Live 개편 등 신규 기능 개발 및 어드민 유지보수
                       </li>
                     </ul>
                   </div>
@@ -211,19 +192,25 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div>
-                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
+                    <ul
+                      className={cn(
+                        'list-disc pl-[18px] max-md:text-[14px]',
+                        isMdDown && 'list-none',
+                      )}
+                    >
                       <li>
-                        공통 컴포넌트 개발(Modal, Popup, Dropdown 등)을 통한 컴포넌트 재활용성 및
-                        개발 효율성 향상
+                        공통 컴포넌트 개발(Modal, Popup, Dropdown 등) → 재활용성 확보 및 개발 효율성
+                        향상
                       </li>
-                      <li>서버컴포넌트 캐싱 전략 적용(ISR, no-store 구분)으로 API 호출 최적화</li>
-                      <li>소셜 로그인 기능 (Google, Apple)을 통한 지갑 로그인 불편함 감소</li>
                       <li>
-                        지갑 연동 및 Web3 기능 지원:
-                        <ul className="list-disc pl-[18px]">
-                          <li>지갑 연동 그리고, Web3 기능을 지원하기 위한 hook 및 유틸함수 생성</li>
-                        </ul>
+                        서버컴포넌트 캐싱, 데이터 특성에 따라 ISR/no-store 구분 적용 → 불필요한 API
+                        호출 제거 및 페이지 로딩 속도 개선
                       </li>
+                      <li>
+                        소셜 로그인(Google, Apple) 기능 도입 → 지갑 로그인 불편 해소 및 신규 사용자
+                        유입 개선
+                      </li>
+                      <li>지갑 연동 및 Web3 기능 지원</li>
                     </ul>
                   </div>
                 </div>
@@ -242,50 +229,36 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div>
-                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
+                    <ul
+                      className={cn(
+                        'list-disc pl-[18px] max-md:text-[14px]',
+                        isMdDown && 'list-none',
+                      )}
+                    >
                       <li>
-                        프로젝트 구조 설정 및 성능 최적화
-                        <ul className="list-disc pl-[18px]">
-                          <li>프론트엔드 개발환경 및 프로젝트 구조 설정</li>
-                          <li>
-                            번들 분석 및 코드 스플리팅으로 First Load JS 470kb → 162kb(-65%) 최적화
-                          </li>
-                        </ul>
+                        프론트엔드 리드(프론트엔드 4인 구성)로 프로젝트 구조/컨벤션을 수립하여 협업
+                        효율을 개선하고, 정식 합류 이후에도 코드 품질 및 개발 표준을 지속적으로 주도
                       </li>
                       <li>
-                        핵심 기능 개발 (Web3 & 결제)
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Web3 게임 브릿지를 위한 웹메시징 프로토콜 구축 (iframe + postMessage
-                            기반)
-                          </li>
-                          <li>
-                            ERC-20 토큰 출금 및 Ticket NFT Convert 기능 구현 (NFT 소각 + 보상 지급)
-                          </li>
-                          <li>
-                            Paypal 결제 연동을 통한 NFT 구매 과정 단축 및 사용자 결제 편의성 강화
-                          </li>
-                        </ul>
+                        번들 최적화: 번들 분석 및 코드 스플리팅 적용 → First Load JS 470kb →
+                        162kb(-65%) 최적화, 초기 로딩 속도 개선
                       </li>
                       <li>
-                        사용자 접근성 및 UX 개선
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Google·Apple 소셜 로그인 및 게스트 로그인 지원 → Web3 비경험자 유입 확대
-                          </li>
-                          <li>출석 리워드 기능 및 스탬프 애니메이션 구현으로 사용자 참여도 향상</li>
-                        </ul>
+                        Web3 게임 브릿지 구축: iframe+postMessage 기반 통신으로 게임 클라이언트 연동
                       </li>
                       <li>
-                        운영 및 분석 지원
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            Web3 지갑 연동 지원 (web3-react, wagmi), WalletConnect V1 → V2
-                            마이그레이션
-                          </li>
-                          <li>GA·Mixpanel 연동을 통한 사용자 행동 데이터 수집 지원</li>
-                        </ul>
+                        결제 편의성 강화: Paypal 결제 연동 → 카드 결제를 통한 직접 티켓 구매 지원
                       </li>
+                      <li>
+                        ERC-20 토큰(가상화폐) 출금 및 NFT 전환 기능 구현 → NFT 소각 시 보상 지급
+                        지원
+                      </li>
+                      <li>
+                        사용자 접근성 및 UX 개선: Google·Apple 소셜 로그인·게스트 로그인 지원, 출석
+                        리워드+애니메이션 적용
+                      </li>
+                      <li>Web3 지갑 고도화: wagmi 적용, WalletConnect V1 → V2 마이그레이션</li>
+                      <li>GA·Mixpanel 연동 → 사용자 행동 데이터 트래킹 및 UX 개선 근거 확보</li>
                     </ul>
                   </div>
                 </div>
@@ -309,37 +282,27 @@ const ResumePage = () => {
                   <P>사용자가 NFT를 자유롭게 거래할 수 있는 C2C 마켓플레이스 입니다</P>
                   <b>주요 역할 및 성과:</b>
                   <div>
-                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
-                      <li>서비스 리뉴얼: v1(CRA+JS) → v2(Next.js+TS) 마이그레이션 및 UI 리뉴얼</li>
+                    <ul
+                      className={cn(
+                        'list-disc pl-[18px] max-md:text-[14px]',
+                        isMdDown && 'list-none',
+                      )}
+                    >
                       <li>
-                        NFT 거래 핵심 기능 개발:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현 및 My
-                            Offers 페이지 개발
-                          </li>
-                        </ul>
+                        서비스 리뉴얼: CRA+JS 기반 v1 → Next.js+TS 기반 v2 마이그레이션 및 UI/UX
+                        개선
                       </li>
                       <li>
-                        대외 협업 및 신규 기능 개발:
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지 스크롤 UI
-                            구현)
-                          </li>
-                          <li>이메일 인증 플로우 추가로 사용자 보안 및 신뢰성 강화</li>
-                        </ul>
+                        NFT 거래 기능: NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현
+                        및 My Offers 페이지 개발
                       </li>
+
                       <li>
-                        Web3 지갑 확장 지원
-                        <ul className="list-disc pl-[18px]">
-                          <li>
-                            web3-react 도입을 통한 멀티월렛 연동 (Metamask, Portis, WalletConnect,
-                            WalletLink 등)
-                          </li>
-                          <li>사용자 접근성 향상 및 지갑 선택권 확대</li>
-                        </ul>
+                        대외 협업: IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지
+                        스크롤 UI 구현) → 신규 유저 유입 확대
                       </li>
+                      <li>이메일 인증 플로우 추가 → 사용자 보안 및 신뢰성 강화</li>
+                      <li>web3-react 도입 → 멀티월렛 지원(Metamask, WalletConnect 등)</li>
                     </ul>
                   </div>
                 </div>
@@ -358,16 +321,18 @@ const ResumePage = () => {
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div>
-                    <ul className={cn('max-md:text-[14px]', isMdDown && 'list-none')}>
+                    <ul
+                      className={cn(
+                        'list-disc pl-[18px] max-md:text-[14px]',
+                        isMdDown && 'list-none',
+                      )}
+                    >
                       <li>
-                        Repair 기능 구현: NFT 스테이킹 아이템의 내구도 회복 기능을 도입하여 사용자가
-                        지속적으로 보상을 획득할 수 있도록 개선
+                        Repair 기능 구현 → NFT 스테이킹 아이템의 내구도 회복 기능을 도입하여
+                        사용자가 지속적으로 보상을 획득할 수 있도록 개선
                       </li>
-                      <li>
-                        공통 컴포넌트 개발: 내구도 게이지, 알림 등 UI 요소를 공통화하여 재사용성 및
-                        유지보수성 향상
-                      </li>
-                      <li>멀티 월렛 지원: WalletConnect 적용을 통한 다양한 지갑 연동 지원</li>
+                      <li>공통 컴포넌트(내구도 게이지·경고 메시지) 개발 → UI 일관성 강화</li>
+                      <li>WalletConnect 연동 → 멀티월렛 지원 확장</li>
                     </ul>
                   </div>
                 </div>
@@ -382,10 +347,11 @@ const ResumePage = () => {
           <div className="flex flex-col">
             <ul className="list-disc pl-6 text-[16px]">
               <li>
+                오픈소스 기여:{' '}
                 <Anchor href="https://github.com/WintrCat/freechess" target="_blank">
                   freechess
                 </Anchor>{' '}
-                오픈소스 기여 (리뷰 패널, 리포트 카드 컴포넌트 개발{' '}
+                (리뷰 패널, 리포트 카드{' '}
                 <Anchor href="https://github.com/WintrCat/freechess/pull/48" target="_blank">
                   [PR #48]
                 </Anchor>
@@ -396,7 +362,7 @@ const ResumePage = () => {
                 )
               </li>
               <li>
-                개인 블로그 운영 -{' '}
+                개인 블로그 운영:{' '}
                 <Anchor href="https://www.dantechblog.xyz/" target="_blank">
                   dantechblog.xyz
                 </Anchor>
