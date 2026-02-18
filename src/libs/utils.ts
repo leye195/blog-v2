@@ -53,3 +53,21 @@ export const generateImageUrl = ({
 }) => {
   return `https://res.cloudinary.com/dodgocm3u/image/upload/${option}/v1709461304/${format}/${fileName}.${format}`;
 };
+
+export const getPageDescription = (recordMap: any) => {
+  const blocks = Object.values(recordMap.block);
+  const textContent = blocks
+    .filter((block: any) => (block as any).value?.type === 'text')
+    .map((block: any) => (block as any).value?.properties?.title?.map((t: any) => t[0]).join(''))
+    .filter(Boolean)
+    .join(' ');
+
+  const description = textContent.length > 160 ? textContent.slice(0, 160) + '...' : textContent;
+  return description || undefined;
+};
+
+export const getPostCoverImage = (recordMap: any, pageId: string) => {
+  const block = recordMap.block[pageId]?.value;
+  const coverImage = block?.format?.page_cover;
+  return coverImage || undefined;
+};

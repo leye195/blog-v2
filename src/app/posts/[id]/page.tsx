@@ -3,29 +3,14 @@ import { getPageTitle } from 'notion-utils';
 import JsonLd from '@/components/common/JsonLd';
 import NotionPage from '@/components/page/PostDetailPage';
 import { getNotionPage } from '@/libs/notion';
+import { getPageDescription, getPostCoverImage } from '@/libs/utils';
 import { PageProps } from '@/types/page';
-
-const getPageDescription = (recordMap: any) => {
-  const blocks = Object.values(recordMap.block);
-  const textContent = blocks
-    .filter((block: any) => block.value?.type === 'text')
-    .map((block: any) => block.value?.properties?.title?.map((t: any) => t[0]).join(''))
-    .filter(Boolean)
-    .join(' ');
-
-  const description = textContent.length > 160 ? textContent.slice(0, 160) + '...' : textContent;
-  return description || undefined;
-};
 
 export async function generateMetadata({ params }: PageProps) {
   const { id: pageId } = await params;
   const recordMap = await getNotionPage(pageId);
   const title = getPageTitle(recordMap);
-  const block = recordMap.block[pageId]?.value;
-  const coverImage = block?.format?.page_cover;
   const description = getPageDescription(recordMap) || `${title} - Dan DevLog`;
-
-
 
   return {
     title: `${title}`,
@@ -54,7 +39,7 @@ export default async function Post({ params }: PageProps) {
   const block = recordMap.block[pageId]?.value;
   const createdTime = block?.created_time;
   const lastEditedTime = block?.last_edited_time;
-  const coverImage = block?.format?.page_cover;
+  const coverImage = getPostCoverImage(recordMap, pageId);
   const description = getPageDescription(recordMap) || `${title} - Dan DevLog`;
 
   const jsonLd = {
