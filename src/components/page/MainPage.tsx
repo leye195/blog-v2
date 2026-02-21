@@ -3,13 +3,14 @@ import Link from 'next/link';
 import Avatar from '@/components/common/Avatar';
 import Flex from '@/components/common/Flex';
 import SectionWithLabel from '@/components/common/SectionWithLabel';
-import { generateImageUrl } from '@/libs/utils';
+import MainAside from '@/components/MainAside';
+import { cn, generateImageUrl } from '@/libs/utils';
 import Posts from '../posts/Posts/Server';
 
 const MainPage = () => {
   return (
     <Flex $direction="column" $gap="64px">
-      <div className="relative flex h-60 w-full items-end justify-center p-5 md:h-96">
+      <div className={cn("relative hidden h-60 w-full items-end justify-center p-5 md:h-96", 'md:flex')}>
         <picture className="absolute inset-0 text-transparent">
           <source
             srcSet={generateImageUrl({
@@ -37,19 +38,22 @@ const MainPage = () => {
           priority
         />
       </div>
-      <SectionWithLabel
-        className="w-full"
-        title={
-          <Flex className="w-full" $justifyContent="space-between">
-            <h3 className="mb-2 text-xl font-bold md:text-2xl">Recent Posts</h3>
-            <Link className="text-lg hover:underline md:text-xl" href="/posts">
-              더보기
-            </Link>
-          </Flex>
-        }
-      >
-        <Posts count={10} dataFromServerSide />
-      </SectionWithLabel>
+      <div className="flex w-full gap-[48px] items-start justify-center max-w-[1200px] mx-auto py-8">
+        <SectionWithLabel
+          className="flex-1 min-w-0 py-0"
+          title={
+            <Flex className="w-full mb-4" $justifyContent="space-between">
+              <h3 className={cn("mb-2 text-xl font-bold md:text-2xl", 'border-l-6 border-black pl-2')}>Recent Posts</h3>
+              <Link className="text-md hover:underline md:text-xl" href="/posts">
+                더보기
+              </Link>
+            </Flex>
+          }
+        >
+          <Posts count={10} dataFromServerSide />
+        </SectionWithLabel>
+        <MainAside />
+      </div>
     </Flex>
   );
 };

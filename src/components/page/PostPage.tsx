@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import { useAnimate } from 'framer-motion';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Button from '@/components/common/Button';
 import Flex from '@/components/common/Flex';
 import Tag from '@/components/common/Tag';
@@ -13,20 +14,41 @@ import type { Post } from '@/types/notion';
 import type { Data } from '@/types/page';
 import Posts from '../posts/Posts/Client';
 
-const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => {
+interface PostPageProps extends Data<Post[]> {
+  initialCategory?: string;
+}
+
+const PostPage = ({ data, initialCategory = 'all' }: PostPageProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const queryCategory = searchParams.get('category') || initialCategory;
+
   const [posts, setPosts] = useState(data);
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState(queryCategory);
+  const [isPending, startTransition] = useTransition();
 
   const [scope, animate] = useAnimate();
-  const { data: tags } = useFetchTags({ initialData: tagsData });
+  const { data: tags } = useFetchTags();
 
   const handleClickTag = (name: string) => () => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (name === 'all') {
+      params.delete('category');
+    } else {
+      params.set('category', name);
+    }
+
     const animateTemplate = {
       opacity: [0, 1],
       y: [5, 0],
     };
 
-    setCategory(name);
+    startTransition(() => {
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+      setCategory(name);
+    });
+
     animate('h1', animateTemplate, {
       duration: 0.5,
     });
@@ -34,6 +56,10 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
       duration: 0.5,
     });
   };
+
+  useIsomorphicLayoutEffect(() => {
+    setCategory(queryCategory);
+  }, [queryCategory]);
 
   useIsomorphicLayoutEffect(() => {
     setPosts(getPostsByCategory(data, category));
@@ -53,15 +79,15 @@ const PostPage = ({ data, tagsData }: Data<Post[]> & { tagsData: string[] }) => 
           $flexWrap="wrap"
         >
           <Button className="p-0" onClick={handleClickTag('all')}>
-            <Tag name="All" type="outline" size="lg" />
+            <Tag name="All" type='outline' size="lg" />
           </Button>
           {tags?.map((tag: string) => (
             <Button key={tag} className="p-0" onClick={handleClickTag(tag)}>
-              <Tag name={tag} type="outline" size="lg" />
+              <Tag name={tag} type='outline' size="lg" />
             </Button>
           ))}
         </Flex>
-        <Flex className="posts animate-fade-in w-full" $direction="column" $gap="12px">
+        <Flex className={cn("posts animate-fade-in w-full", isPending && "opacity-50")} $direction="column" $gap="12px">
           <Posts type="grid" data={posts} />
         </Flex>
       </Flex>

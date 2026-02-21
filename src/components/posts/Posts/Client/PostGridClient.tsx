@@ -28,7 +28,7 @@ export default function PostGridClient({
       {posts.map(({ id, name, date, tag, url }) => (
         <Link
           className={cn(
-            'min-h-[220px] rounded-xl border-2 transition duration-500 hover:border-blue-200',
+            'min-h-[220px] rounded-xl border-1 border-white-75 transition duration-500 hover:border-blue-500',
             'max-md:min-h-[150px]',
           )}
           key={id}

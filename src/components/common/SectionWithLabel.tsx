@@ -1,5 +1,5 @@
 import { type ComponentProps } from 'react';
-import { clsx } from 'clsx';
+import { cn } from '@/libs/utils';
 
 type SectionWithLabelProps = {
   title: React.ReactNode;
@@ -7,8 +7,8 @@ type SectionWithLabelProps = {
 
 const SectionWithLabel = ({ title, children, className }: SectionWithLabelProps) => {
   return (
-    <section className={clsx('py-8', className)}>
-      <div className="mx-auto w-full px-4">
+    <section className={cn('py-8', className)}>
+      <div className={cn("mx-auto w-full px-2", "md:px-4")}>
         {title}
         {children}
       </div>

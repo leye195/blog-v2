@@ -15,15 +15,14 @@ export const metadata: Metadata = {
 async function fetchNotionData() {
   try {
     const data = await getPosts('all');
-    const tags = await getTags();
-
-    return { data, tags };
+    return { data };
   } catch (error) {
-    return { data: [], tags: [] };
+    return { data: [] };
   }
 }
 
-export default async function Posts() {
-  const { data, tags } = await fetchNotionData();
-  return <PostPage data={data} tagsData={tags} />;
+export default async function Posts({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const { category } = await searchParams;
+  const { data } = await fetchNotionData();
+  return <PostPage data={data} initialCategory={category} />;
 }

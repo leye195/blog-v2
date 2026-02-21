@@ -29,7 +29,7 @@ export default async function PostListServer({
     <Flex className={cn('w-[inherit]', className)} $direction="column" $gap="12px">
       {posts.map(({ id, name, date, tag, url }) => (
         <Link
-          className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"
+          className={cn("w-[inherit] border-b-1 border-white-75 transition duration-500 hover:border-blue-500", 'md:rounded-xl md:border-1')}
           key={id}
           href={`/posts/${id}`}
         >

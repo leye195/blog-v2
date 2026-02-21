@@ -1,19 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import { getTags } from '@/apis';
 
-type Props = {
-  initialData?: string[];
-};
-
-const useFetchTags = ({ initialData = [] }: Props) => {
-  const { data } = useQuery({
+const useFetchTags = () => {
+  const { data } = useSuspenseQuery({
     queryKey: ['tags'],
-    queryFn: async () => {
-      const data = await getTags();
-      return data;
-    },
+    queryFn: getTags,
     refetchOnWindowFocus: false,
-    initialData,
+    staleTime: Infinity
   });
 
   return { data };

@@ -8,7 +8,7 @@ type PostCardProps = ComponentProps<'div'> & Omit<Post, 'id'>;
 const PostCard = ({ date, name, tag }: PostCardProps) => {
   return (
     <Flex
-      className="h-full w-[inherit] p-[1rem]"
+      className="h-full w-[inherit] p-4"
       $direction="column"
       $gap="10px"
       $justifyContent="space-between"

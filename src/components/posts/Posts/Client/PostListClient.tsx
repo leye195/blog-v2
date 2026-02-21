@@ -13,16 +13,14 @@ type PostListProps = {
 
 export default function PostListClient({
   data = [],
-
   className,
 }: PostListProps) {
   const posts = data;
-
   return (
     <Flex className={cn('w-[inherit]', className)} $direction="column" $gap="12px">
       {posts.map(({ id, name, date, tag, url }) => (
         <Link
-          className="w-[inherit] rounded-xl border-2 transition duration-500 hover:border-blue-200"
+          className="w-[inherit] rounded-xl border-1 border-white-75 transition duration-500 hover:border-blue-500"
           key={id}
           href={`/posts/${id}`}
         >
