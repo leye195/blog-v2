@@ -38,7 +38,7 @@ const MainPage = () => {
           priority
         />
       </div>
-      <div className="flex w-full gap-[48px] items-start justify-center max-w-[1200px] mx-auto py-8">
+      <div className="flex w-full gap-[48px] items-start justify-center mx-auto py-8">
         <SectionWithLabel
           className="flex-1 min-w-0 py-0"
           title={
