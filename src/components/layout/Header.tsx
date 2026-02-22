@@ -30,7 +30,8 @@ const Header = () => {
       >
         <nav className={cn('mx-auto flex w-[inherit] max-w-[1600px] items-center justify-between')}>
           <div className="left-side">
-            <Link href="/" className="text-[18px]">
+            <Link href="/" className="flex items-center gap-2 text-[18px]">
+              <div className='flex items-center justify-center rounded-xl bg-black text-white w-8 h-8' >D</div>
               <b>DAN.DEV.LOG</b>
             </Link>
           </div>
