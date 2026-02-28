@@ -57,7 +57,7 @@ const ResumePage = () => {
             <b>Introduction</b>
           </h2>
           <div>
-            <P>주도적으로 문제를 발견하고 해결하는 것을 좋아합니다.</P>
+            <P>서비스 운영 과정에서 발생하는 성능, 구조, 협업 병목 문제를 발견하고 개선하는 것을 강점으로 가진 프론트엔드 엔지니어입니다.</P>
             <P>
               서비스 성능 최적화(
               <Anchor
@@ -73,12 +73,10 @@ const ResumePage = () => {
               >
                 GitLab 언어팩 파이프라인 구축
               </Anchor>
-              ), Knip 도입을 통한 데드코드 감지·관리 등을 통해 서비스 품질과 팀 생산성을 개선한
-              경험이 있습니다.
+              ), Knip 도입을 통한 데드코드 감지·관리 등을 통해 서비스 품질과 팀 생산성개선을 주도했습니다.
             </P>
             <P>
-              또한 블로그를 통해 학습과 경험을 꾸준히 공유하며, 제 경험이 다른 개발자와 동료들에 게
-              인사이트가 되고 저 또한 지속적으로 성장하고 있습니다.
+              또한 기술적 문제 해결 과정과 경험을 블로그를 통해 지속적으로 공유하며, 학습과 개선 중심의 개발을 지향하고 있습니다.
             </P>
           </div>
         </Flex>
@@ -128,10 +126,9 @@ const ResumePage = () => {
                       )}
                     >
                       <li>
-                        FE 코드 컨벤션 표준화 및 데드코드 자동 관리 체계 구축(ESLint·Knip) → 코드
-                        품질 향상 및 개발 효율 개선
+                        <b>FE 코드 컨벤션 표준화 및 데드코드 자동 관리 체계 구축(ESLint/Knip)</b> → 코드 품질 및 개발 효율 개선
                       </li>
-                      <li>Optimistic UI·버튼 debounce 적용 → API 요청 감소, 사용자 경험 개선</li>
+                      <li><b>Optimistic UI·버튼 debounce 적용</b> → 불필요한 API 요청 감소 및 사용자 체감 응답성 개선</li>
                       <li>
                         글로벌 서비스 운영 및 인증 체계 통합 → 메일 인증 기반으로 통합하여 사용자
                         경험 일원화 및 유지보수 부담 감소
@@ -141,7 +138,7 @@ const ResumePage = () => {
                           className="underline"
                           href="http://localhost:3000/posts/2628cb44-979a-803a-a79f-dcc7429c933a"
                         >
-                          Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축 →  MR
+                          <b>Gitlab 기반 언어팩 자동화 파이프라인(CI Schedule + MR 생성) 구축</b> →  MR
                           수동 생성 제거 및 언어팩 관련 충돌 발생률 100% 감소
                         </a>
                       </li>
@@ -186,9 +183,8 @@ const ResumePage = () => {
                     </b>{' '}
                     <span className="text-base">(2024.06 ~ 2024.09)</span>
                   </h4>
-
                   <P>
-                    EZplay는 유저가 웹 게임을 쉽게 즐기도록 하기 위한 web3 미니 게임 플렛폼 입니다.
+                    기존 Web3 토너먼트 플랫폼의 높은 진입장벽을 낮추기 위해 기획된 참여형 미니게임 플랫폼 EZPlay의 리뉴얼 및 성능 최적화를 담당했습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div>
@@ -199,18 +195,14 @@ const ResumePage = () => {
                       )}
                     >
                       <li>
-                        공통 컴포넌트 개발(Modal, Popup, Dropdown 등) → 재활용성 확보 및 개발 효율성
-                        향상
+                        <b>Next.js App Router 기반 아키텍처 설계</b>: 서버 컴포넌트(RSC)를 적극 활용하여 클라이언트 사이드 번들 사이즈를 줄이고 초기 로딩 속도를 개선
                       </li>
                       <li>
-                        서버컴포넌트 캐싱, 데이터 특성에 따라 ISR/no-store 구분 적용 → 불필요한 API
-                        호출 제거 및 페이지 로딩 속도 개선
+                        <b>데이터 페칭 및 캐싱 전략 수립</b>: 서비스 도메인 특성에 맞춰 ISR(Incremental Static Regeneration)과 SSR(Server-Side Rendering) 기법을 선택적으로 설계 및 적용
                       </li>
                       <li>
-                        소셜 로그인(Google, Apple) 기능 도입 → 지갑 로그인 불편 해소 및 신규 사용자
-                        유입 개선
+                        <b>사용자 접근성 및 UX 개선</b>: Google/Apple 소셜 로그인 및 게스트 로그인 기능을 도입하여 복잡한 지갑 생성 없이 서비스 이용이 가능하도록 개선
                       </li>
-                      <li>지갑 연동 및 Web3 기능 지원</li>
                     </ul>
                   </div>
                 </div>
@@ -223,9 +215,7 @@ const ResumePage = () => {
                   </h4>
 
                   <P>
-                    재화(Gold,Ticket) 소비를 통해 참여한 게임 플레이 순위 및 대결 결과에 따른 보상을
-                    제공하는 블록체인 기반 게임 플랫폼 입니다. TF팀 일원으로 소프트런칭에 기여한 후
-                    정식으로 팀에 합류하여 서비스 개발 및 개선에 참여하였습니다.
+                    게임 플레이 결과에 따라 보상을 제공하는 블록체인 기반 플랫폼으로, 초기 TF팀으로 합류하여 소프트 런칭 및 서비스 안정화를 주도했습니다.
                   </P>
                   <b>주요 역할 및 성과:</b>
                   <div>
@@ -236,29 +226,20 @@ const ResumePage = () => {
                       )}
                     >
                       <li>
-                        프론트엔드 리드(프론트엔드 4인 구성)로 프로젝트 구조/컨벤션을 수립하여 협업
-                        효율을 개선하고, 정식 합류 이후에도 코드 품질 및 개발 표준을 지속적으로 주도
+                        <b>프론트엔드 파트 리딩(4인 구성)</b>: 프로젝트 전반의 기술 스택 선정 및 컨벤션 수립을 주도하여 협업 효율 극대화
                       </li>
                       <li>
-                        번들 최적화: 번들 분석 및 코드 스플리팅 적용 → First Load JS 470kb →
-                        162kb(-65%) 최적화, 초기 로딩 속도 개선
+                        <b>Web3 게임 브릿지 구축</b>: iframe+postMessage 기반 통신으로 게임 클라이언트 연동
                       </li>
                       <li>
-                        Web3 게임 브릿지 구축: iframe+postMessage 기반 통신으로 게임 클라이언트 연동
+                        <b>Web3 지갑 고도화</b>: wagmi 도입 및 WalletConnect V1 → V2 마이그레이션
                       </li>
                       <li>
-                        결제 편의성 강화: Paypal 결제 연동 → 카드 결제를 통한 직접 티켓 구매 지원
+                        <b>번들 최적화</b>: 코드 스플리팅 및 번들 분석을 통해 First Load JS 사이즈를 470kb에서 162kb로 65% 절감하여 초기 로딩 속도 개선
                       </li>
                       <li>
-                        ERC-20 토큰(가상화폐) 출금 및 NFT 전환 기능 구현 → NFT 소각 시 보상 지급
-                        지원
+                        ERC-20 토큰(이더리움 기반 디지털 자산) 출금 및 NFT 전환 기능 구현 → NFT 소각 시 보상 지급 지원
                       </li>
-                      <li>
-                        사용자 접근성 및 UX 개선: Google·Apple 소셜 로그인·게스트 로그인 지원, 출석
-                        리워드+애니메이션 적용
-                      </li>
-                      <li>Web3 지갑 고도화: wagmi 적용, WalletConnect V1 → V2 마이그레이션</li>
-                      <li>GA·Mixpanel 연동 → 사용자 행동 데이터 트래킹 및 UX 개선 근거 확보</li>
                     </ul>
                   </div>
                 </div>
@@ -279,7 +260,7 @@ const ResumePage = () => {
                     <span className="text-base">(2020.10 ~ 2022.08)</span>
                   </h4>
 
-                  <P>사용자가 NFT를 자유롭게 거래할 수 있는 C2C 마켓플레이스 입니다</P>
+                  <P>NFT를 거래할 수 있는 C2C 마켓플레이스의 리뉴얼 및 고도화를 진행했습니다.</P>
                   <b>주요 역할 및 성과:</b>
                   <div>
                     <ul
@@ -289,20 +270,18 @@ const ResumePage = () => {
                       )}
                     >
                       <li>
-                        서비스 리뉴얼: CRA+JS 기반 v1 → Next.js+TS 기반 v2 마이그레이션 및 UI/UX
+                        <b>서비스 리뉴얼</b>: CRA+JS 기반 v1 → Next.js+TS 기반 v2 마이그레이션 및 UI/UX
                         개선
                       </li>
                       <li>
-                        NFT 거래 기능: NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현
+                        <b>NFT 거래 기능</b>: NFT(ERC-721) 구매, 판매 제안(Offer) 생성·취소·승인 기능 구현
                         및 My Offers 페이지 개발
                       </li>
-
                       <li>
-                        대외 협업: IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지
+                        <b>외부 협업</b>: IPX(라인프렌즈)와 협업하여 OOZ NFT 티징 페이지 제작 (원페이지
                         스크롤 UI 구현) → 신규 유저 유입 확대
                       </li>
-                      <li>이메일 인증 플로우 추가 → 사용자 보안 및 신뢰성 강화</li>
-                      <li>web3-react 도입 → 멀티월렛 지원(Metamask, WalletConnect 등)</li>
+                      <li><b>web3-react 도입</b>: 멀티월렛 지원(Metamask, WalletConnect 등)</li>
                     </ul>
                   </div>
                 </div>
@@ -332,7 +311,6 @@ const ResumePage = () => {
                         사용자가 지속적으로 보상을 획득할 수 있도록 개선
                       </li>
                       <li>공통 컴포넌트(내구도 게이지·경고 메시지) 개발 → UI 일관성 강화</li>
-                      <li>WalletConnect 연동 → 멀티월렛 지원 확장</li>
                     </ul>
                   </div>
                 </div>
