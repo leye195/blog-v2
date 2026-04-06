@@ -1,3 +1,4 @@
+'use client';
 import * as React from 'react';
 import { type ExtendedRecordMap } from 'notion-types';
 import Flex from '@/components/common/Flex';

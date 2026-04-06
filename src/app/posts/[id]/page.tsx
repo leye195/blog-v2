@@ -1,3 +1,4 @@
+import { Block } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
 
 import JsonLd from '@/components/common/JsonLd';
@@ -36,9 +37,9 @@ export default async function Post({ params }: PageProps) {
   const recordMap = await getNotionPage(pageId);
   const title = getPageTitle(recordMap);
 
-  const block = recordMap.block[pageId]?.value;
-  const createdTime = block?.created_time;
-  const lastEditedTime = block?.last_edited_time;
+  const block = recordMap.block[pageId]?.value as Block;
+  const createdTime = block.created_time;
+  const lastEditedTime = block.last_edited_time;
   const coverImage = getPostCoverImage(recordMap, pageId);
   const description = getPageDescription(recordMap) || `${title} - Dan DevLog`;
 
@@ -62,7 +63,7 @@ export default async function Post({ params }: PageProps) {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <NotionPage title={title} recordMap={recordMap} rootPageId={pageId} previewImagesEnabled />
+      <NotionPage title={title ?? ''} recordMap={recordMap} rootPageId={pageId} previewImagesEnabled />
     </>
   );
 }
