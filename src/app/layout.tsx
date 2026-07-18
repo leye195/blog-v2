@@ -14,8 +14,7 @@ import 'nprogress/nprogress.css';
 import '@/styles/globals.css';
 
 const baseUrl = getBaseUrl();
-const siteDescription =
-  '프론트엔드·웹 개발 경험과 학습 기록을 정리하는 Dan DevLog입니다. React, Next.js, 블록체인 등 개발 이야기를 다룹니다.';
+const siteDescription = '프론트엔드·웹 개발 경험과 학습 기록을 정리하는 Dan DevLog입니다.';
 const ogImage = `${baseUrl}/assets/pageImage.png`;
 
 export const metadata: Metadata = {
