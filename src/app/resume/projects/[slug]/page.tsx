@@ -18,14 +18,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${project.company} - Projects`;
+  const description = `${project.company}에서 진행한 프로젝트 상세 — 담당 역할과 기술 스택, 성과를 정리했습니다.`;
 
   return {
     title,
+    description,
     alternates: {
-      canonical: `https://www.dantechblog.xyz/resume/projects/${slug}`,
-    },
-    openGraph: {
-      title,
+      canonical: `/resume/projects/${slug}`,
     },
   };
 }

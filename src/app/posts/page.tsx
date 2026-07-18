@@ -4,11 +4,9 @@ import PostPage from '@/components/page/PostPage';
 
 export const metadata: Metadata = {
   title: 'Posts',
+  description: 'Dan DevLog의 전체 개발 포스트 목록입니다. 카테고리별로 글을 살펴보세요.',
   alternates: {
-    canonical: 'https://www.dantechblog.xyz/posts',
-  },
-  openGraph: {
-    title: 'Posts',
+    canonical: '/posts',
   },
 };
 
