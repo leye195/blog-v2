@@ -10,6 +10,7 @@ import Posts from '../posts/Posts/Server';
 const MainPage = () => {
   return (
     <Flex $direction="column" $gap="64px">
+      <h1 className="sr-only">Dan DevLog — 프론트엔드 개발 블로그</h1>
       <Hero />
       <div className="flex w-full gap-[48px] items-start justify-center mx-auto py-8">
         <SectionWithLabel
