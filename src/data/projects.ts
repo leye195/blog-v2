@@ -527,6 +527,12 @@ export const projects: Project[] = [
     intro:
       '게임 플레이 결과에 따라 보상을 제공하는 블록체인 기반 플랫폼으로, 초기 TF팀으로 합류해 약 1.5개월 만에 소프트 런칭을 완료하고 이후 서비스 안정화를 주도했습니다.',
     stack: ['Next.js', 'TypeScript', 'Redux Toolkit', 'TanStack Query', 'Emotion', 'web3-react', 'wagmi'],
+    challenges: [
+      {
+        label: '짧은 런칭 기한 내 소프트 런칭 필요',
+        text: '초기 TF팀으로서 제한된 일정(약 1.5개월) 안에 블록체인 게임 플랫폼의 소프트 런칭을 완료해야 하는 시간적 제약이 있었습니다.',
+      },
+    ],
     categories: [
       {
         title: '프로젝트 리딩 및 아키텍처',
