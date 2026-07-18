@@ -1,12 +1,13 @@
 import Rss from "rss";
 import { getPosts } from "@/apis";
 import { getNotionPage } from "@/libs/notion";
+import { getBaseUrl } from "@/libs/url";
 import { getPageDescription, getPostCoverImage } from "@/libs/utils";
 import type { Post } from "@/types/notion";
 
 export const revalidate = 3600;
 
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.dantechblog.xyz";
+const baseURL = getBaseUrl();
 
 const generateRssFeed = async () => {
   try {

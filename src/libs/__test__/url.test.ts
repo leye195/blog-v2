@@ -23,4 +23,9 @@ describe('getBaseUrl', () => {
     process.env.NEXT_PUBLIC_BASE_URL = 'http://localhost:3000';
     expect(getBaseUrl()).toBe('http://localhost:3000');
   });
+
+  it('falls back to the production domain when the env var is an empty string', () => {
+    process.env.NEXT_PUBLIC_BASE_URL = '';
+    expect(getBaseUrl()).toBe('https://www.dantechblog.xyz');
+  });
 });

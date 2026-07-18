@@ -5,6 +5,6 @@ const FALLBACK_BASE_URL = 'https://www.dantechblog.xyz';
  * 값이 없으면 프로덕션 도메인으로 폴백합니다. metadataBase의 단일 소스로 사용합니다.
  */
 export const getBaseUrl = (): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? FALLBACK_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || FALLBACK_BASE_URL;
   return baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
 };
