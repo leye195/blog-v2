@@ -313,9 +313,23 @@ const ResumePage = () => {
           <h2 className="text-[22px]">
             <b>Skill</b>
           </h2>
-          <div>
-            <p>TypeScript, JavaScript, React, Next.js, Node.js, Git, Jira</p>
-          </div>
+          <ul className="flex list-disc flex-col gap-1 pl-6 max-md:text-[14px]">
+            <li>
+              <b>Frontend:</b> TypeScript, JavaScript, React, Next.js
+            </li>
+            <li>
+              <b>State/Data:</b> TanStack Query, Zustand, Redux(RTK)
+            </li>
+            <li>
+              <b>Styling:</b> TailwindCSS, Emotion
+            </li>
+            <li>
+              <b>Web3:</b> wagmi, viem, web3-react
+            </li>
+            <li>
+              <b>Build/Etc:</b> Vite, Node.js, Git, Jira
+            </li>
+          </ul>
         </Flex>
         <Flex $direction="column" $gap="2px">
           <h2 className="text-[22px]">
