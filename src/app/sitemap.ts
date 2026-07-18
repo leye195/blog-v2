@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getPosts } from '@/apis';
+import { projects } from '@/data/projects';
 import type { Post } from '@/types/notion';
 
 const FALLBACK_BASE_URL = 'https://www.dantechblog.xyz';
@@ -35,6 +36,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    ...projects.map((project) => ({
+      url: `${baseUrl}/resume/projects/${project.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
     {
       url: `${baseUrl}/rss.xml`,
       lastModified: new Date(),
