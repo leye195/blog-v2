@@ -6,7 +6,7 @@ const useMountTransition = (isMounted: boolean, unmountDelay: number) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
     if (isMounted && !isTransitioning) {
       setIsTransitioning(true);
@@ -15,7 +15,7 @@ const useMountTransition = (isMounted: boolean, unmountDelay: number) => {
     }
 
     return () => {
-      clearTimeout(timeoutId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
     };
   }, [isMounted, unmountDelay, isTransitioning]);
 
