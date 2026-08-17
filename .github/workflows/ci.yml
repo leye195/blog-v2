@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# 같은 브랜치에 연달아 푸시하면 이전 실행은 취소한다.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck / Lint / Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # setup-node의 pnpm 캐시가 pnpm 실행 파일을 필요로 하므로 먼저 설치한다.
+      # 버전은 package.json의 packageManager 필드를 따른다.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # next typegen이 .next/types를 만든 뒤 tsc가 돈다. 세 검사 모두 시크릿·네트워크 불필요.
+      - run: pnpm typecheck
+
+      - run: pnpm lint
+
+      - run: pnpm test --run
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    # 포크 PR에는 시크릿이 전달되지 않으므로 아예 돌리지 않는다.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # 커밋된 .env.production은 값이 비어 있고, 빌드 중 자기 자신의 /api/posts를
+      # 호출하므로 최소한 BASE_URL과 Notion 자격증명이 있어야 성공한다.
+      - name: Check build inputs
+        id: inputs
+        env:
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
+          NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+        run: |
+          if [ -n "$NOTION_SECRET" ] && [ -n "$NOTION_DATABASE" ] && [ -n "$NEXT_PUBLIC_BASE_URL" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::NOTION_SECRET / NOTION_DATABASE secret 또는 NEXT_PUBLIC_BASE_URL variable이 없어 빌드를 건너뜁니다."
+          fi
+
+      - name: Build
+        if: steps.inputs.outputs.ready == 'true'
+        env:
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
+          # 별도 PAT이 없으면 Actions 기본 토큰을 쓴다. 권한이 모자라면 별 개수만 0이 된다.
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GITHUB_USERNAME: ${{ vars.NEXT_PUBLIC_GITHUB_USERNAME }}
+        run: pnpm build
