@@ -1,4 +1,6 @@
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import type { useRouter } from 'next/navigation';
+
+type AppRouterInstance = ReturnType<typeof useRouter>;
 
 export const generateKBarAction = (router: AppRouterInstance) => {
   const actions = [
