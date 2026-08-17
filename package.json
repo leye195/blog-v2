@@ -50,18 +50,18 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/rss": "^0.0.30",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^6.0.5",
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^9.31.0",
     "eslint-config-next": "16.3.1",
     "eslint-plugin-import": "^2.29.1",
-    "jsdom": "^26.1.0",
+    "jsdom": "^30.0.1",
     "postcss": "^8",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.11",
     "typescript": "~6.0.3",
-    "vite": "^6.4.3",
+    "vite": "^8.2.1",
     "vitest": "^4.1.10"
   }
 }
