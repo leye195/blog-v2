@@ -1,7 +1,9 @@
-@import './base.css' layer(base);
-@import './normalize.css' layer(base);
+/* 원격 @import는 반드시 맨 앞에 둔다. 아래 상대 경로 import들은 번들 시 인라인되기 때문에,
+   순서를 바꾸면 @import가 일반 규칙 뒤로 밀려 CSS 파싱이 실패한다. */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css')
 layer(base);
+@import './base.css' layer(base);
+@import './normalize.css' layer(base);
 
 @import 'tailwindcss';
 

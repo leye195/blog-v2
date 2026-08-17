@@ -17,6 +17,8 @@ const KBarSearch = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
         'box-border w-full px-5 py-3.5',
         'focus:placeholder:opacity-100 focus:placeholder:transition-opacity',
       )}
+      // kbar가 제공하는 콜백 ref다. ref 객체의 current를 읽는 것이 아니라서 안전하다.
+      // eslint-disable-next-line react-hooks/refs
       ref={query.inputRefSetter}
       value={value}
       placeholder="Cmd (or Ctrl) + K to toggle"

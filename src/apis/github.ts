@@ -58,12 +58,26 @@ export async function getGithubStats(): Promise<GithubStats | null> {
     }
 
     const json = await res.json();
+
+    // GraphQL은 부분 실패도 200으로 준다. 조용히 넘어가면 어떤 필드가 왜 비었는지 알 수 없다.
+    if (Array.isArray(json.errors) && json.errors.length > 0) {
+      const messages = Array.from(
+        new Set<string>(json.errors.map((error: any) => String(error?.message))),
+      );
+      console.warn(`GitHub GraphQL returned partial errors: ${messages.join(' / ')}`);
+    }
+
     const user = json.data?.user;
     if (!user) return null;
 
     // 1. Calculate Total Stars (from owned, non-fork repos up to 100)
-    const repos = user.repositories.nodes;
-    const totalStars = repos.reduce((acc: number, repo: any) => acc + repo.stargazers.totalCount, 0);
+    // 토큰 권한이 모자라면 GitHub이 stargazers에 FORBIDDEN을 내고, non-null 필드라
+    // 그 오류가 위로 전파되어 nodes 원소 자체가 null로 온다. 별 개수만 포기하고 넘어간다.
+    const repos = user.repositories?.nodes ?? [];
+    const totalStars = repos.reduce(
+      (acc: number, repo: any) => acc + (repo?.stargazers?.totalCount ?? 0),
+      0,
+    );
 
     // 2. Contributions
     const calendar = user.contributionsCollection.contributionCalendar;
