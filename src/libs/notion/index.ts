@@ -34,6 +34,9 @@ export const queryDatabase = async () => {
   return query;
 };
 
+// notion-client 7.12.0부터 기본 User-Agent를 보내고 기본 도메인이 app.notion.com으로
+// 바뀌었다. 그 전에는 UA 없는 요청을 Cloudflare가 403으로 막았다.
+// 참고: https://github.com/NotionX/react-notion-x/issues/710
 const notionClient = new NotionAPI({});
 
 export const getNotionPage = async (id: string) => {
