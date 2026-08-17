@@ -74,3 +74,5 @@ export const getPostCoverImage = (recordMap: any, pageId: string) => {
   const coverImage = block?.format?.page_cover;
   return coverImage || undefined;
 };
+
+export const __ciSelfTest: number = 'not-a-number';
