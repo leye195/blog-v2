@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
