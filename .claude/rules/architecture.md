@@ -2,7 +2,7 @@
 
 ## Overview
 
-Next.js 15 App Router blog using Notion as a headless CMS. Content is stored in a Notion database, fetched via the Notion SDK, and rendered with `react-notion-x`.
+Next.js 16 App Router blog using Notion as a headless CMS. Content is stored in a Notion database, fetched via the Notion SDK, and rendered with `react-notion-x`.
 
 ## Data Flow
 
