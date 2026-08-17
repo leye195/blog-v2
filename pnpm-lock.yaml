@@ -47,6 +47,9 @@ importers:
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
+      prismjs:
+        specifier: ^1.30.0
+        version: 1.30.0
       react:
         specifier: ^19.2.8
         version: 19.2.8
