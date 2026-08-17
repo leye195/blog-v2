@@ -1,0 +1,18 @@
+# typecheck과 test는 프로젝트 전체 단위라 커밋마다 돌리기엔 무겁다. push 시점에 한 번만.
+#
+# pnpm test는 .nvmrc의 Node를 요구한다(vite 8이 끌어오는 rolldown이 Node >=22.12).
+# 이 머신은 PATH에서 homebrew node가 nvm보다 앞서 있어 셸에 따라 구버전이 잡히므로,
+# nvm이 있으면 맞춰준다.
+#
+# husky는 훅을 `sh -e`로 실행한다. nvm.sh 내부에는 0이 아닌 종료 코드를 내는 지점이 있어
+# errexit 상태로 소스하면 아무 출력 없이 즉시 죽는다. 이 구간만 errexit를 끈다.
+set +e
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh"
+  nvm use --silent
+fi
+set -e
+
+echo "▸ node $(node -v)"
+pnpm typecheck
+pnpm test --run
