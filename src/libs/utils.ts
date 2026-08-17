@@ -1,4 +1,5 @@
 import { ClassValue, clsx } from 'clsx';
+import { getBlockValue } from 'notion-utils';
 import { twMerge } from 'tailwind-merge';
 
 import type { Post } from '@/types/notion';
@@ -54,11 +55,13 @@ export const generateImageUrl = ({
   return `https://res.cloudinary.com/dodgocm3u/image/upload/${option}/v1709461304/${format}/${fileName}.${format}`;
 };
 
+// notion-client 7.12(app.notion.com)는 block 레코드를 한 겹 더 감싼다.
+// getBlockValue가 `.value`를 재귀적으로 벗겨내므로 신/구 구조 모두 안전하게 읽는다.
 export const getPageDescription = (recordMap: any) => {
-  const blocks = Object.values(recordMap.block);
-  const textContent = blocks
-    .filter((block: any) => (block as any).value?.type === 'text')
-    .map((block: any) => (block as any).value?.properties?.title?.map((t: any) => t[0]).join(''))
+  const textContent = Object.values(recordMap.block ?? {})
+    .map((block: any) => getBlockValue(block))
+    .filter((block: any) => block?.type === 'text')
+    .map((block: any) => block?.properties?.title?.map((t: any) => t[0]).join(''))
     .filter(Boolean)
     .join(' ');
 
@@ -67,7 +70,7 @@ export const getPageDescription = (recordMap: any) => {
 };
 
 export const getPostCoverImage = (recordMap: any, pageId: string) => {
-  const block = recordMap.block[pageId]?.value;
+  const block = getBlockValue(recordMap.block?.[pageId]);
   const coverImage = block?.format?.page_cover;
   return coverImage || undefined;
 };
