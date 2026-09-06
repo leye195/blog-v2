@@ -31,16 +31,15 @@ const Header = () => {
         <nav className={cn('mx-auto flex w-[inherit] max-w-[1600px] items-center justify-between')}>
           <div className="left-side">
             <Link href="/" className="flex items-center gap-2 text-[18px]">
-              <div className='flex items-center justify-center rounded-xl bg-black text-white w-8 h-8' >D</div>
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-black text-white">
+                D
+              </div>
               <b>DAN.DEV.LOG</b>
             </Link>
           </div>
           <div className={cn('flex items-center gap-[10px] max-md:text-[16px]')}>
             <Link href="/posts">
               <b>Posts</b>
-            </Link>
-            <Link href="/resume">
-              <b>Resume</b>
             </Link>
             <KBarToggleButton />
           </div>
